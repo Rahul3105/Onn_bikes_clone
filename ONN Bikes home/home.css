@@ -1,0 +1,975 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url(images/body\ bg/bodybackground.png);
+  background-size: 50%;
+  background-color: rgb(223, 223, 223);
+}
+
+/* utility classes */
+.flex-box-space-btw {
+  display: flex;
+  justify-content: space-between;
+}
+
+.non_selectable_txt {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* header css starts from here */
+.home_header {
+  width: 100%;
+  height: 62rem;
+  position: relative;
+}
+.image_container {
+  width: 100%;
+  height: 100%;
+  background-image: url(images/header_home\ bg/header_home_bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 5px 100px 50px 1px rgb(0 0 0 / 30%) inset;
+  position: absolute;
+  top: 0;
+}
+/* nav bar css starts here */
+.home_nav_bar {
+  width: 100%;
+  height: 8.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  position: fixed;
+  z-index: 1;
+}
+.home_nav_bar > ul {
+  font-size: 1.4rem;
+  width: 113rem;
+  list-style: none;
+  align-items: center;
+}
+.home_nav_bar > ul > li > a {
+  text-decoration: none;
+  color: white;
+}
+.home_nav_bar > ul > li > a:hover {
+  color: rgb(238, 127, 34);
+}
+.home_nav_bar > ul > li > a > img {
+  width: 6rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 1rem;
+}
+
+/* when user scoll then this class will added to nav bar */
+.scrollNav {
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition: 0.6s;
+}
+.scrollNav a {
+  color: rgb(30, 45, 81) !important;
+}
+.scrollNav a:hover {
+  color: rgb(238, 127, 34) !important;
+}
+
+/* tagline css starts form here */
+
+.tagLine {
+  margin: auto;
+  text-align: center;
+  margin-top: 26rem;
+  line-height: 5.2rem;
+  color: white;
+  text-shadow: 1px 1px 20px #000000;
+  width: 100rem;
+  margin-bottom: 1.3rem;
+}
+.tagLine > h1 {
+  font-size: 5.5rem !important;
+  font-weight: 700 !important;
+}
+.tagLine > h3 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+}
+
+/* rideNow box css  */
+.rideNow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 102rem;
+  margin: auto;
+  background-color: white;
+  height: 5.5rem;
+  font-weight: 400;
+}
+.rideNow > div {
+  width: 20%;
+  height: 100%;
+  float: left;
+  font-size: 1.6rem;
+}
+.rideNow > div > p {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collapse {
+  z-index: 1;
+}
+.rideNow button {
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  background-color: rgb(30, 45, 81);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* main_content section css starts form here */
+
+.main_content {
+  background-color: white;
+  width: 100%;
+}
+
+.whyONN,
+.app_link,
+.featuredOn,
+.contactUs,
+.FAQs_section {
+  border: 1px solid rgba(250, 0, 0, 0);
+  width: 130rem;
+  margin: auto;
+}
+.app_link {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 4.5rem;
+}
+
+.app_link > div > h2,
+.whyONN > h2,
+.featuredOn > h2,
+.FAQs_section > h2,
+.contactUs > h2 {
+  font-size: 3.4rem;
+  color: rgb(88, 88, 88);
+  font-weight: 500;
+  text-align: center;
+}
+
+.whyONN > h2 + p,
+.featuredOn > h2 + p,
+.FAQs_section > h2 + p,
+.contactUs > h2 + p {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+/* why onn section */
+.whyONN,
+.featuredOn,
+.contactUs {
+  margin-top: 6rem;
+}
+.whyONN > .whyONN_advantages {
+  width: 95%;
+  margin: auto;
+}
+.whyONN_advantages > div {
+  box-shadow: 0 0 5px #d2d2d2;
+  text-align: center;
+  padding: 15px 8px;
+  margin: 30px 0;
+  height: 37rem;
+  width: 22%;
+}
+.whyONN_advantages > div > img {
+  width: 9rem;
+}
+.whyONN_advantages > div > .big_img {
+  width: 6rem !important;
+}
+.whyONN .whyONN_advantage_tagLine {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.7rem;
+}
+.whyONN .whyONN_advantage_tagLine_content {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #353854;
+  line-height: 2.8rem;
+}
+.whyONN_advantages > .ONN_Stations > .whyONN_advantage_tagLine {
+  margin-top: 3rem;
+}
+
+/* .featuredOn css starts form here */
+
+.featuredOn > .featuredOn_img,
+.FAQs_section > .FAQ_ques_section {
+  width: 80%;
+  margin: auto;
+}
+.featuredOn > .featuredOn_img > div > img {
+  width: 15rem;
+  padding-top: 2rem;
+}
+
+/* contact us form css starts form here */
+
+.contactUs_parts {
+  width: 85%;
+  margin: auto;
+}
+.left_contactUs,
+.right_contactUs {
+  width: 48.5%;
+  margin-top: 2.6rem;
+}
+.firstName_lastName > div {
+  width: 49%;
+  display: flex;
+}
+
+.form span {
+  border-left: 1px solid rgb(221, 220, 220);
+  border-bottom: 1px solid rgb(221, 220, 220);
+  border-top: 1px solid rgb(221, 220, 220);
+  height: 4rem;
+  width: 4rem;
+  border-right: 1px dotted black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.7rem;
+  font-size: 1.5rem;
+  color: rgb(187, 178, 178);
+}
+.firstName_lastName input {
+  width: 84.5%;
+  height: 4rem;
+  border: 1px solid rgb(221, 220, 220);
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.form > div {
+  display: flex;
+}
+
+.form input,
+.form button,
+.form textarea,
+.form select {
+  width: 92%;
+  margin: 0.7rem 0;
+  height: 4rem;
+  border: 1px solid rgb(221, 220, 220);
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.form textarea {
+  height: 6rem;
+}
+.firstName_lastName > input:focus,
+.form input:focus,
+.form button:focus,
+.form textarea:focus,
+.form select:focus {
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(182, 172, 172);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(182, 172, 172);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(182, 172, 172);
+}
+.left_contactUs > .form #submit_contactUs {
+  background-color: rgb(30, 45, 81);
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: 4.5rem;
+  width: 99.5%;
+  border-radius: 0.3rem;
+  font-weight: 500;
+}
+
+/* form accordian starts from here */
+.form_accordian {
+  background-color: white;
+  text-align: left;
+  color: rgb(139, 132, 132);
+}
+.form_accordian + #formOptionBox {
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.form_accordian + #formOptionBox > div {
+  padding: 0;
+}
+.form_accordian + #formOptionBox > div > div {
+  padding: 1.2rem 1rem;
+  font-size: 1.4rem;
+  color: rgb(30, 45, 81);
+  cursor: pointer;
+}
+.form_accordian + #formOptionBox > div > div:hover {
+  background-color: rgb(30, 45, 81);
+  color: white;
+}
+.form_accordian_Container {
+  position: relative;
+}
+
+/* //accordian css starts form here */
+
+.right_contactUs > button,
+.right_contactUs > div {
+  width: 100%;
+}
+.right_contactUs > button {
+  height: 5.2rem;
+  border-radius: 0 !important;
+  background-color: white;
+  color: rgb(30, 45, 81);
+  border: 1px solid rgb(221, 220, 220);
+  outline: none;
+  font-size: 1.3rem;
+  text-align: start;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  transition: 0.2s;
+  position: relative;
+  font-weight: 500;
+}
+.right_contactUs > button::after,
+.form_accordian::after,
+.collapsible-content-tri::after {
+  content: "\25be";
+  position: absolute;
+  right: 2%;
+  transform: scale(1.5);
+}
+.collapsible-content-tri,
+.form_accordian {
+  position: relative;
+  cursor: pointer;
+}
+.right_contactUs > button:hover {
+  background-color: rgb(30, 45, 81);
+  color: white;
+  transition: 0.2s;
+}
+.right_contactUs > .card {
+  border: 1px solid rgb(221, 220, 220);
+  border-top: hidden;
+}
+.right_contactUs .card-body > h5 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.right_contactUs .card-body > p {
+  font-size: 1.2rem;
+}
+.right_contactUs .card-body > ul {
+  padding-left: 2rem;
+  line-height: 2rem;
+}
+.right_contactUs .card-body > ul > li {
+  font-size: 1.2rem;
+}
+/* .right_contactUs .card-body > ul > li >  */
+/* form css end here */
+
+.main_contentFaq {
+  background-color: rgb(250, 250, 250);
+  padding-top: 6rem;
+}
+
+.FAQs_section > h2 + p {
+  color: rgb(30, 45, 81);
+  margin-bottom: 5rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+.FAQ_ques_section {
+  width: 93% !important;
+}
+.FAQ_ques_section > div {
+  width: 49%;
+  font-size: 1.4rem;
+  box-shadow: 0 0 5px #d2d2d2;
+  line-height: 3rem;
+  padding: 3rem;
+  font-weight: 300;
+  background-color: white;
+}
+.FAQ_ques_section > div:hover {
+  box-shadow: none;
+}
+.FAQ_ques_section > div > h3 > i {
+  font-size: 1.5rem;
+  color: rgb(53, 50, 50);
+}
+.FAQ_ques_section > div > h3 {
+  font-weight: 500;
+}
+.FAQ_ques_section > div > h3 + p {
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+.FAQs_section > .blog_FAQ_link {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 2.6rem;
+  margin: 3.5rem 0;
+}
+
+.popular_bike_for_rent {
+  display: grid;
+  width: 45%;
+  margin: auto;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 3.5rem;
+  font-weight: 400;
+  padding: 2rem;
+  box-shadow: 0 0 5px #d2d2d2;
+  margin-bottom: 5rem;
+}
+.popular_bike_for_rent > .popular_Bike_Heading {
+  grid-column: 1/-1;
+  margin-bottom: 2rem;
+}
+.popular_Bike_Heading > h5 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: gray;
+}
+/* footer css starts from here */
+
+footer {
+  background-color: rgba(0, 0, 0, 0.692);
+  color: white;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 3rem;
+  text-shadow: 1px 1px 1px rgb(34, 33, 33);
+}
+
+.footer_upperPart > div > ul {
+  list-style: none;
+  line-height: 3rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+.footer_upperPart > div > h5 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.footer_upperPart > div:last-child {
+  width: 45rem;
+  font-size: 1.2rem;
+}
+/* //social links css */
+.footer_upperPart .social_media_links {
+  margin-top: 1rem;
+  width: 38%;
+}
+
+.facebook_link,
+.insta_link,
+.twitter_link,
+.linkdin_link {
+  font-size: 1.5rem;
+  background-color: white;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+  cursor: pointer;
+}
+.facebook_link:hover {
+  background-color: rgba(52, 52, 187, 0.65);
+  transition: 0.5s;
+}
+.twitter_link:hover {
+  background-color: rgb(58, 181, 230);
+  transition: 0.5s;
+}
+.insta_link:hover {
+  background-color: rgb(231, 96, 118);
+  transition: 0.5s;
+}
+.linkdin_link:hover {
+  background-color: rgb(26, 186, 250);
+  transition: 0.5s;
+}
+
+footer > .footer_upperPart + hr {
+  margin: 2.2rem 0;
+  background-color: white;
+}
+.footer_lowerPart {
+  font-size: 1.2rem;
+}
+.footer_lowerPart > h6 {
+  margin: 0.9rem 0;
+  font-size: 1.5rem;
+}
+.footer_lowerPart_heading {
+  margin: 0.9rem 0;
+}
+.footer_lowerPart + hr {
+  margin: 1.3rem 0;
+  background-color: white;
+}
+.copyRights {
+  padding: 0.5rem 0;
+  font-size: 1.3rem;
+  margin: 0;
+}
+/* hamburger menu */
+.hamburgerMenu {
+  display: none;
+  width: 4.8rem;
+  height: 4rem;
+  cursor: pointer;
+  position: relative;
+}
+.scrollHamburger > div {
+  background-color: gray !important;
+}
+.hamburgerMenu > div {
+  width: 90%;
+  height: 10%;
+  border-radius: 1rem;
+  margin: auto;
+  margin-bottom: 0.6rem;
+  background-color: white;
+}
+#menuBox {
+  position: absolute;
+  top: 9rem;
+  width: 100%;
+  border-top: 1px solid rgb(197, 186, 186);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#menuBox > ul > li {
+  list-style: none;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+}
+#menuBox > ul > li > a:hover {
+  color: orangered;
+}
+#menuBox > ul > li > a {
+  text-decoration: none;
+  color: rgb(30, 45, 81);
+}
+#planName {
+  /* border: 1px solid lime; */
+  margin-top: -1rem;
+  text-align: center;
+  color: rgb(30, 45, 81);
+}
+#planName > .card {
+  padding: 0;
+}
+#planName > .card > p {
+  width: 100%;
+  padding: 1.2rem 0;
+  margin: 0;
+  font-weight: 500;
+  transition: 0.2s;
+}
+#planName > .card > p:hover {
+  background-color: rgb(30, 45, 81);
+  color: white;
+  transition: 0.2s;
+}
+
+.covid_updateCont {
+  position: fixed;
+  bottom: 3.5%;
+  width: 30rem;
+  height: 9rem;
+  border: 1px dashed rgb(30, 45, 81);
+  left: 1.5%;
+  z-index: 2;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  cursor: pointer;
+}
+.covid_updateCont > img {
+  width: 100%;
+  height: 100%;
+}
+.covid_updateCont > .removeCovidUpdate {
+  position: absolute;
+  top: -18%;
+  right: -6%;
+  border-radius: 50%;
+  width: 3.3rem;
+  height: 3.3rem;
+  background-image: url(/images/covid_update/cross.png);
+  background-position: -7466px 0;
+}
+
+/* responsive layout starts form here */
+@media only screen and (max-width: 1340px) {
+  html {
+    font-size: 59%;
+  }
+  .whyONN,
+  .app_link,
+  .featuredOn,
+  .contactUs,
+  .FAQs_section {
+    /* border: 1px solid black; */
+    width: 120rem;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  html {
+    font-size: 56%;
+  }
+  .whyONN,
+  .app_link,
+  .featuredOn,
+  .contactUs,
+  .FAQs_section {
+    /* border: 1px solid black; */
+    width: 110rem;
+  }
+}
+@media only screen and (max-width: 1078px) {
+  html {
+    font-size: 52%;
+  }
+  .home_nav_bar > ul {
+    width: 100rem;
+  }
+}
+/* one line layout start */
+
+@media only screen and (max-width: 980px) {
+  html {
+    font-size: 50%;
+  }
+  .home_nav_bar > ul {
+    font-size: 1.5rem;
+  }
+  .app_link {
+    display: block;
+  }
+  .app_link > div {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  /* whyOnn responsive */
+  .whyONN_advantages {
+    display: block;
+    /* border: 1px solid yellow; */
+  }
+  .whyONN_advantages > div {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+  .whyONN_advantages > div > .whyONN_advantage_tagLine {
+    font-size: 2.4rem;
+  }
+  .whyONN_advantages > div > .whyONN_advantage_tagLine_content {
+    font-size: 1.7rem;
+  }
+
+  /* featuredOn_img pending */
+
+  /* contact_Us responsive */
+  .contactUs_parts {
+    display: block;
+    /* border: 1px solid red; */
+  }
+  .contactUs_parts > div {
+    /* border: 1px solid black; */
+    margin: auto;
+    margin-bottom: 3rem;
+    width: 60%;
+  }
+  .contactUs_parts > .left_contactUs > .form > .firstName_lastName {
+    display: block;
+  }
+  .contactUs_parts > .left_contactUs > .form > .firstName_lastName > div {
+    width: 100%;
+  }
+  #formOptionBox {
+    z-index: 1;
+  }
+
+  /* FAQ_ques_section */
+  .FAQ_ques_section {
+    display: block;
+  }
+  .FAQ_ques_section > div {
+    margin: auto;
+    margin-bottom: 2rem;
+    width: 70%;
+  }
+  .FAQs_section > .blog_FAQ_link {
+    font-size: 1.3rem;
+  }
+  /* popular_bike_for_rent */
+
+  .popular_bike_for_rent {
+    display: block;
+    font-size: 1.6rem;
+  }
+  .popular_Bike_Heading > h5 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(30, 45, 81);
+  }
+
+  /* footer_upperPart */
+  .footer_upperPart {
+    display: block;
+  }
+}
+@media only screen and (max-width: 880px) {
+  html {
+    font-size: 47%;
+  }
+  .whyONN,
+  .app_link,
+  .featuredOn,
+  .contactUs,
+  .FAQs_section {
+    width: 100rem;
+  }
+  .home_nav_bar > ul {
+    width: 90rem;
+  }
+}
+/* mobile layout starts form here */
+@media only screen and (max-width: 772px) {
+  /* here i am creating .hamburgerMenu */
+  .home_nav_bar > ul > li > a {
+    display: none;
+  }
+  .home_nav_bar > ul > .logo_li > a {
+    display: block;
+  }
+  .home_nav_bar .logo_li img {
+    width: 7rem;
+  }
+  .home_nav_bar {
+    height: 10rem;
+  }
+  .home_nav_bar ul {
+    display: block;
+    position: relative;
+    width: 95vw;
+  }
+  .hamburgerMenu {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  /* ride now section */
+  .rideNow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 60rem;
+    height: 17rem;
+    background-color: transparent;
+  }
+  .rideNow > div {
+    width: 100%;
+    height: 5rem;
+    border: 0.8px solid rgb(173, 169, 169);
+    background-color: white;
+  }
+  .rideNowBtn {
+    grid-column: 1/-1;
+    width: 98%;
+    height: 4rem;
+    background-color: rgb(30, 45, 81);
+  }
+  /* contact us */
+  .left_contactUs,
+  .right_contactUs {
+    width: 70rem !important;
+  }
+  .FAQ_ques_section > div {
+    width: 70rem !important;
+  }
+  .popular_bike_for_rent {
+    width: 60rem !important;
+  }
+}
+@media only screen and (max-width: 752px) {
+  html {
+    font-size: 44%;
+  }
+  .whyONN,
+  .app_link,
+  .featuredOn,
+  .contactUs,
+  .FAQs_section {
+    width: 80rem;
+  }
+  .featuredOn_img img {
+    width: 1rem !important;
+  }
+  .tagLine {
+    /* border: 1px solid lime; */
+    width: 70%;
+    margin-top: 20rem;
+  }
+  .contactUs_parts {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 570px) {
+  html {
+    font-size: 41%;
+  }
+  .whyONN,
+  .app_link,
+  .featuredOn,
+  .contactUs,
+  .FAQs_section {
+    width: 80rem;
+  }
+}
+@media only screen and (max-width: 522px) {
+  .whyONN,
+  .app_link,
+  .featuredOn,
+  .contactUs,
+  .FAQs_section {
+    width: auto;
+  }
+  .tagLine {
+    width: auto;
+  }
+  .tagLine > h1 {
+    font-size: 5rem !important;
+  }
+  .tagLine > h3 {
+    font-size: 2.4rem !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .contactUs_parts > .left_contactUs,
+  .right_contactUs {
+    width: 100%;
+  }
+  .whyONN_advantages > div {
+    /* border: 1px solid orangered; */
+    width: 100%;
+  }
+  .FAQ_ques_section {
+    /* border: 1px solid orangered; */
+    width: 100% !important;
+  }
+  .popular_bike_for_rent {
+    /* border: 1px solid lime; */
+    width: 90% !important;
+  }
+  .footer_lowerPart,
+  .footer_upperPart {
+    font-size: 1.8rem !important;
+  }
+  .footer_upperPart > div > h5 {
+    font-size: 2.6rem !important;
+    font-weight: 500;
+  }
+  .footer_lowerPart_heading,
+  .footer_lowerPart > h6 {
+    font-size: 2.5rem !important ;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 462px) {
+  .left_contactUs,
+  .right_contactUs {
+    width: 92% !important;
+  }
+  .FAQ_ques_section > div {
+    /* border: 1px solid orangered; */
+    width: 92% !important;
+  }
+}
+@media only screen and (max-width: 462px) {
+  .rideNow {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 336px) {
+  .footer_lowerPart,
+  .footer_upperPart {
+    font-size: 1.5rem !important;
+  }
+  .footer_upperPart > div > h5 {
+    font-size: 2.3rem !important;
+    font-weight: 500;
+  }
+  .footer_lowerPart_heading,
+  .footer_lowerPart > h6 {
+    font-size: 2.2rem !important ;
+    font-weight: 600;
+  }
+  .social_media_links_container {
+    height: auto !important;
+    width: auto !important;
+  }
+}
