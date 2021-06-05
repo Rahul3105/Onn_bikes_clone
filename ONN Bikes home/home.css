@@ -631,7 +631,7 @@ footer > .footer_upperPart + hr {
   color: white;
   transition: 0.2s;
 }
-
+/* this is for covid update popup */
 .covid_updateCont {
   position: fixed;
   bottom: 3.5%;
