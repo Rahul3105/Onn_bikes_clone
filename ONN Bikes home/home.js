@@ -41,7 +41,16 @@ function changeImgAndTagLine() {
 setInterval(() => {
   changeImgAndTagLine();
 }, 4000);
-function removeCovidUpdate() {
-  let updateCont = document.getElementsByClassName("covid_updateCont")[0];
-  updateCont.style.display = "none";
+function removePopUp(name) {
+  let popUpCont = document.getElementsByClassName(name)[0];
+  popUpCont.style.display = "none";
+}
+function showSelectCity() {
+  let selectCityCont = document.getElementsByClassName("selectCity")[0];
+  selectCityCont.style.display = "block";
+}
+function showCalender() {
+  let calender = document.getElementsByClassName("calender")[0];
+  console.log(calender);
+  calender.classList.toggle("showCal");
 }

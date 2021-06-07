@@ -7,6 +7,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 body {
   font-family: "Montserrat", sans-serif;
@@ -124,6 +125,7 @@ body {
   height: 100%;
   float: left;
   font-size: 1.6rem;
+  border-right: 0.4px solid rgba(214, 211, 211, 0.384);
 }
 .rideNow > div > p {
   height: 100%;
@@ -648,14 +650,99 @@ footer > .footer_upperPart + hr {
   height: 100%;
 }
 .covid_updateCont > .removeCovidUpdate {
-  position: absolute;
   top: -18%;
   right: -6%;
+}
+.covid_updateCont > .removeCovidUpdate,
+.selectCity > .removeSelectCity {
+  position: absolute;
   border-radius: 50%;
   width: 3.3rem;
   height: 3.3rem;
   background-image: url(/images/covid_update/cross.png);
   background-position: -7466px 0;
+  cursor: pointer;
+}
+/* cityArea css starts form here */
+.selectCity {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  z-index: 2;
+  border-radius: 4px;
+  display: none;
+  transition: 1s;
+}
+.selectCity > .removeSelectCity {
+  top: -2.5%;
+  right: -1.8%;
+}
+.selectCity > .searchArea {
+  width: 50%;
+  padding: 5% 1.9%;
+  float: left;
+  height: 100%;
+}
+.selectCity > .searchArea input {
+  width: 60%;
+  height: 3.4rem;
+  font-size: 1.3rem;
+  border: 1px solid rgba(153, 149, 149, 0.479);
+  padding: 1.2rem;
+  background: url(https://www.onnbikes.com/img/citysearch.svg) right no-repeat
+    #f9f9f9;
+  background-size: auto;
+  border: none;
+  background-size: 25px 25px;
+  box-shadow: 0 0 3px #dad8d8;
+}
+.CitySearchInputInfo {
+  margin-top: 30%;
+  font-size: 1.4rem;
+}
+.city-search-input-info-para2 {
+  font-size: 2.1rem;
+  font-weight: 200;
+  margin-top: 3%;
+}
+.selectCity > .cityArea {
+  float: left;
+  width: 50%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.selectCity > .cityArea img {
+  width: 12rem;
+  text-align: center;
+}
+.selectCity > .cityArea > .cityCont {
+  border: 1px solid rgba(148, 144, 144, 0.534);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.selectCity > .cityArea > .cityCont > div > p {
+  color: #1e2d51;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.9rem;
+}
+/* calender css starts form here */
+.calender {
+  margin-top: -5%;
+  border: 1px solid gray;
+  display: none;
+  width: 140%;
+  height: 23rem;
+}
+.showCal {
+  display: block;
 }
 
 /* responsive layout starts form here */
@@ -776,6 +863,55 @@ footer > .footer_upperPart + hr {
   /* footer_upperPart */
   .footer_upperPart {
     display: block;
+  }
+}
+
+.hsnrxR.launcher-button {
+  animation: 0.1s ease 0s 1 normal none running dewAppear;
+}
+.hsnrxR:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+  transform: scale(1.04);
+  transition: all 0.5s linear 0s;
+  background: rgb(23, 133, 45)
+    radial-gradient(circle, transparent 1%, rgb(23, 133, 45) 1%) repeat scroll
+    center center / 15000%;
+}
+.hsnrxR {
+  display: flex;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  -moz-box-align: center;
+  align-items: center;
+  float: right;
+  border-radius: 30px 8px 30px 30px;
+  background-color: rgb(23, 133, 45);
+  box-shadow: none;
+  color: rgb(255, 255, 255);
+  z-index: 2147483647;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.1s ease-out 0s;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Helvetica Neue", Arial, sans-serif;
+}
+@keyframes dewAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 @media only screen and (max-width: 880px) {

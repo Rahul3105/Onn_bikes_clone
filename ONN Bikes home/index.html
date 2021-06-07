@@ -34,7 +34,7 @@
             <nav class="home_nav_bar">
                 <ul class="flex-box-space-btw">
                     <li>
-                        <a href="#">WHY ONN?</a>
+                        <a href="#whyONNId">WHY ONN?</a>
                     </li>
                     <li>
                         <a href="#">FLEET AND PRICING</a>
@@ -64,7 +64,7 @@
                     <div id="menuBox" class="collapse">
                         <ul class="card card-body">
                             <li>
-                                <a href="#">WHY ONN?</a>
+                                <a href="#whyONNId">WHY ONN?</a>
                             </li>
                             <li>
                                 <a href="#">FLEET AND PRICING</a>
@@ -92,7 +92,7 @@
             </div>
             
             <div class="rideNow non_selectable_txt">
-                <div>
+                <div onclick="showSelectCity()">
                     <p class="collapsible-content-tri">SELECT CITY</p>
                 </div>
                 <div class="choose_plan" data-toggle="collapse" data-target="#planName">
@@ -105,10 +105,70 @@
                     </div>
                 </div>
                 <div>
-                    <p>START DATE</p>
+                    <p>START DATE <img onclick="showCalender()" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo=" alt="" width="35" height="35"></p>
+                    <div class="calender">
+                        <div class="month">
+                            <i class="fa fa-arrow-left"></i>
+                             <p>2021-jun</p>
+                            <i class="fa fa-arrow-right"></i>
+                        </div>
+                        <div class="days">
+                            <div>su</div>
+                            <div>Mo</div>
+                            <div>tu</div>
+                            <div>we</div>
+                            <div>th</div>
+                            <div>fr</div>
+                            <div>sa</div>
+                        </div>
+                        <div class="dates">
+                            <div>30</div>
+                            <div>31</div>
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div>5</div>
+                            <div>6</div>
+                            <div>7</div>
+                            <div>8</div>
+                            <div>9</div>
+                            <div>10</div>
+                            <div>11</div>
+                            <div>12</div>
+                            <div>13</div>
+                            <div>14</div>
+                            <div>15</div>
+                            <div>16</div>
+                            <div>17</div>
+                            <div>18</div>
+                            <div>19</div>
+                            <div>20</div>
+                            <div>21</div>
+                            <div>22</div>
+                            <div>23</div>
+                            <div>24</div>
+                            <div>25</div>
+                            <div>26</div>
+                            <div>27</div>
+                            <div>28</div>
+                            <div>29</div>
+                            <div>30</div>
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div>5</div>
+                            <div>6</div>
+                            <div>7</div>
+                            <div>8</div>
+                            <div>9</div>
+                            <div>10</div>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <p>END DATE</p>
+                    <p>END DATE <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo=" alt="" width="35" height="35"></p>
                 </div>
                 <div class="rideNowBtn"><button>RIDE NOW</button></div> 
             </div>
@@ -130,7 +190,7 @@
                 <img src="https://www.onnbikes.com/img/appstore.svg" alt="" srcset="">
             </div>
         </div>
-        <div class="whyONN">
+        <div class="whyONN" id="whyONNId">
             <h2>Why ONN?</h2>
             <p>We simplified bike rentals, so you can focus on what's important to you.</p>
             <div class="whyONN_advantages flex-box-space-btw">
@@ -594,18 +654,78 @@
         <hr>
         <p class="copyRights">© 2019 MOTOCRUIZER TECHNOLOGIES INDIA PVT.LTD. ALL RIGHTS RESERVED</p>
     </footer>
-    <!-- this if for covid safety page popup -->
+
+
+    <!-- from here some popup things are adding -->
+    <!-- this is for covid safety page popup -->
     <div class="covid_updateCont">
-        <div class="removeCovidUpdate"  onclick="removeCovidUpdate()">
+        <div class="removeCovidUpdate"  onclick="removePopUp('covid_updateCont')">
         </div>
         <img src="images/covid_update/covidupdate.jpg" alt="" srcset="">
     </div>
 
 
-    <!-- <div class="selectCity">
+    <div class="selectCity">
+        <div class="removeSelectCity" onclick="removePopUp('selectCity')"></div>
+        <div class="searchArea">
+            <div class="cityInputCont">
+                <input type="text" name="searchCity" id="searchCity" placeholder="Enter your city to search">
+            </div>
+            <div class="CitySearchInputInfo">
+                <p>You've selected <br><span>Bengaluru</span></p>
+                <p class="city-search-input-info-para2">Tell us where you are and <br>we make sure you #RideONN</p>
+            </div>
+        </div>
+        <div class="cityArea">
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/bengaluru.png" alt="" srcset="">
+                    <p>BENGALURU</p>
+                </div>
+            </div>
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/hyderabad.png" alt="" srcset="">
+                    <p>HYDERABAD</p>
+                </div>
+            </div>
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/jaipur.png" alt="" srcset="">
+                    <p>Jaipur</p>
+                </div>
+            </div>
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/gurugram.jpeg" alt="" srcset="">
+                    <p>GURUGRAM</p>
+                </div>
+            </div>
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/mysuru.png" alt="" srcset="">
+                    <p>MYSURU</p>
+                </div>
+            </div>
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/udaipur.png" alt="" srcset="">
+                    <p>UDAIPUR</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </div> -->
 
+    <div class="launcher-button elements__Wrapper-sc-4gy1pz-0 hsnrxR" data-testid="launcher-wrapper"><svg class="icon"
+            style="fill: rgb(255, 255, 255); width: 16px; height: 16px; float: left; margin-left: 1px;" alt="Help"
+            data-testid="launcher-icon" version="1.1" width="32" height="32" viewBox="0 0 32 32">
+            <title>Help</title>
+            <path
+                d="M15.733 31.467c-8.659 0-15.733-7.074-15.733-15.733s7.074-15.733 15.733-15.733c8.659 0 15.733 7.074 15.733 15.733s-7.074 15.733-15.733 15.733zM15.733 29.015c7.305 0 13.281-5.977 13.281-13.281s-5.977-13.281-13.281-13.281c-7.305 0-13.281 5.977-13.281 13.281s5.977 13.281 13.281 13.281zM10.857 11.756c0-0.66 0.212-1.328 0.635-2.005s1.042-1.238 1.854-1.682c0.813-0.444 1.76-0.667 2.844-0.667 1.007 0 1.896 0.186 2.667 0.557s1.366 0.877 1.786 1.516c0.42 0.639 0.63 1.333 0.63 2.083 0 0.59-0.12 1.108-0.359 1.552s-0.524 0.828-0.854 1.151c-0.33 0.323-0.922 0.866-1.776 1.63-0.236 0.215-0.425 0.404-0.568 0.568s-0.248 0.313-0.318 0.448c-0.069 0.135-0.123 0.271-0.161 0.406s-0.096 0.373-0.172 0.714c-0.132 0.722-0.545 1.083-1.24 1.083-0.361 0-0.665-0.118-0.911-0.354s-0.37-0.587-0.37-1.052c0-0.583 0.090-1.089 0.271-1.516s0.42-0.802 0.719-1.125c0.299-0.323 0.701-0.707 1.208-1.151 0.444-0.389 0.766-0.682 0.964-0.88s0.365-0.418 0.5-0.661c0.135-0.243 0.203-0.507 0.203-0.792 0-0.556-0.207-1.024-0.62-1.406s-0.946-0.573-1.599-0.573c-0.764 0-1.326 0.193-1.688 0.578s-0.667 0.953-0.917 1.703c-0.236 0.785-0.684 1.177-1.344 1.177-0.389 0-0.717-0.137-0.984-0.411s-0.401-0.571-0.401-0.891zM15.941 23.173c-0.424 0-0.793-0.137-1.109-0.411s-0.474-0.658-0.474-1.151c0-0.438 0.153-0.806 0.458-1.104s0.681-0.448 1.125-0.448c0.437 0 0.806 0.149 1.104 0.448s0.448 0.667 0.448 1.104c0 0.486-0.156 0.868-0.469 1.146s-0.674 0.417-1.083 0.417z">
+            </path>
+        </svg><span class="launcher-text elements__LauncherText-sc-4gy1pz-1 hmSVpf" data-testid="launcher-text">Help</span>
+    </div>
 </body>
 <script src="home.js"></script>
 </html>
