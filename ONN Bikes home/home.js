@@ -64,3 +64,9 @@ function showSignup() {
   loginHeading.classList.toggle("currForm");
   signupHeading.classList.toggle("currForm");
 }
+function showContactPopup() {
+  let contactPopup = document.getElementsByClassName(
+    "contactUsForm-helpPopup-cont"
+  )[0];
+  contactPopup.classList.toggle("active");
+}
