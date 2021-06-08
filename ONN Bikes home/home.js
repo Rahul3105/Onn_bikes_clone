@@ -51,6 +51,16 @@ function showSelectCity() {
 }
 function showCalender() {
   let calender = document.getElementsByClassName("calender")[0];
-  console.log(calender);
   calender.classList.toggle("showCal");
+}
+function showSignup() {
+  let login = document.getElementById("login_form");
+  let signup = document.getElementById("signup_form");
+  let heading = document.getElementsByClassName("heading")[0];
+  let loginHeading = heading.children[0];
+  let signupHeading = heading.children[1];
+  login.classList.toggle("hide");
+  signup.classList.toggle("hide");
+  loginHeading.classList.toggle("currForm");
+  signupHeading.classList.toggle("currForm");
 }
