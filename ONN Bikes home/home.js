@@ -1,17 +1,18 @@
 window.addEventListener("scroll", showNav);
-
+// this is for when we scroll page so nav bar property change
 function showNav() {
   let navBar = document.getElementsByClassName("home_nav_bar")[0];
   navBar.classList.toggle("scrollNav", window.scrollY > 0);
   let hamburgerMenu = document.getElementsByClassName("hamburgerMenu")[0];
   hamburgerMenu.classList.toggle("scrollHamburger", window.scrollY > 0);
 }
-function formCitySelect(city) {
-  let selectedCity = document.getElementsByClassName("form_accordian")[0];
-  selectedCity.innerHTML = city;
-  let options = document.getElementById("formOptionBox");
-  options.classList.remove("show");
+// this is for collapsible content where we can select anything and that value  will appear on collapse_btn
+function changeCollapseBtnValue(collapse_btn_type, value) {
+  let collapse_btn = document.getElementsByClassName(collapse_btn_type)[0];
+  collapse_btn.innerHTML = value;
+  collapse_btn.classList.remove("active");
 }
+// this function is to change image of header dynamically
 let imgNum = 2;
 function changeImgAndTagLine() {
   let arrOfImg = [
@@ -41,18 +42,22 @@ function changeImgAndTagLine() {
 setInterval(() => {
   changeImgAndTagLine();
 }, 4000);
+
 function removePopUp(name) {
   let popUpCont = document.getElementsByClassName(name)[0];
   popUpCont.style.display = "none";
 }
+// ride now city popup
 function showSelectCity() {
   let selectCityCont = document.getElementsByClassName("selectCity")[0];
   selectCityCont.style.display = "block";
 }
+// ride now calender popup
 function showCalender() {
   let calender = document.getElementsByClassName("calender")[0];
   calender.classList.toggle("showCal");
 }
+// nav bar signup page
 function showSignup() {
   let login = document.getElementById("login_form");
   let signup = document.getElementById("signup_form");
@@ -64,9 +69,44 @@ function showSignup() {
   loginHeading.classList.toggle("currForm");
   signupHeading.classList.toggle("currForm");
 }
+// showLoginPopup();
+function showLoginPopup() {
+  let loginDiv = document.getElementsByClassName("loginPop")[0];
+  loginDiv.style.display = "block";
+}
+// help popup
 function showContactPopup() {
   let contactPopup = document.getElementsByClassName(
     "contactUsForm-helpPopup-cont"
   )[0];
   contactPopup.classList.toggle("active");
+}
+let collapse_btn = document.querySelectorAll(".collapse-btn");
+
+collapse_btn.forEach(function (btn, ind) {
+  btn.addEventListener("click", function () {
+    let grandFather = this.parentElement.parentElement;
+    if (grandFather.classList.contains("accordian_container")) {
+      collideOthers(ind, grandFather);
+    }
+    this.classList.toggle("active");
+  });
+});
+function collideOthers(ind, elem) {
+  let children = elem.children;
+  for (let i = 0; i < children.length; i++) {
+    if (elem.children[i].children[0].classList.contains("active") && i != ind) {
+      elem.children[i].children[0].classList.remove("active");
+    }
+  }
+}
+// this function if for contact us form select city collapsible content
+function showFormCity() {
+  let btn = document.getElementsByClassName("collapse-btn-form")[0];
+  btn.classList.toggle("active");
+}
+// this if for ride now collase 30 days or etc wala
+function showrideNowCollapse() {
+  let btn = document.getElementsByClassName("collapse-btn-rideNow")[0];
+  btn.classList.toggle("active");
 }

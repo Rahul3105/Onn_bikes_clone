@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -18,7 +18,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-        
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -51,10 +51,10 @@
                         <a href="#">FAQ</a>
                     </li>
                     <li>
-                        <a href="#"> LOGIN/SIGNUP</a>
+                        <a href="#" onclick="showLoginPopup()"> LOGIN/SIGNUP</a>
                     </li>
                     <li>
-                        <a href="#"> +7683004927</a>
+                        <a href="7683004927"> +7683004927</a>
                     </li>
                     <div class="hamburgerMenu" data-toggle="collapse" data-target="#menuBox">
                         <div></div>
@@ -90,26 +90,26 @@
                 <h1 id="tagLineHeading">LONG TERM RENTALS</h1>
                 <h3>CHOOSE FROM MONTHLY & QUADRATIC PLAN</h3>
             </div>
-            
+
             <div class="rideNow non_selectable_txt">
                 <div onclick="showSelectCity()">
                     <p class="collapsible-content-tri">SELECT CITY</p>
                 </div>
-                <div class="choose_plan" data-toggle="collapse" data-target="#planName">
-                   <p class="collapsible-content-tri" >HOURLY/DAILY</p>
-                    <div class="collapse" id="planName">
-                        <div class="card card-body">
-                            <p>HOURLY/ DAILY</p>
-                            <p>30 DAYS BOOKING</p>
-                        </div>
+                <div class="choose_plan">
+                    <div class="collapsible-content-tri collapse-btn-rideNow" onclick="showrideNowCollapse()">HOURLY/DAILY</div>
+                    <div class="collapse-content-rideNow" id="planName">
+                        <p onclick="changeCollapseBtnValue('collapse-btn-rideNow','HOURLY/ DAILY')">HOURLY/ DAILY</p>
+                        <p onclick="changeCollapseBtnValue('collapse-btn-rideNow','30 DAYS BOOKING')">30 DAYS BOOKING</p>
                     </div>
                 </div>
                 <div>
-                    <p>START DATE <img onclick="showCalender()" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo=" alt="" width="35" height="35"></p>
+                    <p>START DATE <img onclick="showCalender()"
+                            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo="
+                            alt="" width="35" height="35"></p>
                     <div class="calender">
                         <div class="month">
                             <i class="fa fa-arrow-left"></i>
-                             <p>2021-jun</p>
+                            <p>2021-jun</p>
                             <i class="fa fa-arrow-right"></i>
                         </div>
                         <div class="days">
@@ -168,11 +168,13 @@
                     </div>
                 </div>
                 <div>
-                    <p>END DATE <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo=" alt="" width="35" height="35"></p>
+                    <p>END DATE <img
+                            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo="
+                            alt="" width="35" height="35"></p>
                 </div>
-                <div class="rideNowBtn"><button>RIDE NOW</button></div> 
+                <div class="rideNowBtn"><button>RIDE NOW</button></div>
             </div>
-            
+
         </div>
 
     </header>
@@ -247,11 +249,11 @@
             </div>
         </div>
 
-        
+
         <div class="contactUs">
             <h2>Contact US</h2>
             <p>Any Bike Renting Issue? Feel Free to Contact us.</p>
-            
+
             <div class="flex-box-space-btw contactUs_parts">
                 <div class="left_contactUs">
                     <div class="form">
@@ -274,83 +276,88 @@
                             <span><i class="fas fa-phone-alt"></i></span>
                             <input type="text" placeholder="Mobile Number" id="mobile_number">
                         </div>
-                        
-                        <div class="form_accordian_Container">
+
+                        <div class="form_collapse_Container">
                             <span><i class="fas fa-envelope"></i></span>
-                            <button data-toggle="collapse" data-target="#formOptionBox" class="form_accordian">Bengaluru</button>
-                            <div class="collapse" id="formOptionBox">
-                                <div class="card card-body">
-                                    <div onclick="formCitySelect('Bengaluru')">BENGALURU</div>
-                                    <div onclick="formCitySelect('Hyderabad')">HYDERABAD</div>
-                                    <div onclick="formCitySelect('Jaipur')">JAIPUR</div>
-                                    <div onclick="formCitySelect('Mysuru')">MYSURU</div>
-                                    <div onclick="formCitySelect('Pune')">PUNE</div>
-                                    <div onclick="formCitySelect('Udaipur')">UDAIPUR</div>
-                                    <div onclick="formCitySelect('Ahmedabad')">AHMEDABAD</div>
-                                    <div onclick="formCitySelect('Franchise')">FRANCHISE</div>
-                                </div>
+                            <button class="collapse-btn-form" onclick="showFormCity()">Bengaluru</button>
+                            <div class="collapse-content-form" id="formOptionBox">
+                                <div onclick="changeCollapseBtnValue('collapse-btn-form','Bengaluru')">BENGALURU</div>
+                                <div onclick="changeCollapseBtnValue('collapse-btn-form','Hyderabad')">HYDERABAD</div>
+                                <div onclick="changeCollapseBtnValue('collapse-btn-form','Jaipur')">JAIPUR</div>
+                                <div onclick="changeCollapseBtnValue('collapse-btn-form','Mysuru')">MYSURU</div>
+                                <div onclick="changeCollapseBtnValue('collapse-btn-form','Pune')">PUNE</div>
+                                <div onclick="changeCollapseBtnValue('collapse-btn-form','Udaipur')">UDAIPUR</div>
+                                <div onclick="changeCollapseBtnValue('collapse-btn-form','Ahmedabad')">AHMEDABAD</div>
+                                <div onclick="changeCollapseBtnValue('collapse-btn-form','Franchise')">FRANCHISE</div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <span><i class="fas fa-info"></i></span>
-                            <textarea name="" id="message_textArea" cols="103" rows="4" placeholder="Message"></textarea>
+                            <textarea name="" id="message_textArea" cols="103" rows="4"
+                                placeholder="Message"></textarea>
                         </div>
                         <div>
                             <button id="submit_contactUs">Submit</button>
                         </div>
                     </div>
                 </div>
-                
-                <div class="right_contactUs">
-                    <button data-toggle="collapse" data-target="#address1">MUMBAI - CORPORATE HQ</button>
-                    <div id="address1" class="collapse">
-                        <div class="card card-body">
+
+                <div class="right_contactUs accordian_container">
+                    <div class="collapse-container">
+                        <button class="collapse-btn">MUMBAI - CORPORATE HQ</button>
+                        <div class="collapse-content">
                             <h5>Motocruizer Technologies (I) Pvt. Ltd.</h5>
-                            <p>Office No. 8, Floor-3, Plot-422, Nav Bhavna, Swatantrya Veer Savarkar Road, Prabhadevi Mumbai Mumbai City MH 400025 IN</p>
+                            <p>Office No. 8, Floor-3, Plot-422, Nav Bhavna, Swatantrya Veer Savarkar Road, Prabhadevi
+                                Mumbai Mumbai City MH 400025 IN</p>
                         </div>
                     </div>
-
-                    <button data-toggle="collapse" data-target="#address2">BENGALURU</button>
-                    <div id="address2" class="collapse">
-                        <div class="card card-body">
+                    <div class="collapse-container">
+                        <button class="collapse-btn">BENGALURU</button>
+                        <div class="collapse-content">
                             <ul>
                                 <li>
                                     <p>KORAMANGALA</p>
-                                    <p>No 150/1 and 2, Hosur Main Road, Opposite Big Bazaar, Next to Raja Honda, Koramangala, Bengaluru - 560095</p>
+                                    <p>No 150/1 and 2, Hosur Main Road, Opposite Big Bazaar, Next to Raja Honda,
+                                        Koramangala, Bengaluru - 560095</p>
                                 </li>
                                 <li>
                                     <p>ELECTRONIC CITY</p>
-                                    <p>#634/472, Doddathogur, Velankani Gate, Electronic City Phase 1, Electronics City Phase,Bengaluru 560100</p>
+                                    <p>#634/472, Doddathogur, Velankani Gate, Electronic City Phase 1, Electronics City
+                                        Phase,Bengaluru 560100</p>
                                 </li>
                                 <li>
                                     <p>MS RAMAIAH COLLEGE</p>
-                                    <p>Ground Floor, Sree Premprasad Complex, Opposite Ramaiah Hospital, New BEL Road, M S Ramaiah College, Bengaluru - 560054</p>
+                                    <p>Ground Floor, Sree Premprasad Complex, Opposite Ramaiah Hospital, New BEL Road, M
+                                        S Ramaiah College, Bengaluru - 560054</p>
                                 </li>
                                 <li>
                                     <p>KUNDALAHALLI</p>
-                                    <p>Munni Reddy Complex, Varthur Main Road, Opposite Nadhini Wines, Silver Springs Layout, Kundalahalli, Bengaluru - 560066</p>
+                                    <p>Munni Reddy Complex, Varthur Main Road, Opposite Nadhini Wines, Silver Springs
+                                        Layout, Kundalahalli, Bengaluru - 560066</p>
                                 </li>
                                 <li>
                                     <p>YELAHANKA</p>
-                                    <p>200/1, KV SR Layout, Kattigenahalli, Bagalur Main Road, Next to Reliance Fresh, Bengaluru - 560063</p>
+                                    <p>200/1, KV SR Layout, Kattigenahalli, Bagalur Main Road, Next to Reliance Fresh,
+                                        Bengaluru - 560063</p>
                                 </li>
                                 <li>
                                     <p>SILK BOARD SRCM</p>
-                                    <p>28, Hosur Road, Madiwala, Balaji Nagar, BTM Layout 1, Central Silk Board Colony, Stage 2, BTM Layout, Bengaluru,
-                                    Karnataka 560068</p>
+                                    <p>28, Hosur Road, Madiwala, Balaji Nagar, BTM Layout 1, Central Silk Board Colony,
+                                        Stage 2, BTM Layout, Bengaluru,
+                                        Karnataka 560068</p>
                                 </li>
                                 <li>
                                     <p>ELECTRONIC CITY HUB</p>
-                                    <p>#634/472, Doddathogur, Velankani Gate, Electronic City Phase 1, Electronics City Phase,Bengaluru 560100</p>
+                                    <p>#634/472, Doddathogur, Velankani Gate, Electronic City Phase 1, Electronics City
+                                        Phase,Bengaluru 560100</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
-
-                    <button data-toggle="collapse" data-target="#address3">HYDERABAD</button>
-                    <div id="address3" class="collapse">
-                        <div class="card card-body">
+                    <div class="collapse-container">
+                        <button class="collapse-btn">HYDERABAD</button>
+                        <div class="collapse-content">
                             <ul>
                                 <li>
                                     <p>MADHAPUR</p>
@@ -362,54 +369,63 @@
                                 </li>
                                 <li>
                                     <p>AMEERPET</p>
-                                    <p>Swati Manor, Beside Aditya Trade center, Kumar Basti, Ameerpet, Hyderabad, Telangana 500082</p>
+                                    <p>Swati Manor, Beside Aditya Trade center, Kumar Basti, Ameerpet, Hyderabad,
+                                        Telangana 500082</p>
                                 </li>
                                 <li>
                                     <p>DILSUKHNAGAR</p>
-                                    <p>16-2-741/29 & 37, Anushka Towers, Bank colony, New malakpet, Dilsukhnagar. LandMark:- Beside DTDC Courier & Oasis
-                                    Reproductive Hospital.</p>
+                                    <p>16-2-741/29 & 37, Anushka Towers, Bank colony, New malakpet, Dilsukhnagar.
+                                        LandMark:- Beside DTDC Courier & Oasis
+                                        Reproductive Hospital.</p>
                                 </li>
                                 <li>
                                     <p>SECUNDERABAD</p>
-                                    <p>Opposite to Yeshoda Hospital Parking Alexander Rd, Kummari Guda, Shivaji Nagar, Secunderabad, Telangana 500003.</p>
+                                    <p>Opposite to Yeshoda Hospital Parking Alexander Rd, Kummari Guda, Shivaji Nagar,
+                                        Secunderabad, Telangana 500003.</p>
                                 </li>
                                 <li>
                                     <p>RAIDURGAM POLICE COMMISSIONARATE</p>
-                                    <p>OYO 3607 Apartment Gachibowli under Stilt parking. Plot No 33 & 34, Udaya Elite, Beside Care Hospital lane, Besides
-                                    Cyberabad Police commissionerate,Gachibowli, Hyderabad, Telangana 500032</p>
+                                    <p>OYO 3607 Apartment Gachibowli under Stilt parking. Plot No 33 & 34, Udaya Elite,
+                                        Beside Care Hospital lane, Besides
+                                        Cyberabad Police commissionerate,Gachibowli, Hyderabad, Telangana 500032</p>
                                 </li>
                                 <li>
                                     <p>CHANDA NAGAR</p>
-                                    <p>Akshita Spaces, Second Floor, Plot # 194p, Rajendar Reddy Nagar Colony, Ameenpur Road, Chanda Nagar, Hyd -500050.</p>
+                                    <p>Akshita Spaces, Second Floor, Plot # 194p, Rajendar Reddy Nagar Colony, Ameenpur
+                                        Road, Chanda Nagar, Hyd -500050.</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
-
-                    <button data-toggle="collapse" data-target="#address4">JAIPUR</button>
-                    <div id="address4" class="collapse">
-                        <div class="card card-body">
+                    <div class="collapse-container">
+                        <button class="collapse-btn">JAIPUR</button>
+                        <div class="collapse-content">
                             <ul>
                                 <li>
                                     <p>GT - GAURAV TOWER</p>
-                                    <p>Malviya Nagar Road, D-Block, Malviya Nagar, D-Block, Crystal Court, Malviya Nagar, Jaipur, Rajasthan 302017</p>
+                                    <p>Malviya Nagar Road, D-Block, Malviya Nagar, D-Block, Crystal Court, Malviya
+                                        Nagar, Jaipur, Rajasthan 302017</p>
                                 </li>
                                 <li>
                                     <p>GOLD SOUK GRAND MALL -JAWAHAR CIRCLE</p>
-                                    <p>Gold Souk Grand Mall (Near Hotel Lalit, Basement 2 Parking), Jaipur, Rajasthan 302001</p>
+                                    <p>Gold Souk Grand Mall (Near Hotel Lalit, Basement 2 Parking), Jaipur, Rajasthan
+                                        302001</p>
                                 </li>
                                 <li>
                                     <p>C SCHEME</p>
-                                    <p>Man Upasana C-44 Sardar Patel Marg Panch Batti, C Scheme, Ashok Nagar Jaipur, Rajasthan 302001</p>
+                                    <p>Man Upasana C-44 Sardar Patel Marg Panch Batti, C Scheme, Ashok Nagar Jaipur,
+                                        Rajasthan 302001</p>
                                 </li>
                                 <li>
                                     <p>NEW AATISH MARKET- METRO STATION</p>
-                                    <p>New Aatish Market Metro station, Gurjar ki Thadi Underpass, Sultan Nagar, Shanthi Nagar,Near Metro Station, Mansarovar,
-                                    Jaipur, Rajasthan 302020</p>
+                                    <p>New Aatish Market Metro station, Gurjar ki Thadi Underpass, Sultan Nagar, Shanthi
+                                        Nagar,Near Metro Station, Mansarovar,
+                                        Jaipur, Rajasthan 302020</p>
                                 </li>
                                 <li>
                                     <p>JAGATPURA ROAD</p>
-                                    <p>Jagatpura Rd, Beside Credr Showroom, Shyam Vihar Colony, Malviya Nagar, Jaipur, Rajasthan 302017</p>
+                                    <p>Jagatpura Rd, Beside Credr Showroom, Shyam Vihar Colony, Malviya Nagar, Jaipur,
+                                        Rajasthan 302017</p>
                                 </li>
                                 <li>
                                     <p>RAJA PARK</p>
@@ -422,17 +438,19 @@
                             </ul>
                         </div>
                     </div>
-                    <button data-toggle="collapse" data-target="#address5">MYSURU</button>
-                    <div id="address5" class="collapse">
-                        <div class="card card-body">
+                    <div class="collapse-container">
+                        <button class="collapse-btn">MYSURU</button>
+                        <div class="collapse-content">
                             <ul>
                                 <li>
                                     <p>INFOSYS</p>
-                                    <p>Shobhja Gate, Hebbal Industrial Area, Meenakunte, Hebbal Industrial Estate, Mysuru, Karnataka 570016</p>
+                                    <p>Shobhja Gate, Hebbal Industrial Area, Meenakunte, Hebbal Industrial Estate,
+                                        Mysuru, Karnataka 570016</p>
                                 </li>
                                 <li>
                                     <p>JAGANMOHAN PALACE</p>
-                                    <p>425 - 426, Deshika Road, Opp. Jaganmohan Palace, Subbarayanakere, Chamrajpura, Mysuru, Karnataka 570024</p>
+                                    <p>425 - 426, Deshika Road, Opp. Jaganmohan Palace, Subbarayanakere, Chamrajpura,
+                                        Mysuru, Karnataka 570024</p>
                                 </li>
                                 <li>
                                     <p>GOKULAM</p>
@@ -441,17 +459,18 @@
                             </ul>
                         </div>
                     </div>
-                    <button data-toggle="collapse" data-target="#address6">PUNE</button>
-                    <div id="address6" class="collapse">
-                        <div class="card card-body">
+                    <div class="collapse-container">
+                        <button class="collapse-btn">PUNE</button>
+                        <div class="collapse-content">
                             <h5>Motocruizer Technologies (I) Pvt. Ltd.</h5>
-                            <p>Office No. 8, Floor-3, Plot-422, Nav Bhavna, Swatantrya Veer Savarkar Road, Prabhadevi Mumbai Mumbai City MH
+                            <p>Office No. 8, Floor-3, Plot-422, Nav Bhavna, Swatantrya Veer Savarkar Road, Prabhadevi
+                                Mumbai Mumbai City MH
                                 400025 IN</p>
                         </div>
                     </div>
-                    <button data-toggle="collapse" data-target="#address7">UDAIPUR</button>
-                    <div id="address7" class="collapse">
-                        <div class="card card-body">
+                    <div class="collapse-container">
+                        <button class="collapse-btn">UDAIPUR</button>
+                        <div class="collapse-content">
                             <ul>
                                 <li>
                                     <p>UDAIPOLE</p>
@@ -460,9 +479,9 @@
                             </ul>
                         </div>
                     </div>
-                    <button data-toggle="collapse" data-target="#address8">AHMEDABAD</button>
-                    <div id="address8" class="collapse">
-                        <div class="card card-body">
+                    <div class="collapse-container">
+                        <button class="collapse-btn">AHMEDABAD</button>
+                        <div class="collapse-content">
                             <ul>
                                 <li>
                                     <p>VIJAY CROSS ROAD</p>
@@ -471,10 +490,9 @@
                             </ul>
                         </div>
                     </div>
-                    <button data-toggle="collapse" data-target="#address9">GURGAON</button>
-                    <div id="address9" class="collapse">
-                        <div class="card card-body">
-                            
+                    <div class="collapse-container">
+                        <button class="collapse-btn">GURGAON</button>
+                        <div class="collapse-content">
                             <ul>
                                 <li>
                                     <p>Omaxe celebration mall</p>
@@ -483,10 +501,10 @@
                             </ul>
                         </div>
                     </div>
-
                 </div>
-            </div>
 
+
+            </div>
         </div>
 
     </div>
@@ -498,16 +516,20 @@
             <div class="FAQ_ques_section flex-box-space-btw">
                 <div>
                     <h3><i class="fas fa-circle"></i> How do I pay?</h3>
-                    <p>You can pay online using debit/credit card or e-wallets. You can also pay at the hub station during your vehicle
-                    pick-up.</p>
+                    <p>You can pay online using debit/credit card or e-wallets. You can also pay at the hub station
+                        during your vehicle
+                        pick-up.</p>
                     <h3><i class="fas fa-circle"></i> Where can I pick up the bike from?</h3>
-                    <p>While booking your bike, you’ll be given an option to select a pick-up location in your vicinity.</p>
+                    <p>While booking your bike, you’ll be given an option to select a pick-up location in your vicinity.
+                    </p>
                 </div>
                 <div>
                     <h3><i class="fas fa-circle"></i> What documents do I need to show while booking?</h3>
-                    <p>You need to show your original valid driving license and submit any one original government verified ID proof.</p>
+                    <p>You need to show your original valid driving license and submit any one original government
+                        verified ID proof.</p>
                     <h3><i class="fas fa-circle"></i> Will I be getting a complimentary helmet?</h3>
-                    <p>Due to COVID-19 pandemic, we avoid providing helmets to customers. We suggest customers to bring their own helmets.</p>
+                    <p>Due to COVID-19 pandemic, we avoid providing helmets to customers. We suggest customers to bring
+                        their own helmets.</p>
                 </div>
             </div>
 
@@ -536,9 +558,9 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
     <!-- footer html starts from here -->
-     <footer>
+    <footer>
         <div class="footer_upperPart flex-box-space-btw">
             <div>
                 <h5>ONN BIKES</h5>
@@ -575,12 +597,12 @@
                     RENT A BIKE ON AN HOURLY, DAILY, WEEKLY OR EVEN MONTHLY BASIS.
                     WE ALSO HAVE LONG TERM LEASING SOLUTIONS FOR BUSINESSES WHO ARE INTO LAST MILE DELIVERY THROUGH TWO
                     WHEELERS.</p>
-                    <div class="social_media_links flex-box-space-btw">
-                        <div class="facebook_link"><i class="fab fa-facebook-f"></i></div>
-                        <div class="twitter_link"><i class="fab fa-twitter"></i></div>
-                        <div class="insta_link"><i class="fab fa-instagram"></i> </div>
-                        <div class="linkdin_link"><i class="fab fa-linkedin-in"></i></div>
-                    </div>
+                <div class="social_media_links flex-box-space-btw">
+                    <div class="facebook_link"><i class="fab fa-facebook-f"></i></div>
+                    <div class="twitter_link"><i class="fab fa-twitter"></i></div>
+                    <div class="insta_link"><i class="fab fa-instagram"></i> </div>
+                    <div class="linkdin_link"><i class="fab fa-linkedin-in"></i></div>
+                </div>
 
             </div>
         </div>
@@ -657,72 +679,80 @@
 
 
     <!-- from here some popup things are adding -->
+
     <!-- this is for covid safety page popup -->
     <div class="covid_updateCont">
-        <div class="removeCovidUpdate"  onclick="removePopUp('covid_updateCont')">
+        <div class="removeCovidUpdate" onclick="removePopUp('covid_updateCont')">
         </div>
         <img src="images/covid_update/covidupdate.jpg" alt="" srcset="">
     </div>
-    
-    
 
-        <div class="selectCity">
-            <div class="removeSelectCity" onclick="removePopUp('selectCity')"></div>
-            <div class="searchArea">
-                <div class="cityInputCont">
-                    <input type="text" name="searchCity" id="searchCity" placeholder="Enter your city to search">
-                </div>
-                <div class="CitySearchInputInfo">
-                    <p>You've selected <br><span>Bengaluru</span></p>
-                    <p class="city-search-input-info-para2">Tell us where you are and <br>we make sure you #RideONN</p>
+
+    <!-- this is choose city popup -->
+    <div class="selectCity">
+        <div class="removeSelectCity" onclick="removePopUp('selectCity')"></div>
+        <div class="searchArea">
+            <div class="cityInputCont">
+                <input type="text" name="searchCity" id="searchCity" placeholder="Enter your city to search">
+            </div>
+            <div class="CitySearchInputInfo">
+                <p>You've selected <br><span>Bengaluru</span></p>
+                <p class="city-search-input-info-para2">Tell us where you are and <br>we make sure you #RideONN</p>
+            </div>
+        </div>
+        <div class="cityArea">
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/bengaluru.png"
+                        alt="" srcset="">
+                    <p>BENGALURU</p>
                 </div>
             </div>
-            <div class="cityArea">
-                <div class="cityCont">
-                    <div>
-                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/bengaluru.png" alt="" srcset="">
-                        <p>BENGALURU</p>
-                    </div>
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/hyderabad.png"
+                        alt="" srcset="">
+                    <p>HYDERABAD</p>
                 </div>
-                <div class="cityCont">
-                    <div>
-                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/hyderabad.png" alt="" srcset="">
-                        <p>HYDERABAD</p>
-                    </div>
+            </div>
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/jaipur.png" alt=""
+                        srcset="">
+                    <p>Jaipur</p>
                 </div>
-                <div class="cityCont">
-                    <div>
-                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/jaipur.png" alt="" srcset="">
-                        <p>Jaipur</p>
-                    </div>
+            </div>
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/gurugram.jpeg"
+                        alt="" srcset="">
+                    <p>GURUGRAM</p>
                 </div>
-                <div class="cityCont">
-                    <div>
-                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/gurugram.jpeg" alt="" srcset="">
-                        <p>GURUGRAM</p>
-                    </div>
+            </div>
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/mysuru.png" alt=""
+                        srcset="">
+                    <p>MYSURU</p>
                 </div>
-                <div class="cityCont">
-                    <div>
-                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/mysuru.png" alt="" srcset="">
-                        <p>MYSURU</p>
-                    </div>
-                </div>
-                <div class="cityCont">
-                    <div>
-                        <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/udaipur.png" alt="" srcset="">
-                        <p>UDAIPUR</p>
-                    </div>
+            </div>
+            <div class="cityCont">
+                <div>
+                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/udaipur.png" alt=""
+                        srcset="">
+                    <p>UDAIPUR</p>
                 </div>
             </div>
         </div>
-    
+    </div>
+
+    <!-- this is login popup -->
     <div class="loginPop">
         <div class="loginPopRemove" onclick="removePopUp('loginPop')"></div>
         <div class="logoSec"></div>
         <div class="formSec">
             <div class="heading">
-               <span class="currForm" onclick="showSignup()">LOGIN</span> | <span onclick = 'showSignup()'>SIGNUP</span> 
+                <span class="currForm" onclick="showSignup()">LOGIN</span> | <span onclick='showSignup()'>SIGNUP</span>
             </div>
             <div class="fb_google">
                 <div class="fbLogin">
@@ -770,18 +800,8 @@
                 </div>
             </form>
         </div>
-    </div>   
-    <!-- <div class="launcher-button elements__Wrapper-sc-4gy1pz-0 hsnrxR" data-testid="launcher-wrapper"><svg class="icon"
-            style="fill: rgb(255, 255, 255); width: 16px; height: 16px; float: left; margin-left: 1px;" alt="Help"
-            data-testid="launcher-icon" version="1.1" width="32" height="32" viewBox="0 0 32 32">
-            <title>Help</title>
-            <path
-                d="M15.733 31.467c-8.659 0-15.733-7.074-15.733-15.733s7.074-15.733 15.733-15.733c8.659 0 15.733 7.074 15.733 15.733s-7.074 15.733-15.733 15.733zM15.733 29.015c7.305 0 13.281-5.977 13.281-13.281s-5.977-13.281-13.281-13.281c-7.305 0-13.281 5.977-13.281 13.281s5.977 13.281 13.281 13.281zM10.857 11.756c0-0.66 0.212-1.328 0.635-2.005s1.042-1.238 1.854-1.682c0.813-0.444 1.76-0.667 2.844-0.667 1.007 0 1.896 0.186 2.667 0.557s1.366 0.877 1.786 1.516c0.42 0.639 0.63 1.333 0.63 2.083 0 0.59-0.12 1.108-0.359 1.552s-0.524 0.828-0.854 1.151c-0.33 0.323-0.922 0.866-1.776 1.63-0.236 0.215-0.425 0.404-0.568 0.568s-0.248 0.313-0.318 0.448c-0.069 0.135-0.123 0.271-0.161 0.406s-0.096 0.373-0.172 0.714c-0.132 0.722-0.545 1.083-1.24 1.083-0.361 0-0.665-0.118-0.911-0.354s-0.37-0.587-0.37-1.052c0-0.583 0.090-1.089 0.271-1.516s0.42-0.802 0.719-1.125c0.299-0.323 0.701-0.707 1.208-1.151 0.444-0.389 0.766-0.682 0.964-0.88s0.365-0.418 0.5-0.661c0.135-0.243 0.203-0.507 0.203-0.792 0-0.556-0.207-1.024-0.62-1.406s-0.946-0.573-1.599-0.573c-0.764 0-1.326 0.193-1.688 0.578s-0.667 0.953-0.917 1.703c-0.236 0.785-0.684 1.177-1.344 1.177-0.389 0-0.717-0.137-0.984-0.411s-0.401-0.571-0.401-0.891zM15.941 23.173c-0.424 0-0.793-0.137-1.109-0.411s-0.474-0.658-0.474-1.151c0-0.438 0.153-0.806 0.458-1.104s0.681-0.448 1.125-0.448c0.437 0 0.806 0.149 1.104 0.448s0.448 0.667 0.448 1.104c0 0.486-0.156 0.868-0.469 1.146s-0.674 0.417-1.083 0.417z">
-            </path>
-        </svg><span class="launcher-text elements__LauncherText-sc-4gy1pz-1 hmSVpf" data-testid="launcher-text">Help</span>
-    </div> -->
-
-
+    </div>
+    <!-- this is help popup -->
     <div class="contactUsForm-helpPopup-cont">
         <div class="contactUsForm-helpPopup-heading-cont">
             <h1 class="contactUsForm-helpPopup-heading">Contact ONN Support</h1>
@@ -803,7 +823,8 @@
     </div>
     <div class="helpPopup" onclick="showContactPopup()">
         <i class="far fa-question-circle"></i> Help
-    </div> 
+    </div>
 </body>
 <script src="home.js"></script>
+
 </html>

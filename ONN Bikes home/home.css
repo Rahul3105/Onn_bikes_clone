@@ -54,7 +54,7 @@ body {
   justify-content: center;
   font-weight: 700;
   position: fixed;
-  z-index: 1;
+  z-index: 5;
 }
 .home_nav_bar > ul {
   font-size: 1.4rem;
@@ -134,8 +134,30 @@ body {
   justify-content: center;
   align-items: center;
 }
-.collapse {
-  z-index: 1;
+
+.collapse-btn-rideNow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collapse-content-rideNow {
+  background-color: white;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+.collapse-content-rideNow > p {
+  margin: 0;
+  padding: 1rem;
+}
+.collapse-btn-rideNow.active + .collapse-content-rideNow {
+  height: auto;
+}
+.collapse-content-rideNow > p:hover {
+  background: rgb(30, 45, 81);
+  color: white;
 }
 .rideNow button {
   height: 100%;
@@ -159,7 +181,7 @@ body {
 .featuredOn,
 .contactUs,
 .FAQs_section {
-  border: 1px solid rgba(250, 0, 0, 0);
+  border: 1px solid rgba(238, 20, 20, 0);
   width: 130rem;
   margin: auto;
 }
@@ -255,21 +277,22 @@ body {
 .firstName_lastName > div {
   width: 49%;
   display: flex;
+  position: relative;
 }
 
 .form span {
-  border-left: 1px solid rgb(221, 220, 220);
-  border-bottom: 1px solid rgb(221, 220, 220);
-  border-top: 1px solid rgb(221, 220, 220);
-  height: 4rem;
+  height: 2.8rem;
   width: 4rem;
-  border-right: 1px dotted black;
+  border-right: 1px dotted rgba(102, 101, 101, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0.7rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: rgb(187, 178, 178);
+  position: absolute;
+  left: 0;
+  margin-top: 1.2rem;
+  z-index: 1;
 }
 .firstName_lastName input {
   width: 84.5%;
@@ -280,18 +303,22 @@ body {
 }
 .form > div {
   display: flex;
+  position: relative;
 }
 
 .form input,
 .form button,
 .form textarea,
 .form select {
-  width: 92%;
-  margin: 0.7rem 0;
+  width: 100%;
+  margin: 0.3rem 0;
   height: 4rem;
   border: 1px solid rgb(221, 220, 220);
   padding: 1rem;
+  padding-left: 5rem;
   font-size: 1.5rem;
+  position: relative;
+  transition: 0.2s;
 }
 .form textarea {
   height: 6rem;
@@ -302,7 +329,8 @@ body {
 .form textarea:focus,
 .form select:focus {
   outline: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+  box-shadow: rgba(7, 7, 7, 0.247) 2px 2px 10px;
+  transition: 0.2s;
 }
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -331,44 +359,53 @@ body {
 }
 
 /* form accordian starts from here */
-.form_accordian {
-  background-color: white;
-  text-align: left;
-  color: rgb(139, 132, 132);
+.form_accordian_Container {
+  position: relative;
 }
-.form_accordian + #formOptionBox {
+.form_collapse_Container > .collapse-btn-form {
+  background-color: white;
+  text-align: start;
+  height: 4.5rem;
+  position: relative;
+  color: gray;
+}
+.collapse-content-form {
   position: absolute;
-  top: 5rem;
+  top: 4.8rem;
   width: 100%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  z-index: 2;
+  background-color: white;
+  height: 0;
+  overflow: hidden;
 }
-.form_accordian + #formOptionBox > div {
-  padding: 0;
+.collapse-btn-form.active + .collapse-content-form {
+  height: auto;
 }
-.form_accordian + #formOptionBox > div > div {
+.collapse-content-form > div {
   padding: 1.2rem 1rem;
   font-size: 1.4rem;
   color: rgb(30, 45, 81);
   cursor: pointer;
 }
-.form_accordian + #formOptionBox > div > div:hover {
+.collapse-content-form > div:hover {
   background-color: rgb(30, 45, 81);
   color: white;
-}
-.form_accordian_Container {
-  position: relative;
 }
 
 /* //accordian css starts form here */
 
-.right_contactUs > button,
-.right_contactUs > div {
+.right_contactUs {
+  margin-bottom: 4rem;
+}
+
+.right_contactUs button {
   width: 100%;
 }
-.right_contactUs > button {
+
+.right_contactUs button {
   height: 5.2rem;
-  border-radius: 0 !important;
   background-color: white;
   color: rgb(30, 45, 81);
   border: 1px solid rgb(221, 220, 220);
@@ -380,45 +417,74 @@ body {
   transition: 0.2s;
   position: relative;
   font-weight: 500;
+  border-bottom: none;
 }
-.right_contactUs > button::after,
-.form_accordian::after,
-.collapsible-content-tri::after {
+
+.right_contactUs button::after,
+.collapsible-content-tri::after,
+.form_collapse_Container > .collapse-btn-form::after {
   content: "\25be";
   position: absolute;
   right: 2%;
-  transform: scale(1.5);
+  transform: scale(1.7);
 }
+
 .collapsible-content-tri,
 .form_accordian {
   position: relative;
   cursor: pointer;
 }
-.right_contactUs > button:hover {
+.right_contactUs button:hover {
   background-color: rgb(30, 45, 81);
   color: white;
   transition: 0.2s;
 }
-.right_contactUs > .card {
+
+.right_contactUs .collapse-content {
   border: 1px solid rgb(221, 220, 220);
   border-top: hidden;
 }
-.right_contactUs .card-body > h5 {
+.collapse-content {
+  max-height: 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.87);
+  border-left: 1px solid rgba(128, 128, 128, 0.87);
+  border-right: 1px solid rgba(128, 128, 128, 0.87);
+  transition: 0.5s;
+  letter-spacing: 0.4px;
+}
+.collapse-btn.active + .collapse-content {
+  transition: 0.5s;
+  max-height: 100rem;
+}
+.collapse-btn.active {
+  border-bottom: 1px solid rgba(161, 157, 157, 0.384);
+}
+.collapse-btn.active::after {
+  content: "\25b4";
+}
+.right_contactUs .collapse-content h5 {
   font-weight: 700;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
+  margin: 2rem;
 }
-.right_contactUs .card-body > p {
+.right_contactUs .collapse-content h5 + p {
+  margin: 2rem;
+}
+.right_contactUs .collapse-content p {
   font-size: 1.2rem;
+  margin: 1rem 0rem;
 }
-.right_contactUs .card-body > ul {
+.right_contactUs .collapse-content ul {
   padding-left: 2rem;
   line-height: 2rem;
+  margin: 2rem 3rem;
 }
-.right_contactUs .card-body > ul > li {
+.right_contactUs .collapse-content ul > li {
   font-size: 1.2rem;
 }
-/* .right_contactUs .card-body > ul > li >  */
+
 /* form css end here */
 
 .main_contentFaq {
@@ -785,6 +851,7 @@ footer > .footer_upperPart + hr {
   background: url(images/login/login.png);
   background-position: -3208px 0;
   z-index: 2;
+  display: none;
 }
 .loginPop > .loginPopRemove {
   right: -2%;
@@ -1068,24 +1135,6 @@ footer > .footer_upperPart + hr {
   transform: scale(104%);
   background-color: rgb(24, 155, 50);
 }
-/* .hsnrxR {
-  display: flex;
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  -moz-box-align: center;
-  align-items: center;
-  float: right;
-  
-  background-color: rgb(23, 133, 45);
-  box-shadow: none;
-  color: rgb(255, 255, 255);
-  z-index: 2147483647;
-  padding: 8px;
-  transition: all 0.1s ease-out 0s;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Helvetica Neue", Arial, sans-serif;
-} */
 
 /* responsive layout starts form here */
 @media only screen and (max-width: 1340px) {
