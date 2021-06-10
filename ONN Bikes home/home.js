@@ -106,12 +106,12 @@ function collideOthers(ind, elem) {
     }
   }
 }
-// this function if for contact us form select city collapsible content
+// this function is for contact us form select city collapsible content
 function showFormCity() {
   let btn = document.getElementsByClassName("collapse-btn-form")[0];
   btn.classList.toggle("active");
 }
-// this if for ride now collase 30 days or etc wala
+// this is for ride now collase 30 days or etc wala
 function showrideNowCollapse() {
   let btn = document.getElementsByClassName("collapse-btn-rideNow")[0];
   btn.classList.toggle("active");
@@ -138,4 +138,12 @@ function slide(step) {
   // index = Math.min(Math.max(index, 0), liEls.length - 1);
   allBikeList[index].scrollIntoView({ behavior: "smooth" });
   console.log(index);
+}
+
+// showFleetAndPricing() and for remove also ;
+function showFleetAndPricing() {
+  let fleetCont = document.getElementsByClassName(
+    "fleetAndPricingOverlay-cont"
+  )[0];
+  fleetCont.classList.toggle("active");
 }

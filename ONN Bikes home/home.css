@@ -1062,7 +1062,7 @@ footer > .footer_upperPart + hr {
   width: 0;
   /* width: 30%; */
   /* height: 86%; */
-  z-index: 5;
+  z-index: 11;
   background-color: rgb(231, 234, 238);
   color: black;
   overflow: auto;
@@ -1141,12 +1141,17 @@ footer > .footer_upperPart + hr {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 700px;
+  height: 100%;
   z-index: 5;
-  /* display: none; */
-  /* width: 0; */
-  /* height: 0; */
-  /* overflow: hidden; */
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.fleetAndPricingOverlay-cont.active {
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
 }
 .fleetAndPricingOverlay-cont.absolute {
   position: absolute !important;
@@ -1270,6 +1275,16 @@ footer > .footer_upperPart + hr {
   outline: none;
   border-radius: 50%;
   font-size: 15px;
+}
+.closeFleetAndPricing {
+  width: 25px;
+  height: 25px;
+  background-position: -6491px 0;
+  background-image: url(images/covid_update/cross.png);
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  cursor: pointer;
 }
 
 /* responsive layout starts form here */
