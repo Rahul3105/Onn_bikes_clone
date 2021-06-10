@@ -81,6 +81,7 @@ body {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   transition: 0.6s;
+  z-index: 10;
 }
 .scrollNav a {
   color: rgb(30, 45, 81) !important;
@@ -1158,25 +1159,55 @@ footer > .footer_upperPart + hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.466);
+  background-color: rgba(0, 0, 0, 0.616);
   /* z-index: 5; */
   overflow: auto;
 }
 .fleetAndPricing_city_cont {
-  border: 1px solid lime;
-  max-height: 340px;
-  min-height: 340px;
+  /* border: 1px solid lime; */
+  max-height: 400px;
+  min-height: 400px;
   overflow-y: auto;
   line-height: 28px;
   background-color: white;
-  width: 200px;
+  min-width: 190px;
+  max-width: 210px;
 }
-.fleetAndPricingOverlay > .bike_cont_list {
-  /* border: 1px solid red; */
-  width: 1000px;
-  height: 350px;
+.fleetAndPricing_city_cont > .collapse-btn-fleetNPricing {
+  width: 100%;
+  height: 50px;
+  background-color: #2d3b55;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+}
+.fleetAndPricing_city_cont > .collapse-btn-fleetNPricing::after {
+  content: "\25be";
+  position: absolute;
+  right: 5%;
+  transform: scale(1.5);
+}
+.fleetAndPricing_city_cont > .locations {
+  padding-left: 25px;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #2d3b55;
+}
+.bike-slider-cont {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.fleetAndPricingOverlay .bike_cont_list {
+  width: 920px;
+  height: 380px;
+  align-items: center;
   display: flex;
   overflow: hidden;
+  margin: 0 10px;
+  /* border: 1px solid lime; */
 }
 .bike_cont_list > li {
   list-style: none;
@@ -1185,7 +1216,12 @@ footer > .footer_upperPart + hr {
   background-color: white;
   width: 240px;
   height: 350px;
-  margin-right: 50px;
+  margin-right: 52px;
+  transition: 0.5s;
+}
+.bike_cont_list .bike_cont:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 .bike_cont > .bike_img_cont {
   width: 100%;
@@ -1226,16 +1262,14 @@ footer > .footer_upperPart + hr {
 .bike-details > .bike-condition {
   color: red;
 }
-.fleetAndPricingOverlay > button {
+.fleetAndPricingOverlay > .bike-slider-cont > button {
   background-color: white;
   width: 30px;
   height: 30px;
   border: none;
   outline: none;
   border-radius: 50%;
-}
-.fleetAndPricingOverlay > button::before {
-  content: "<";
+  font-size: 15px;
 }
 
 /* responsive layout starts form here */
