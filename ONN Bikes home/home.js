@@ -5,6 +5,12 @@ function showNav() {
   navBar.classList.toggle("scrollNav", window.scrollY > 0);
   let hamburgerMenu = document.getElementsByClassName("hamburgerMenu")[0];
   hamburgerMenu.classList.toggle("scrollHamburger", window.scrollY > 0);
+
+  ////fleet and pricing overlay
+  let fleetAndPricing = document.getElementsByClassName(
+    "fleetAndPricingOverlay-cont"
+  )[0];
+  fleetAndPricing.classList.toggle("absolute", window.scrollY > 10);
 }
 // this is for collapsible content where we can select anything and that value  will appear on collapse_btn
 function changeCollapseBtnValue(collapse_btn_type, value) {
@@ -109,4 +115,27 @@ function showFormCity() {
 function showrideNowCollapse() {
   let btn = document.getElementsByClassName("collapse-btn-rideNow")[0];
   btn.classList.toggle("active");
+}
+
+////for fleet and pricing slide
+const allBikeList = document.querySelectorAll(".bike_cont_list > li");
+let arrOfBikePos = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+let i = 0;
+let j = 2;
+function slide(step) {
+  if (j == arrOfBikePos.length - 1 && step > 0) return;
+  else if (i == 0 && step < 0) return;
+  let index;
+  if (step > 0) {
+    j++;
+    i++;
+    index = j;
+  } else {
+    j--;
+    i--;
+    index = i;
+  }
+  // index = Math.min(Math.max(index, 0), liEls.length - 1);
+  allBikeList[index].scrollIntoView({ behavior: "smooth" });
+  console.log(index);
 }

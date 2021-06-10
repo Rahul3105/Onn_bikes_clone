@@ -1061,7 +1061,7 @@ footer > .footer_upperPart + hr {
   width: 0;
   /* width: 30%; */
   /* height: 86%; */
-  z-index: 2;
+  z-index: 5;
   background-color: rgb(231, 234, 238);
   color: black;
   overflow: auto;
@@ -1134,6 +1134,108 @@ footer > .footer_upperPart + hr {
 #contactUsForm-helpPopup > button:hover {
   transform: scale(104%);
   background-color: rgb(24, 155, 50);
+}
+/* ///fleet and pricing  */
+.fleetAndPricingOverlay-cont {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 700px;
+  z-index: 5;
+  /* display: none; */
+  /* width: 0; */
+  /* height: 0; */
+  /* overflow: hidden; */
+}
+.fleetAndPricingOverlay-cont.absolute {
+  position: absolute !important;
+}
+.fleetAndPricingOverlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.466);
+  /* z-index: 5; */
+  overflow: auto;
+}
+.fleetAndPricing_city_cont {
+  border: 1px solid lime;
+  max-height: 340px;
+  min-height: 340px;
+  overflow-y: auto;
+  line-height: 28px;
+  background-color: white;
+  width: 200px;
+}
+.fleetAndPricingOverlay > .bike_cont_list {
+  /* border: 1px solid red; */
+  width: 1000px;
+  height: 350px;
+  display: flex;
+  overflow: hidden;
+}
+.bike_cont_list > li {
+  list-style: none;
+}
+.bike_cont_list .bike_cont {
+  background-color: white;
+  width: 240px;
+  height: 350px;
+  margin-right: 50px;
+}
+.bike_cont > .bike_img_cont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.bike_cont > .bike_img_cont > img {
+  width: 148px;
+}
+.bike_cont .bike-details {
+  text-align: center;
+  margin-top: 10px;
+}
+.bike-details > h4 {
+  font-size: 15px;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.bike-details > h2 {
+  font-size: 14px;
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+.bike-details p {
+  font-size: 13px;
+}
+.fleetAndPricingOverlay > ol > li .bike-details p > span {
+  color: #6d6d6d;
+  font-size: 13px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+.bike-details > .bike-condition {
+  color: red;
+}
+.fleetAndPricingOverlay > button {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+.fleetAndPricingOverlay > button::before {
+  content: "<";
 }
 
 /* responsive layout starts form here */
@@ -1253,25 +1355,6 @@ footer > .footer_upperPart + hr {
   /* footer_upperPart */
   .footer_upperPart {
     display: block;
-  }
-}
-
-@keyframes dewAppear {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 @media only screen and (max-width: 880px) {
