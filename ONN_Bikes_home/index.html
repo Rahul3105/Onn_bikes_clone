@@ -752,58 +752,61 @@
     </div>
 
     <!-- this is login popup -->
-    <div class="loginPop">
-        <div class="loginPopRemove" onclick="removePopUp('loginPop')"></div>
-        <div class="logoSec"></div>
-        <div class="formSec">
-            <div class="heading">
-                <span class="currForm" onclick="showSignup()">LOGIN</span> | <span onclick='showSignup()'>SIGNUP</span>
+    <div class="loginPopupOverlay">
+        <div class="loginPop">
+            <div class="loginPopRemove" onclick="removePopUp('loginPop')"></div>
+            <div class="logoSec"></div>
+            <div class="formSec">
+                <div class="heading">
+                    <span class="currForm" onclick="showSignup()">LOGIN</span> | <span onclick='showSignup()'>SIGNUP</span>
+                </div>
+                <div class="fb_google">
+                    <div class="fbLogin">
+                        <button>facebook</button>
+                    </div>
+                    <div class="googleLogin">
+                        <button>Google+</button>
+                    </div>
+                </div>
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+                <form id="login_form">
+                    <div class="inputCont">
+                        <input type="text" name="email/number" id="emailORPhone" placeholder="EMAIL ID / Phone number">
+                    </div>
+                    <div class="inputCont">
+                        <input type="password" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="inputCont checkbox">
+                        <label for="remember_me">
+                            <input type="checkbox" name="remember_me" id="remember_me"> Remember me
+                        </label>
+                    </div>
+                    <button class="login-Btn">Login</button>
+                    <div>
+                        <a href="#" onclick="showSignup()">New to ONN Bikes? Signup</a>
+                    </div>
+                </form>
+                <form id="signup_form" class="hide">
+                    <div>
+                        <input type="text" name="first_name" id="first_name" placeholder="First Name">
+                        <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                    </div>
+                    <div>
+                        <input type="text" name="email" id="email" placeholder="Email Address" class="input-event">
+                        <!-- <p>Enter a valid email</p> -->
+                        <input type="text" name="mobile" id="mobile" placeholder="Mobile Number(10 Digits)" class="input-event">
+                    </div>
+                    <div>
+                        <input type="password" name="password" id="password" placeholder="Password" class="input-event">
+                    </div>
+                    <button class="login-Btn" onclick="signupUser()">Signup</button>
+                    <div>
+                        <a href="#" onclick="showSignup()">New to ONN Bikes? Signup</a>
+                    </div>
+                </form>
             </div>
-            <div class="fb_google">
-                <div class="fbLogin">
-                    <button>facebook</button>
-                </div>
-                <div class="googleLogin">
-                    <button>Google+</button>
-                </div>
-            </div>
-            <div class="divider">
-                <span>OR</span>
-            </div>
-            <form id="login_form">
-                <div class="inputCont">
-                    <input type="text" name="email/number" id="emailORPhone" placeholder="EMAIL ID / Phone number">
-                </div>
-                <div class="inputCont">
-                    <input type="password" name="password" id="password" placeholder="Password">
-                </div>
-                <div class="inputCont checkbox">
-                    <label for="remember_me">
-                        <input type="checkbox" name="remember_me" id="remember_me"> Remember me
-                    </label>
-                </div>
-                <button class="login-Btn">Login</button>
-                <div>
-                    <a href="#" onclick="showSignup()">New to ONN Bikes? Signup</a>
-                </div>
-            </form>
-            <form id="signup_form" class="hide">
-                <div>
-                    <input type="text" name="first_name" id="first_name" placeholder="First Name">
-                    <input type="text" name="last_name" id="last_name" placeholder="Last Name">
-                </div>
-                <div>
-                    <input type="text" name="email" id="email" placeholder="Email Address">
-                    <input type="text" name="mobile" id="mobile" placeholder="Mobile Number(10 Digits)">
-                </div>
-                <div>
-                    <input type="text" name="password" id="password" placeholder="Password">
-                </div>
-                <button class="login-Btn">Signup</button>
-                <div>
-                    <a href="#" onclick="showSignup()">New to ONN Bikes? Signup</a>
-                </div>
-            </form>
         </div>
     </div>
     <!-- this is help popup -->

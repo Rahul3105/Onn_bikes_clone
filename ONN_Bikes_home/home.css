@@ -842,7 +842,20 @@ footer > .footer_upperPart + hr {
 }
 
 /* login popup css starts form here */
-
+/* some
+  properties
+  of
+  this
+  overlay
+  is
+  with
+  fleet
+  and
+  pricing
+  overlay */
+/* .loginPopupOverlay {
+  display: none !important;
+} */
 .loginPop {
   position: absolute;
   top: 20%;
@@ -1165,7 +1178,7 @@ footer > .footer_upperPart + hr {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.616);
-  /* z-index: 5; */
+  z-index: 5;
   overflow: auto;
 }
 .fleetAndPricing_city_cont {

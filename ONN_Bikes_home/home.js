@@ -209,3 +209,57 @@ function changeFleetAndPricingCity(city) {
   };
   locations.innerHTML = objOfLocations[city];
 }
+
+// signupUser();
+
+function signupUser() {
+  const form = document.getElementById("signup_form");
+  let first_name = form.first_name.value;
+  let last_name = form.last_name.value;
+  let email = form.email.value;
+  let mobile = form.mobile.value;
+  let password = form.password.value;
+  // if()
+  // console.log(first_name, last_name, email, mobile, password);
+}
+// to validate the form i am adding this addInputEvent function to all Element which has class input-event
+function addInputEvent() {
+  const inputs = document.querySelectorAll(".input-event");
+  inputs.forEach((input) => {
+    input.addEventListener("input", function () {
+      validateInput(this);
+    });
+  });
+}
+addInputEvent();
+
+function validateInput(elem) {
+  if (elem.name === "email") {
+    let elemId = elem.id;
+    let warningMessage = document.querySelector("#elemId + p");
+    if (validateMail(elem.value)) warningMessage.style.display = "none";
+    else warningMessage.style.display = "block";
+  } else if (elem.name === "password") {
+    let elemId = elem.id;
+    let warningMessage = document.querySelector("#elemId + p");
+    if (validatePassword(elem.value)) warningMessage.style.display = "none";
+    else warningMessage.style.display = "block";
+  } else if (elem.name === "mobile") {
+    let warningMessage = document.querySelector("#elemId + p");
+    let elemId = elem.id;
+    if (validateMobile(elem.value)) warningMessage.style.display = "none";
+    else warningMessage.style.display = "block";
+  }
+}
+function validateMail(str) {
+  let regex =
+    /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-zA-Z]{2,10})(.[A-Za-z]{2,10})?$/;
+  return regex.test(str);
+}
+function validateMobile(str) {
+  let regex = /^[0-9]{10}$/;
+  return regex.test(str);
+}
+function validatePassword(str) {
+  return str.length > 5 ? true : false;
+}
