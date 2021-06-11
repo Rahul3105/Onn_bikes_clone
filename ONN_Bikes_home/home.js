@@ -220,12 +220,23 @@ function signupUser(e) {
   let email = form.email.value;
   let mobile = form.mobile.value;
   let password = form.password.value;
+  let bool = true;
   Array.from(form).forEach((input) => {
-    if (input.value === "" && input.name != "last_name") {
+    if (
+      input.value == "" &&
+      input.name != "last_name" &&
+      input.tagName != "BUTTON"
+    ) {
+      console.log(input);
+      bool = false;
       document.querySelector(`#${input.id} ~ .required_field`).style.display =
         "block";
     }
   });
+  if (bool) {
+    console.log("it is working");
+    createUserAccount(first_name, last_name, email, mobile, password);
+  }
 }
 // to validate the form i am adding this addInputEvent function to all Element which has class input-event
 function addInputEvent() {
@@ -245,7 +256,6 @@ function validateInput(elem) {
   if (elem.name === "email") {
     let elemId = elem.id;
     let warningMessage = document.querySelector(`#${elemId} ~ .warning`);
-    console.log(warningMessage);
     if (validateMail(elem.value) || elem.value == "")
       warningMessage.style.display = "none";
     else warningMessage.style.display = "block";
@@ -262,7 +272,6 @@ function validateInput(elem) {
       warningMessage.style.display = "none";
     else warningMessage.style.display = "block";
   } else if (elem.name == "first_name" || elem.name == "last_name") {
-    console.log("yo");
     let elemId = elem.id;
     let warningMessage = document.querySelector(`#${elemId} ~ .warning`);
     if (validateName(elem.value) || elem.value == "")
@@ -292,4 +301,38 @@ function validateName(str) {
     }
   }
   return true;
+}
+
+// createUserAccount
+
+function createUserAccount(first_name, last_name, email, mobile, password) {
+  let newUser = new User(first_name, last_name, email, mobile, password);
+  let users = localStorage.getItem("users");
+  if (users == null) {
+    users = [];
+  } else {
+    users = JSON.parse(users);
+  }
+  let bool = true;
+  users.forEach((user) => {
+    if (user.email == newUser.email && user.mobile == newUser.mobile) {
+      bool = false;
+    }
+  });
+  if (bool) {
+    console.log("you are in buddy");
+    // users.push(newUser);
+    // localStorage.setItem("users", JSON.stringify(users));
+  } else {
+    alert(
+      "The Email / Phone number is already registered with us. Please use forgot password, if you have problems logging in."
+    );
+  }
+}
+function User(first_name, last_name, email, mobile, password) {
+  this.first_name = first_name;
+  this.last_name = last_name;
+  this.email = email;
+  this.mobile = mobile;
+  this.password = password;
 }
