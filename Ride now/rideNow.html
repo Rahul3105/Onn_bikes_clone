@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" href="https://www.onnbikes.com/img/favicon32.png">
+    <link rel="stylesheet" href="rideNow.css">
+    <title>Rent a Bike or Scooty with Zero Deposit at ₹ 8/Hour - ONN Bikes</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">HOME</a>
+                </li>
+                <li>
+                    <a href="#">OFFERS</a>
+                </li>
+                <li>
+                    <a href="#">RENT-TO-OWN</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/onn logo/ONN logo.png" alt="" srcset="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">LOGIN/SIGNUP</a>
+                </li>
+                <li>
+                    <a href="#">+7683004927</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="ride-now">
+        <div class="rideNow non_selectable_txt">
+            <div onclick="showSelectCity()">
+                <p class="collapsible-content-tri">SELECT CITY</p>
+            </div>
+            <div class="choose_plan">
+                <div class="collapsible-content-tri collapse-btn-rideNow" onclick="showrideNowCollapse()">
+                    HOURLY/DAILY</div>
+                <div class="collapse-content-rideNow" id="planName">
+                    <p onclick="changeCollapseBtnValue('collapse-btn-rideNow','HOURLY/ DAILY')">HOURLY/ DAILY</p>
+                    <p onclick="changeCollapseBtnValue('collapse-btn-rideNow','30 DAYS BOOKING')">30 DAYS BOOKING
+                    </p>
+                </div>
+            </div>
+            <div>
+                <p>START DATE <img onclick="showCalender()"
+                        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo="
+                        alt="" width="35" height="35"></p>
+            </div>
+            <div>
+                <p>END DATE <img
+                        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjEwLjI5MnB4IiB2aWV3Qm94PSIwIDAgMTAgMTAuMjkyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMC4yOTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8ZyBvcGFjaXR5PSIwLjgiPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTcuNzYxLDUuOTdjLTEuMDUzLDAtMS45MDksMC44NTctMS45MDksMS45MWMwLDEuMDU0LDAuODU2LDEuOTA4LDEuOTA5LDEuOTA4CgkJYzEuMDU0LDAsMS45MDktMC44NTQsMS45MDktMS45MDhDOS42Nyw2LjgyOCw4LjgxNCw1Ljk3LDcuNzYxLDUuOTdMNy43NjEsNS45N3ogTTcuNzYxLDkuNDcyYy0wLjg3NywwLTEuNTkxLTAuNzE1LTEuNTkxLTEuNTkyCgkJczAuNzE0LTEuNTkyLDEuNTkxLTEuNTkyYzAuODc4LDAsMS41OTMsMC43MTUsMS41OTMsMS41OTJTOC42MzksOS40NzIsNy43NjEsOS40NzJMNy43NjEsOS40NzJ6Ii8+Cgk8cGF0aCBmaWxsPSIjMUUyRDUxIiBkPSJNOC43MTYsNy43MjFINy45MlY2LjkyNWMwLTAuMDg4LTAuMDctMC4xNTgtMC4xNTktMC4xNThjLTAuMDg4LDAtMC4xNTksMC4wNy0wLjE1OSwwLjE1OFY3Ljg4CgkJYzAsMC4wODgsMC4wNzEsMC4xNTgsMC4xNTksMC4xNThoMC45NTVjMC4wODksMCwwLjE1OS0wLjA3LDAuMTU5LTAuMTU4UzguODA1LDcuNzIxLDguNzE2LDcuNzIxTDguNzE2LDcuNzIxeiIvPgoJPHBhdGggZmlsbD0iIzFFMkQ1MSIgZD0iTTQuNzM3LDMuOTAySDEuNTU1djQuNjE0aDMuMTgyVjUuNjUzaDIuODY1VjMuOTAySDQuNzM3eiBNNi4xNyw0LjIxOWgxLjExM3YxLjExNkg2LjE3VjQuMjE5egoJCSBNMy4zMDUsNC4yMTloMS4xMTR2MS4xMTZIMy4zMDVWNC4yMTl6IE0xLjg3Myw0LjIxOWgxLjExNXYxLjExNkgxLjg3M1Y0LjIxOXogTTEuODczLDUuNjUzaDEuMTE1djEuMTEzSDEuODczVjUuNjUzegoJCSBNMi45ODgsOC4xOTdIMS44NzNWNy4wODVoMS4xMTVWOC4xOTd6IE00LjQxOSw4LjE5N0gzLjMwNVY3LjA4NWgxLjExNFY4LjE5N3ogTTQuNDE5LDYuNzY3SDMuMzA1VjUuNjUzaDEuMTE0VjYuNzY3egoJCSBNNS44NTIsNS4zMzVINC43MzdWNC4yMTlINS44NXYxLjExNkg1Ljg1MnoiLz4KCTxwYXRoIGZpbGw9IiMxRTJENTEiIGQ9Ik01LjY5MSw5LjMxM0gwLjc1OVYzLjEwNmg3LjYzOHYyLjA2OGMwLDAuMDg4LDAuMDcxLDAuMTYsMC4xNiwwLjE2YzAuMDg4LDAsMC4xNTgtMC4wNzIsMC4xNTgtMC4xNlYxLjM1NgoJCWMwLTAuMDg4LTAuMDctMC4xNTktMC4xNTgtMC4xNTlINy43NjFWMC43MTljMC0wLjA4Ny0wLjA2OS0wLjE1OS0wLjE1OS0wLjE1OUg2LjQ4OGMtMC4wOSwwLTAuMTU5LDAuMDcyLTAuMTU5LDAuMTU5djAuNDc4SDIuODI4CgkJVjAuNzE5YzAtMC4wODctMC4wNzItMC4xNTktMC4xNi0wLjE1OUgxLjU1NWMtMC4wODksMC0wLjE1OSwwLjA3Mi0wLjE1OSwwLjE1OXYwLjQ3OEgwLjZjLTAuMDg3LDAtMC4xNTksMC4wNzEtMC4xNTksMC4xNTl2OC4xMTYKCQlDMC40NDEsOS41NiwwLjUxMyw5LjYzLDAuNiw5LjYzaDUuMDkxYzAuMDg4LDAsMC4xNTgtMC4wNywwLjE1OC0wLjE1OFM1Ljc3OSw5LjMxMyw1LjY5MSw5LjMxM0w1LjY5MSw5LjMxM3ogTTYuNjQ2LDAuODc4aDAuNzk1CgkJdjAuOTU1SDYuNjQ2VjAuODc4eiBNMS43MTQsMC44NzhoMC43OTV2MC45NTVIMS43MTRWMC44Nzh6IE0wLjc1OSwxLjUxNWgwLjYzN3YwLjQ3N2MwLDAuMDg4LDAuMDcsMC4xNTksMC4xNTksMC4xNTloMS4xMTMKCQljMC4wODgsMCwwLjE2LTAuMDcxLDAuMTYtMC4xNTlWMS41MTVoMy41MDF2MC40NzdjMCwwLjA4OCwwLjA2OSwwLjE1OSwwLjE1OSwwLjE1OWgxLjExM2MwLjA4OCwwLDAuMTU4LTAuMDcxLDAuMTU4LTAuMTU5VjEuNTE1CgkJaDAuNjM3djEuMjcySDAuNzU5VjEuNTE1eiIvPgo8L2c+Cjwvc3ZnPgo="
+                        alt="" width="35" height="35"></p>
+            </div>
+            <div class="rideNowBtn"><button>RIDE NOW</button></div>
+        </div>
+    </section>
+
+    <div class="save-more">
+        <div class="calender-icon">
+            <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div>Save More, <a href="">Book Monthly</a></div>
+    </div>
+
+    <section class="filter-bar">
+        <div class="filter-heading">Filter <a href="#">Clear All</a></div>
+        <div class="manufacturer-cont">
+            <h6>MANUFACTURER</h6>
+            <div class="manufacturer-checkbox-cont">
+                <label for="royal-enfeild">
+                    <input type="checkbox" name="royal-enfeild" id="royal-enfeild"> Royal Enfield
+                </label>
+
+                <label for="bajaj">
+                    <input type="checkbox" name="bajaj" id="bajaj"> Bajaj
+                </label>
+
+                <label for="honda">
+                    <input type="checkbox" name="honda" id="honda"> Honda
+                </label>
+
+                <label for="yamaha">
+                    <input type="checkbox" name="yamaha" id="yamaha"> Yamaha
+                </label>
+            </div>
+        </div>
+
+        <div class="model-cont">
+            <h6>MODEL</h6>
+            <div class="model-checkbox-cont">
+                <label for="350_classic">
+                    <input type="checkbox" name="350_classic" id="350_classic"> 350 Classic
+                </label>
+        
+                <label for="avenger_220_street">
+                    <input type="checkbox" name="avenger_220_street" id="avenger_220_street"> Avenger 220 Street
+                </label>
+        
+                <label for="active">
+                    <input type="checkbox" name="activa" id="activa"> Activa
+                </label>
+        
+                <label for="fz">
+                    <input type="checkbox" name="fz" id="fz"> FZ
+                </label>
+
+                <label for="dio">
+                    <input type="checkbox" name="dio" id="dio"> Dio
+                </label>
+
+                <label for="pulsar">
+                    <input type="checkbox" name="pulsar" id="pulsar"> Pulsar
+                </label>
+
+                <label for="Ct_100">
+                    <input type="checkbox" name="Ct_100" id="Ct_100"> Ct 100
+                </label>
+            </div>
+        </div>
+
+        <div class="vehicle-cont">
+            <h6>VEHICLE</h6>
+            <div class="vehicle-checkbox-cont">
+                <label for="motorcycle">
+                    <input type="checkbox" name="motorcycle" id="motorcycle"> Motorcycle
+                </label>
+        
+                <label for="scooter">
+                    <input type="checkbox" name="scooter" id="scooter"> Scooter
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <section class="bike-showcase">
+        <div>
+            <div class="bike-img-cont">
+                <img src="https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HondaActiva4G@2x.jpg" alt="">
+            </div>
+            <p class="bike-name">Bajaj CT 100</p>
+            
+            
+            <div class="free-N-excess">
+                <p class="free-kilometers">
+                    Free 110 Kms
+                </p>
+                 <p class="excess">
+                    Excess ₹2/km
+                 </p>
+            </div>
+
+            <div class="price-N-bookNow">
+                <p class="price">₹79</p>
+                <button>BOOK NOW</button>
+            </div> 
+        </div>
+        <div>
+            <div class="bike-img-cont">
+                <img src="https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HondaActiva4G@2x.jpg" alt="">
+            </div>
+            <p class="bike-name">Bajaj CT 100</p>
+        
+        
+            <div class="free-N-excess">
+                <p class="free-kilometers">
+                    Free 110 Kms
+                </p>
+                <p class="excess">
+                    Excess ₹2/km
+                </p>
+            </div>
+        
+            <div class="price-N-bookNow">
+                <p class="price">₹79</p>
+                <button>BOOK NOW</button>
+            </div>
+        </div>
+        <div>
+            <div class="bike-img-cont">
+                <img src="https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HondaActiva4G@2x.jpg" alt="">
+            </div>
+            <p class="bike-name">Bajaj CT 100</p>
+        
+        
+            <div class="free-N-excess">
+                <p class="free-kilometers">
+                    Free 110 Kms
+                </p>
+                <p class="excess">
+                    Excess ₹2/km
+                </p>
+            </div>
+        
+            <div class="price-N-bookNow">
+                <p class="price">₹79</p>
+                <button>BOOK NOW</button>
+            </div>
+        </div>
+        <div>
+            <div class="bike-img-cont">
+                <img src="https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HondaActiva4G@2x.jpg" alt="">
+            </div>
+            <p class="bike-name">Bajaj CT 100</p>
+        
+        
+            <div class="free-N-excess">
+                <p class="free-kilometers">
+                    Free 110 Kms
+                </p>
+                <p class="excess">
+                    Excess ₹2/km
+                </p>
+            </div>
+        
+            <div class="price-N-bookNow">
+                <p class="price">₹79</p>
+                <button>BOOK NOW</button>
+            </div>
+        </div>
+
+        <div>
+            <div class="bike-img-cont">
+                <img src="https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HondaActiva4G@2x.jpg" alt="">
+            </div>
+            <p class="bike-name">Bajaj CT 100</p>
+        
+        
+            <div class="free-N-excess">
+                <p class="free-kilometers">
+                    Free 110 Kms
+                </p>
+                <p class="excess">
+                    Excess ₹2/km
+                </p>
+            </div>
+        
+            <div class="price-N-bookNow">
+                <p class="price">₹79</p>
+                <button>BOOK NOW</button>
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="bike-img-cont">
+                <img src="https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HondaActiva4G@2x.jpg" alt="">
+            </div>
+            <p class="bike-name">Bajaj CT 100</p>
+        
+        
+            <div class="free-N-excess">
+                <p class="free-kilometers">
+                    Free 110 Kms
+                </p>
+                <p class="excess">
+                    Excess ₹2/km
+                </p>
+            </div>
+        
+            <div class="price-N-bookNow">
+                <p class="price">₹79</p>
+                <button>BOOK NOW</button>
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="bike-img-cont">
+                <img src="https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HondaActiva4G@2x.jpg" alt="">
+            </div>
+            <p class="bike-name">Bajaj CT 100</p>
+
+
+            <div class="free-N-excess">
+                <p class="free-kilometers">
+                    Free 110 Kms
+                </p>
+                <p class="excess">
+                    Excess ₹2/km
+                </p>
+            </div>
+
+            <div class="price-N-bookNow">
+                <p class="price">₹79</p>
+                <button>BOOK NOW</button>
+            </div>
+        </div>
+
+
+
+
+        <div>
+            <div class="bike-img-cont">
+                <img src="https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HondaActiva4G@2x.jpg" alt="">
+            </div>
+            <p class="bike-name">Bajaj CT 100</p>
+        
+        
+            <div class="free-N-excess">
+                <p class="free-kilometers">
+                    Free 110 Kms
+                </p>
+                <p class="excess">
+                    Excess ₹2/km
+                </p>
+            </div>
+        
+            <div class="price-N-bookNow">
+                <p class="price">₹79</p>
+                <button>BOOK NOW</button>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>

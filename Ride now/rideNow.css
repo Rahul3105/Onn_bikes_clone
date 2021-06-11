@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url(images/body_bg/bodybackground.png);
+  background-size: 50%;
+}
+header nav {
+  /* border: 1px solid lime; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 14vh;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid red; */
+  width: 80%;
+}
+header nav ul li {
+  list-style: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: rgb(30, 45, 81);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+header nav ul li a:hover {
+  color: orange;
+}
+header nav ul li a img {
+  width: 6.5rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 7px;
+}
+.rideNow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 102rem;
+  margin: auto;
+  background-color: white;
+  height: 5.5rem;
+  font-weight: 400;
+}
+.rideNow > div {
+  width: 20%;
+  height: 100%;
+  float: left;
+  font-size: 1.6rem;
+  border-right: 0.2px solid rgba(214, 211, 211, 0.151);
+}
+.rideNow > div > p {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collapse-btn-rideNow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collapse-content-rideNow {
+  background-color: white;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+.collapse-content-rideNow > p {
+  margin: 0;
+  padding: 1rem;
+}
+.collapse-btn-rideNow.active + .collapse-content-rideNow {
+  height: auto;
+}
+.collapse-content-rideNow > p:hover {
+  background: rgb(30, 45, 81);
+  color: white;
+}
+.rideNow button {
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  background-color: rgb(30, 45, 81);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.filter-bar {
+  margin-top: 1.8rem;
+  width: 205px;
+  height: 330px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
+  float: left;
+}
+.filter-bar .filter-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  font-size: 16px;
+  padding: 0 1rem;
+}
+.filter-bar .filter-heading a {
+  font-size: 11px;
+  text-decoration: underline;
+  color: #337ab7;
+}
+.filter-bar h6 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-top: 4%;
+  padding-left: 4%;
+}
+.filter-bar .manufacturer-checkbox-cont,
+.model-checkbox-cont,
+.vehicle-checkbox-cont {
+  min-height: 20px;
+  width: 100%;
+  overflow-y: scroll;
+  max-height: 75px;
+  padding-left: 20px;
+  line-height: 20px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.filter-bar .manufacturer-checkbox-cont label,
+.model-checkbox-cont label,
+.vehicle-checkbox-cont label {
+  display: block;
+}
+
+.save-more {
+  /* border: 1px solid lime; */
+  width: 250px;
+  margin: auto;
+  margin-top: 40px;
+  font-size: 15px;
+  color: #1e2d51;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.save-more .calender-icon {
+  background-color: rgb(235, 127, 35);
+  margin-right: 3%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.save-more a {
+  color: #1e2d51;
+}
+
+.bike-showcase {
+  float: right;
+  margin-top: 1.8rem;
+  width: 82%;
+  margin-right: 12px;
+  height: 425px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow-y: scroll;
+}
+.bike-showcase > div {
+  height: 70%;
+  background-color: white;
+  box-shadow: 0 0 2px #dddfe0, 0 0 2px #dddfe0;
+  height: 300px;
+  margin: 10px 13px;
+  padding: 0 15px;
+  line-height: 20px;
+  position: relative;
+  transition: 0.5s;
+}
+.bike-showcase > div:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 5px;
+  transition: 0.5s;
+}
+.bike-showcase > div::after {
+  content: "5 Left";
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: rgb(45, 196, 132);
+  width: 20%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  color: white;
+}
+.bike-showcase .bike-img-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 57%;
+}
+.bike-showcase img {
+  width: 200px;
+}
+.bike-showcase .bike-name {
+  color: rgb(30, 45, 81);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.free-N-excess,
+.price-N-bookNow {
+  /* border: 1px solid lime; */
+  display: flex;
+  margin: 11px 0;
+  font-size: 13px;
+  color: #a2a2a2;
+}
+.free-N-excess .excess {
+  margin-left: 17px;
+  /* border: 1px solid pink; */
+}
+.price-N-bookNow .price {
+  font-size: 21px;
+  color: #3c3d40;
+  border-bottom: 2px solid #d4d4d4;
+  height: 47px;
+  width: 80px;
+  line-height: 46px;
+  text-align: center;
+  /* border: 1px solid lime; */
+  margin-right: 10px;
+}
+.price-N-bookNow button {
+  background-color: #1e2d51;
+  border: 0;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  height: 47px;
+  width: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
