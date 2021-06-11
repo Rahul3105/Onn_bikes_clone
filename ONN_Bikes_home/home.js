@@ -147,3 +147,65 @@ function showFleetAndPricing() {
   )[0];
   fleetCont.classList.toggle("active");
 }
+// showFleetAndPricingCity(); and city change logic
+function showFleetAndPricingCity() {
+  let btn = document.getElementsByClassName("collapse-btn-fleetNPricing")[0];
+  btn.classList.toggle("active");
+}
+
+function addEventListenerFleetCities() {
+  let cities = document.querySelectorAll(
+    ".collapse-content-fleetNPricing > ul > li"
+  );
+  cities.forEach((city) => {
+    city.addEventListener("click", function () {
+      changeFleetAndPricingCity(city.innerHTML);
+      showFleetAndPricingCity();
+    });
+  });
+}
+addEventListenerFleetCities();
+
+function changeFleetAndPricingCity(city) {
+  let btn = document.getElementsByClassName("collapse-btn-fleetNPricing")[0];
+  btn.innerHTML = city;
+  let locations = document.querySelector(".locations > ul");
+  let objOfLocations = {
+    BENGALURU: `<li>KORAMANGALA</li>
+    <li>ELECTRONIC CITY</li>
+    <li>MS RAMAIAH COLLEGE</li>
+    <li>KUNDALAHALLI</li>
+    <li>YELAHANKA</li>
+    <li>SILK BOARD SRCM</li>
+    <li>ELECTRONIC CITY HUB</li>`,
+
+    HYDERABAD: `<li>MADHAPUR</li>
+    <li>GACHIBOWLI</li>
+    <li>AMEERPET</li>
+    <li>DILSUKHNAGAR</li>
+    <li>SECUNDERABAD</li>
+    <li>RAIDURGAM POLICE COMMISSIONARATE</li>
+    <li>CHANDA NAGAR</li>`,
+
+    JAIPUR: `<li>GT-GAURAV TOWER</li>
+    <li>GOLD SOUK GRAND MALL-JAWAHAR CIRCLE</li>
+    <li>C SCHEME</li>
+    <li>NEW AATISH MARKET-METRO STATION</li>
+    <li>JAGATPURA ROAD</li>
+    <li>RAJA PARK</li>
+    <li>MANSAROVAR-SHIPRA PATH</li>`,
+
+    GURUGRAM: `<li>BIKE SURGEON</li>`,
+
+    MYSURU: `<li>INFOSYS</li>
+    <li>JAGANMOHAN PALACE</li>
+    <li>GOKULAM</li>`,
+
+    UDAIPUR: `<li>UDAIPOLE</li>`,
+
+    AHMEDABAD: `<li>VIJAY CROSS ROAD</li>`,
+
+    PUNE: ``,
+  };
+  locations.innerHTML = objOfLocations[city];
+}

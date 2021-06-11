@@ -1176,7 +1176,8 @@ footer > .footer_upperPart + hr {
   line-height: 28px;
   background-color: white;
   min-width: 190px;
-  max-width: 210px;
+  max-width: 190px;
+  position: relative;
 }
 .fleetAndPricing_city_cont > .collapse-btn-fleetNPricing {
   width: 100%;
@@ -1198,6 +1199,34 @@ footer > .footer_upperPart + hr {
   padding-left: 25px;
   padding-top: 10px;
   font-size: 13px;
+  color: #2d3b55;
+}
+.collapse-btn-fleetNPricing.active + .collapse-content-fleetNPricing {
+  max-height: 100%;
+  transition: 0.5s;
+}
+.collapse-content-fleetNPricing {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+  max-height: 0;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.5s;
+}
+.collapse-content-fleetNPricing ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.collapse-content-fleetNPricing ul > li {
+  list-style: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+.collapse-content-fleetNPricing ul > li:hover {
   color: #2d3b55;
 }
 .bike-slider-cont {
