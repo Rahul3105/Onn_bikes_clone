@@ -1039,12 +1039,22 @@ footer > .footer_upperPart + hr {
   width: 95%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .formSec > #signup_form > div > input {
   width: 47%;
 }
-
+#signup_form > div {
+  margin-bottom: 15px;
+}
+#signup_form input {
+  margin-bottom: 1px;
+}
+#signup_form > div input + .required_field,
+.warning {
+  margin: 1px 0;
+  color: red;
+  display: none;
+}
 /* help popup css starts from here */
 .helpPopup {
   position: fixed;

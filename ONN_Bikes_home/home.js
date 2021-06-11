@@ -212,15 +212,20 @@ function changeFleetAndPricingCity(city) {
 
 // signupUser();
 
-function signupUser() {
+function signupUser(e) {
+  e.preventDefault();
   const form = document.getElementById("signup_form");
   let first_name = form.first_name.value;
   let last_name = form.last_name.value;
   let email = form.email.value;
   let mobile = form.mobile.value;
   let password = form.password.value;
-  // if()
-  // console.log(first_name, last_name, email, mobile, password);
+  Array.from(form).forEach((input) => {
+    if (input.value === "" && input.name != "last_name") {
+      document.querySelector(`#${input.id} ~ .required_field`).style.display =
+        "block";
+    }
+  });
 }
 // to validate the form i am adding this addInputEvent function to all Element which has class input-event
 function addInputEvent() {
@@ -234,26 +239,40 @@ function addInputEvent() {
 addInputEvent();
 
 function validateInput(elem) {
+  if (elem.name != "last_name")
+    document.querySelector(`#${elem.id} ~ .required_field`).style.display =
+      "none";
   if (elem.name === "email") {
     let elemId = elem.id;
-    let warningMessage = document.querySelector("#elemId + p");
-    if (validateMail(elem.value)) warningMessage.style.display = "none";
+    let warningMessage = document.querySelector(`#${elemId} ~ .warning`);
+    console.log(warningMessage);
+    if (validateMail(elem.value) || elem.value == "")
+      warningMessage.style.display = "none";
     else warningMessage.style.display = "block";
   } else if (elem.name === "password") {
     let elemId = elem.id;
-    let warningMessage = document.querySelector("#elemId + p");
-    if (validatePassword(elem.value)) warningMessage.style.display = "none";
+    let warningMessage = document.querySelector(`#${elemId} ~ .warning`);
+    if (validatePassword(elem.value) || elem.value == "")
+      warningMessage.style.display = "none";
     else warningMessage.style.display = "block";
   } else if (elem.name === "mobile") {
-    let warningMessage = document.querySelector("#elemId + p");
     let elemId = elem.id;
-    if (validateMobile(elem.value)) warningMessage.style.display = "none";
+    let warningMessage = document.querySelector(`#${elemId} ~ .warning`);
+    if (validateMobile(elem.value) || elem.value == "")
+      warningMessage.style.display = "none";
+    else warningMessage.style.display = "block";
+  } else if (elem.name == "first_name" || elem.name == "last_name") {
+    console.log("yo");
+    let elemId = elem.id;
+    let warningMessage = document.querySelector(`#${elemId} ~ .warning`);
+    if (validateName(elem.value) || elem.value == "")
+      warningMessage.style.display = "none";
     else warningMessage.style.display = "block";
   }
 }
 function validateMail(str) {
   let regex =
-    /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-zA-Z]{2,10})(.[A-Za-z]{2,10})?$/;
+    /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-zA-Z]{2,10})(.[A-Za-z]{2,10})$/;
   return regex.test(str);
 }
 function validateMobile(str) {
@@ -262,4 +281,15 @@ function validateMobile(str) {
 }
 function validatePassword(str) {
   return str.length > 5 ? true : false;
+}
+function validateName(str) {
+  str = str.trim();
+  let regex = /^[a-zA-Z]+$/;
+  if (!regex.test(str)) return false;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == " ") {
+      return false;
+    }
+  }
+  return true;
 }

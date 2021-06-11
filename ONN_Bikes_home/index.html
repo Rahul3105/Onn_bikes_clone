@@ -790,18 +790,37 @@
                 </form>
                 <form id="signup_form" class="hide">
                     <div>
-                        <input type="text" name="first_name" id="first_name" placeholder="First Name">
-                        <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                        <div>
+                            <input type="text" name="first_name" id="first_name" placeholder="First Name" class="input-event">
+                            <p class="required_field">This field is required</p>
+                            <p class="warning">No space and special character</p>
+                        </div>
+                        <div>
+                            <input type="text" name="last_name" id="last_name" placeholder="Last Name" class="input-event">
+                            <!-- <p class="required_field">This field is required</p> -->
+                            <p class="warning">No space and special character</p>
+                        </div>
                     </div>
                     <div>
-                        <input type="text" name="email" id="email" placeholder="Email Address" class="input-event">
-                        <!-- <p>Enter a valid email</p> -->
-                        <input type="text" name="mobile" id="mobile" placeholder="Mobile Number(10 Digits)" class="input-event">
+                        <div>
+                            <input type="text" name="email" id="email" placeholder="Email Address" class="input-event">
+                            <p class="required_field">This field is required</p>
+                            <p class="warning">Enter a valid email id</p>
+                        </div>
+                        <div>
+                            <input type="text" name="mobile" id="mobile" placeholder="Mobile Number(10 Digits)" class="input-event">
+                            <p class="required_field">This field is required</p>
+                            <p class="warning">Enter a valid mobile number</p>
+                        </div>
                     </div>
                     <div>
-                        <input type="password" name="password" id="password" placeholder="Password" class="input-event">
+                        <div>
+                            <input type="password" name="password" id="password" placeholder="Password" class="input-event">
+                            <p class="required_field">This field is required</p>
+                            <p class="warning">Minimum 6 character</p>
+                        </div>
                     </div>
-                    <button class="login-Btn" onclick="signupUser()">Signup</button>
+                    <button class="login-Btn" onclick="signupUser(event)">Signup</button>
                     <div>
                         <a href="#" onclick="showSignup()">New to ONN Bikes? Signup</a>
                     </div>
