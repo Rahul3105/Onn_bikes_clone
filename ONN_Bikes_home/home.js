@@ -321,6 +321,11 @@ function createUserAccount(first_name, last_name, email, mobile, password) {
   });
   if (bool) {
     console.log("you are in buddy");
+    let otpSec = document.querySelector(".otpSec");
+    otpSec.classList.remove("hide");
+    let formSec = document.querySelector(".formSec");
+    formSec.classList.add("hide");
+
     // users.push(newUser);
     // localStorage.setItem("users", JSON.stringify(users));
   } else {

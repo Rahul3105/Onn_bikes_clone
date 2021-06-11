@@ -756,6 +756,16 @@
         <div class="loginPop">
             <div class="loginPopRemove" onclick="removePopUp('loginPop')"></div>
             <div class="logoSec"></div>
+            <div class="otpSec hide">
+                <div class="otp_heading">
+                    <p>OTP VERIFY</p>
+                </div>
+
+                <input type="text" name="otp" id="otp" placeholder="OTP">
+
+                <p class="otpInfo">One Time Password (OTP) has been sent to your mobile, please enter the same here to login.</p>
+                <button onclick="verifyOTP()">Request Verify</button>
+            </div>
             <div class="formSec">
                 <div class="heading">
                     <span class="currForm" onclick="showSignup()">LOGIN</span> | <span onclick='showSignup()'>SIGNUP</span>
