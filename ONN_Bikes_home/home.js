@@ -234,10 +234,15 @@ function signupUser(e) {
     }
   });
   if (bool) {
-    console.log("it is working");
     createUserAccount(first_name, last_name, email, mobile, password);
+    form.first_name.value = "";
+    form.last_name.value = "";
+    form.email.value = "";
+    form.mobile.value = "";
+    form.password.value = "";
   }
 }
+
 // to validate the form i am adding this addInputEvent function to all Element which has class input-event
 function addInputEvent() {
   const inputs = document.querySelectorAll(".input-event");
@@ -304,9 +309,10 @@ function validateName(str) {
 }
 
 // createUserAccount
-
+let otp;
+let newUser;
 function createUserAccount(first_name, last_name, email, mobile, password) {
-  let newUser = new User(first_name, last_name, email, mobile, password);
+  newUser = new User(first_name, last_name, email, mobile, password);
   let users = localStorage.getItem("users");
   if (users == null) {
     users = [];
@@ -320,14 +326,12 @@ function createUserAccount(first_name, last_name, email, mobile, password) {
     }
   });
   if (bool) {
-    console.log("you are in buddy");
     let otpSec = document.querySelector(".otpSec");
     otpSec.classList.remove("hide");
     let formSec = document.querySelector(".formSec");
     formSec.classList.add("hide");
-
-    // users.push(newUser);
-    // localStorage.setItem("users", JSON.stringify(users));
+    otp = Math.floor(Math.random() * (10000 - 1000) + 1000);
+    console.log(otp);
   } else {
     alert(
       "The Email / Phone number is already registered with us. Please use forgot password, if you have problems logging in."
@@ -340,4 +344,38 @@ function User(first_name, last_name, email, mobile, password) {
   this.email = email;
   this.mobile = mobile;
   this.password = password;
+}
+function userAddToLocalSto(newUser) {
+  let users = localStorage.getItem("users");
+  if (users == null) {
+    users = [];
+  } else {
+    users = JSON.parse(users);
+  }
+  users.push(newUser);
+  localStorage.setItem("users", JSON.stringify(users));
+  loginUser();
+}
+
+// verifyOTP();
+function verifyOTP() {
+  let otpInput = document.querySelector(".otpSec > #otp");
+  if (otpInput.value == otp) {
+    userAddToLocalSto(newUser);
+  } else {
+    alert("The OTP you entered appears to be incorrect. Please try again.");
+  }
+}
+
+// loginUser();
+
+function loginUser() {
+  removePopUp("loginPop");
+  document.getElementsByClassName("welcomeNav")[0].classList.remove("hide");
+  document.getElementsByClassName("signupNav")[0].classList.add("hide");
+}
+
+function showWelcomeContent() {
+  document.getElementsByClassName("welcomeNav")[0].classList.toggle("active");
+  console.log("yo");
 }

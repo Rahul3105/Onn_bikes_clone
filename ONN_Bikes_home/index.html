@@ -53,8 +53,13 @@
                     <li>
                         <a href="#">FAQ</a>
                     </li>
-                    <li>
-                        <a href="#" onclick="showLoginPopup()"> LOGIN/SIGNUP</a>
+                    <li style="position: relative;">
+                        <a href="#" onclick="showLoginPopup()" class="signupNav"> LOGIN/SIGNUP</a>
+                        <a href="#" onclick="showWelcomeContent()"class='welcomeNav hide'>WELCOME</a>
+                        <div class="welcome-collapse-content">
+                            <p><i class="fa fa-user"></i> MY ACCOUNT</p>
+                            <p><i class="fas fa-sign-out-alt"></i> LOGOUT</p>
+                        </div>
                     </li>
                     <li>
                         <a href="7683004927"> +7683004927</a>
@@ -88,7 +93,6 @@
                     </div>
                 </ul>
             </nav>
-
             <div class="movingText tagLine non_selectable_txt">
                 <h1 id="tagLineHeading">LONG TERM RENTALS</h1>
                 <h3>CHOOSE FROM MONTHLY & QUADRATIC PLAN</h3>
@@ -764,7 +768,7 @@
                 <input type="text" name="otp" id="otp" placeholder="OTP">
 
                 <p class="otpInfo">One Time Password (OTP) has been sent to your mobile, please enter the same here to login.</p>
-                <button onclick="verifyOTP()">Request Verify</button>
+                <button onclick="verifyOTP()" class="verifyOTP">Request Verify</button>
             </div>
             <div class="formSec">
                 <div class="heading">
@@ -1039,6 +1043,24 @@
                 </ul>
                 <button onclick="slide(+1)"><i class="fas fa-angle-right"></i></button>
             </div>
+        </div>
+    </div>
+
+
+    <div class="myAccount">
+        <div class="left-side">
+            <div class="biker-icon">
+
+            </div>
+            <p class="user-name">rahul rajput</p>
+            <p class="user-mail">rajput@gmail.com</p>
+            <p class="onn-credits">ONN Credits: 0</p>
+            <hr>
+            <button>Booking History</button>
+            <button>Your Profile</button>
+        </div>
+        <div class="right-side">
+
         </div>
     </div>
 

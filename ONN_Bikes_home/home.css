@@ -55,17 +55,21 @@ body {
   font-weight: 700;
   position: fixed;
   z-index: 5;
+  /* border: 1px solid lime; */
 }
 .home_nav_bar > ul {
   font-size: 1.4rem;
   width: 113rem;
   list-style: none;
   align-items: center;
+  /* border: 1px solid blue; */
 }
 .home_nav_bar > ul > li > a {
   text-decoration: none;
   color: white;
+  /* border: 1px solid yellow; */
 }
+
 .home_nav_bar > ul > li > a:hover {
   color: rgb(238, 127, 34);
 }
@@ -1380,6 +1384,39 @@ footer > .footer_upperPart + hr {
   top: 15%;
   right: 5%;
   cursor: pointer;
+}
+/* welcome nav bar css starts form here */
+.welcome-collapse-content {
+  position: absolute;
+  top: 170%;
+  width: 16rem;
+  background-color: white;
+  color: #1e2d51;
+  font-size: 14px;
+  font-weight: 400;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  display: none;
+}
+.welcomeNav.active + .welcome-collapse-content {
+  display: block;
+}
+.welcome-collapse-content > p {
+  margin: 0;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.welcome-collapse-content > p:hover {
+  background-color: #1e2d51;
+  color: white;
+  transition: 0.2s;
+}
+
+/* myAccount css starts form here */
+
+.myAccount {
 }
 
 /* responsive layout starts form here */
