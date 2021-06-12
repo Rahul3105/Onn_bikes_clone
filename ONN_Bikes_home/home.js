@@ -409,3 +409,91 @@ function changeRightOfAccount(show, hide, activeBtn, deactiveBtn) {
     deactiveBtn.classList.remove("active");
   }
 }
+// calender logic starts form here
+let date = new Date();
+
+function missionCalender() {
+  console.log(date);
+  date.setDate(1);
+  let dayOfFirstDay = date.getDay();
+  let month = document.querySelectorAll(".calender .month p");
+  let lastDate = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+  let prevMonthLastDate = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    0
+  ).getDate();
+  let dates = document.querySelectorAll(".calender .dates");
+  dates.forEach((dat) => {
+    dat.innerHTML = "";
+  });
+  month.forEach((mon) => {
+    mon.innerHTML = `${date.getFullYear()}-${giveMonth(date.getMonth())}`;
+  });
+  for (
+    let i = prevMonthLastDate - dayOfFirstDay + 1;
+    i <= prevMonthLastDate;
+    i++
+  ) {
+    let dateCont = document.createElement("div");
+    dateCont.innerHTML = i;
+    dateCont.classList.add("prevMonthDate");
+    dates.forEach((dat) => {
+      dat.append(dateCont);
+    });
+  }
+  for (let i = 1; i <= lastDate; i++) {
+    let dateCont = document.createElement("div");
+    if (date.getMonth() == new Date().getMonth() && i < new Date().getDate()) {
+      dateCont.classList.add("past");
+    } else {
+      dateCont.classList.add("presentNFuture");
+    }
+    dateCont.innerHTML = i;
+    dates.forEach((dat) => {
+      dat.append(dateCont);
+    });
+  }
+  date.setDate(lastDate);
+  let restOfTheDay = date.getDay();
+  for (let i = 1; i <= 7 - restOfTheDay - 1; i++) {
+    let dateCont = document.createElement("div");
+    dateCont.innerHTML = i;
+    dateCont.classList.add("nextMonthDate");
+    dates.forEach((dat) => {
+      dat.append(dateCont);
+    });
+  }
+  console.log(date);
+}
+missionCalender();
+
+function giveMonth(ind) {
+  let month = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  return month[ind];
+}
+function changeMonth(para) {
+  let currMonth = date.getMonth();
+  date.setDate(1);
+  if (para == "prev") {
+    date.setMonth(currMonth - 1);
+    console.log(date.getMonth());
+  } else {
+    date.setMonth(currMonth + 1);
+  }
+  console.log(date.getMonth());
+  missionCalender();
+}

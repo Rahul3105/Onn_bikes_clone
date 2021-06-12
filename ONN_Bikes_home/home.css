@@ -812,7 +812,6 @@ footer > .footer_upperPart + hr {
   margin-top: -5%;
   display: none;
   width: 160%;
-  height: 25rem;
   background-color: white;
   z-index: 2;
 }
@@ -828,22 +827,35 @@ footer > .footer_upperPart + hr {
 .calender > .dates {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  height: 76%;
-  color: #1e2d51;
+  grid-template-rows: repeat(5, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 .calender > .dates > div {
-  border: 0.1px solid rgba(170, 164, 164, 0.568);
+  border-right: 0.1px solid rgba(170, 164, 164, 0.568);
+  border-bottom: 0.1px solid rgba(170, 164, 164, 0.568);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  padding: 15%;
 }
-.calender > .dates > div:hover {
+.calender .nextMonthDate,
+.calender .prevMonthDate {
+  color: rgba(146, 135, 135, 0.801);
+}
+.calender .past {
+  color: rgba(172, 165, 165, 0.301) !important;
+}
+.calender .presentNFuture:hover {
   background-color: rgba(170, 164, 164, 0.568);
 }
 .showCal {
   display: block;
+}
+.startDateSelector img,
+.endDateSelector img {
+  margin-left: 10%;
 }
 
 /* login popup css starts form here */
