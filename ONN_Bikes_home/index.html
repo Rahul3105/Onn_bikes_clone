@@ -55,10 +55,10 @@
                     </li>
                     <li style="position: relative;">
                         <a href="#" onclick="showLoginPopup()" class="signupNav"> LOGIN/SIGNUP</a>
-                        <a href="#" onclick="showWelcomeContent()"class='welcomeNav hide'>WELCOME</a>
+                        <a href="#" onclick="showWelcomeContent()"class='welcomeNav hide'>WELCOME <span class="fa fa-caret-down"></span></a>
                         <div class="welcome-collapse-content">
                             <p onclick="showMyAccount()"><i class="fa fa-user"></i> MY ACCOUNT</p>
-                            <p><i class="fas fa-sign-out-alt"></i> LOGOUT</p>
+                            <p onclick='logoutUser()'><i class="fas fa-sign-out-alt"></i> LOGOUT</p>
                         </div>
                     </li>
                     <li>
@@ -774,7 +774,7 @@
                             <input type="checkbox" name="remember_me" id="remember_me"> Remember me
                         </label>
                     </div>
-                    <button class="login-Btn">Login</button>
+                    <button class="login-Btn" onclick="checkUsers(event)">Login</button>
                     <div>
                         <a href="#" onclick="showSignup()">New to ONN Bikes? Signup</a>
                     </div>

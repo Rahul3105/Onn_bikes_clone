@@ -216,8 +216,9 @@ function changeFleetAndPricingCity(city) {
   };
   locations.innerHTML = objOfLocations[city];
 }
+// signup login function starts form here
 
-// signupUser();
+// #signupUser();
 
 function signupUser(e) {
   e.preventDefault();
@@ -234,7 +235,6 @@ function signupUser(e) {
       input.name != "last_name" &&
       input.tagName != "BUTTON"
     ) {
-      console.log(input);
       bool = false;
       document.querySelector(`#${input.id} ~ .required_field`).style.display =
         "block";
@@ -249,6 +249,7 @@ function signupUser(e) {
     form.password.value = "";
   }
 }
+// #2 validating user input fields
 
 // to validate the form i am adding this addInputEvent function to all Element which has class input-event
 function addInputEvent() {
@@ -315,7 +316,8 @@ function validateName(str) {
   return true;
 }
 
-// createUserAccount
+// #3createUserAccount
+// here i am checking if user already exist or not if not than open otp sec
 let otp;
 let newUser;
 function createUserAccount(first_name, last_name, email, mobile, password) {
@@ -328,7 +330,7 @@ function createUserAccount(first_name, last_name, email, mobile, password) {
   }
   let bool = true;
   users.forEach((user) => {
-    if (user.email == newUser.email && user.mobile == newUser.mobile) {
+    if (user.email == newUser.email || user.mobile == newUser.mobile) {
       bool = false;
     }
   });
@@ -345,6 +347,7 @@ function createUserAccount(first_name, last_name, email, mobile, password) {
     );
   }
 }
+// user constructor
 function User(first_name, last_name, email, mobile, password) {
   this.first_name = first_name;
   this.last_name = last_name;
@@ -352,6 +355,7 @@ function User(first_name, last_name, email, mobile, password) {
   this.mobile = mobile;
   this.password = password;
 }
+
 function userAddToLocalSto(newUser) {
   let users = localStorage.getItem("users");
   if (users == null) {
@@ -361,18 +365,40 @@ function userAddToLocalSto(newUser) {
   }
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
+  addToCurrLoggedIn(newUser);
+}
+function addToCurrLoggedIn(user) {
+  let currLoggedIn = localStorage.getItem("currLoggedIn");
+  if (currLoggedIn == null) {
+    currLoggedIn = [];
+  } else {
+    currLoggedIn = JSON.parse(currLoggedIn);
+  }
+  currLoggedIn.push(user);
+  localStorage.setItem("currLoggedIn", JSON.stringify(currLoggedIn));
   loginUser();
 }
-
 // verifyOTP();
 function verifyOTP() {
   let otpInput = document.querySelector(".otpSec > #otp");
   if (otpInput.value == otp) {
+    otpInput.value = "";
     userAddToLocalSto(newUser);
   } else {
     alert("The OTP you entered appears to be incorrect. Please try again.");
   }
 }
+// keepUserLoggedIn();
+function keepUserLoggedIn() {
+  let currLoggedIn = localStorage.getItem("currLoggedIn");
+  if (currLoggedIn == null) {
+    currLoggedIn = [];
+  } else {
+    currLoggedIn = JSON.parse(currLoggedIn);
+  }
+  if (currLoggedIn.length > 0) loginUser();
+}
+keepUserLoggedIn();
 
 // loginUser();
 
@@ -380,11 +406,20 @@ function loginUser() {
   removePopUp("loginPop");
   document.getElementsByClassName("welcomeNav")[0].classList.remove("hide");
   document.getElementsByClassName("signupNav")[0].classList.add("hide");
+
+  updateMyAccount();
+}
+// logoutUser();
+function logoutUser() {
+  let arr = [];
+  localStorage.setItem("currLoggedIn", JSON.stringify(arr));
+  document.getElementsByClassName("welcomeNav")[0].classList.add("hide");
+  document.getElementsByClassName("welcomeNav")[0].classList.remove("active");
+  document.getElementsByClassName("signupNav")[0].classList.remove("hide");
 }
 
 function showWelcomeContent() {
   document.getElementsByClassName("welcomeNav")[0].classList.toggle("active");
-  console.log("yo");
 }
 // tempo
 function showMyAccount() {
@@ -392,6 +427,63 @@ function showMyAccount() {
   accountDiv.classList.remove("hide");
 }
 
+// checkUsers() if exist than login user;
+function checkUsers(e) {
+  e.preventDefault();
+  let login_form = document.getElementById("login_form");
+  let email = login_form.emailORPhone.value;
+  let password = login_form.password.value;
+  let users = localStorage.getItem("users");
+  if (users == null) {
+    users = [];
+  } else {
+    users = JSON.parse(users);
+  }
+  users.forEach((user) => {
+    if (
+      (user.email == email && user.password == password) ||
+      (user.mobile == email && user.password == password)
+    ) {
+      login_form.emailORPhone.value = "";
+      login_form.password.value = "";
+      addToCurrLoggedIn(user);
+      loginUser();
+    }
+  });
+}
+function updateMyAccount() {
+  let currLoggedIn = localStorage.getItem("currLoggedIn");
+  if (currLoggedIn == null) {
+    currLoggedIn = [];
+  } else {
+    currLoggedIn = JSON.parse(currLoggedIn);
+  }
+  let userNameCont = document.querySelector(".myAccount .user-name");
+  let emailIdCont = document.querySelector(".myAccount .user-mail");
+  userNameCont.innerHTML = `${currLoggedIn[0].first_name} ${currLoggedIn[0].last_name}`;
+  emailIdCont.innerHTML = currLoggedIn[0].email;
+
+  // your profile sec
+  let first_name_yourProfile = document.querySelector(
+    ".yourProfileCont #first_name-yourProfile"
+  );
+  let last_name_yourProfile = document.querySelector(
+    ".yourProfileCont #last_name-yourProfile"
+  );
+  let email_yourProfile = document.querySelector(
+    ".yourProfileCont .email-yourProfile"
+  );
+  let mobile_yourProfile = document.querySelector(
+    ".yourProfileCont .mobile-yourProfile"
+  );
+  first_name_yourProfile.value = currLoggedIn[0].first_name;
+  last_name_yourProfile.value = currLoggedIn[0].last_name;
+  email_yourProfile.innerHTML = currLoggedIn[0].email;
+  mobile_yourProfile.innerHTML = currLoggedIn[0].mobile;
+}
+///////////////////////login/signup logic ends here
+
+// user profile  logic starts form here
 function enableInputBox(classOfParent) {
   let parentOfInput = document.querySelector(`.${classOfParent}`);
   Array.from(parentOfInput.children).forEach((elem) => {
@@ -401,7 +493,9 @@ function enableInputBox(classOfParent) {
     }
   });
 }
+
 // changeRightOfAccount();
+// user profile options toggle function
 function changeRightOfAccount(show, hide, activeBtn, deactiveBtn) {
   show = document.getElementsByClassName(show)[0];
   hide = document.getElementsByClassName(hide)[0];
@@ -416,7 +510,7 @@ function changeRightOfAccount(show, hide, activeBtn, deactiveBtn) {
     deactiveBtn.classList.remove("active");
   }
 }
-// calender logic starts form here
+////////////////////////////////////////// calender logic starts form here
 let date = new Date();
 
 function missionCalender() {
@@ -475,7 +569,6 @@ function missionCalender() {
       dat.append(dateCont);
     });
   }
-  console.log(date);
 }
 missionCalender();
 
