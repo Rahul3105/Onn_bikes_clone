@@ -748,8 +748,7 @@ footer > .footer_upperPart + hr {
   background-color: white;
   z-index: 2;
   border-radius: 4px;
-  display: none;
-  transition: 1s;
+  transition: 0.5s;
 }
 .selectCity > .removeSelectCity {
   top: -2.5%;
@@ -1226,7 +1225,9 @@ footer > .footer_upperPart + hr {
 .fleetAndPricingOverlay-cont.absolute {
   position: absolute !important;
 }
-.fleetAndPricingOverlay {
+.fleetAndPricingOverlay,
+.selectCity-overlay,
+.loginPopupOverlay {
   position: absolute;
   top: 0;
   width: 100%;

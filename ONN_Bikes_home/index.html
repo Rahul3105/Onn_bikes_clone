@@ -675,67 +675,71 @@
 
 
     <!-- this is choose city popup -->
-    <div class="selectCity">
-        <div class="removeSelectCity" onclick="removePopUp('selectCity')"></div>
-        <div class="searchArea">
-            <div class="cityInputCont">
-                <input type="text" name="searchCity" id="searchCity" placeholder="Enter your city to search">
-            </div>
-            <div class="CitySearchInputInfo">
-                <p>You've selected <br><span>Bengaluru</span></p>
-                <p class="city-search-input-info-para2">Tell us where you are and <br>we make sure you #RideONN</p>
+    <!-- <div class="selectCity-overlay-cont hide"></div> -->
+        <div class="selectCity-overlay hide">
+            <div class="selectCity">
+                <div class="removeSelectCity" onclick="removePopUp('selectCity-overlay')"></div>
+                <div class="searchArea">
+                    <div class="cityInputCont">
+                        <input type="text" name="searchCity" id="searchCity" placeholder="Enter your city to search">
+                    </div>
+                    <div class="CitySearchInputInfo">
+                        <p>You've selected <br><span>Bengaluru</span></p>
+                        <p class="city-search-input-info-para2">Tell us where you are and <br>we make sure you #RideONN</p>
+                    </div>
+                </div>
+                <div class="cityArea">
+                    <div class="cityCont">
+                        <div>
+                            <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/bengaluru.png"
+                                alt="" srcset="">
+                            <p>BENGALURU</p>
+                        </div>
+                    </div>
+                    <div class="cityCont">
+                        <div>
+                            <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/hyderabad.png"
+                                alt="" srcset="">
+                            <p>HYDERABAD</p>
+                        </div>
+                    </div>
+                    <div class="cityCont">
+                        <div>
+                            <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/jaipur.png" alt=""
+                                srcset="">
+                            <p>Jaipur</p>
+                        </div>
+                    </div>
+                    <div class="cityCont">
+                        <div>
+                            <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/gurugram.jpeg"
+                                alt="" srcset="">
+                            <p>GURUGRAM</p>
+                        </div>
+                    </div>
+                    <div class="cityCont">
+                        <div>
+                            <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/mysuru.png" alt=""
+                                srcset="">
+                            <p>MYSURU</p>
+                        </div>
+                    </div>
+                    <div class="cityCont">
+                        <div>
+                            <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/udaipur.png" alt=""
+                                srcset="">
+                            <p>UDAIPUR</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="cityArea">
-            <div class="cityCont">
-                <div>
-                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/bengaluru.png"
-                        alt="" srcset="">
-                    <p>BENGALURU</p>
-                </div>
-            </div>
-            <div class="cityCont">
-                <div>
-                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/hyderabad.png"
-                        alt="" srcset="">
-                    <p>HYDERABAD</p>
-                </div>
-            </div>
-            <div class="cityCont">
-                <div>
-                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/jaipur.png" alt=""
-                        srcset="">
-                    <p>Jaipur</p>
-                </div>
-            </div>
-            <div class="cityCont">
-                <div>
-                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/gurugram.jpeg"
-                        alt="" srcset="">
-                    <p>GURUGRAM</p>
-                </div>
-            </div>
-            <div class="cityCont">
-                <div>
-                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/mysuru.png" alt=""
-                        srcset="">
-                    <p>MYSURU</p>
-                </div>
-            </div>
-            <div class="cityCont">
-                <div>
-                    <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/udaipur.png" alt=""
-                        srcset="">
-                    <p>UDAIPUR</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- </div> -->
 
     <!-- this is login popup -->
-    <div class="loginPopupOverlay">
-        <div class="loginPop hide">
-            <div class="loginPopRemove" onclick="removePopUp('loginPop')"></div>
+    <div class="loginPopupOverlay hide">
+        <div class="loginPop">
+            <div class="loginPopRemove" onclick="removePopUp('loginPopupOverlay')"></div>
             <div class="logoSec"></div>
             <div class="otpSec hide">
                 <div class="otp_heading">

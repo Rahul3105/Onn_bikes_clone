@@ -59,11 +59,15 @@ setInterval(() => {
 function removePopUp(name) {
   let popUpCont = document.getElementsByClassName(name)[0];
   popUpCont.classList.add("hide");
+  if (popUpCont.classList.contains("active"))
+    popUpCont.classList.remove("active");
+  document.body.style.overflow = "visible";
 }
 // ride now city popup
 function showSelectCity() {
-  let selectCityCont = document.getElementsByClassName("selectCity")[0];
-  selectCityCont.style.display = "block";
+  let selectCityCont = document.getElementsByClassName("selectCity-overlay")[0];
+  selectCityCont.classList.toggle("hide");
+  selectCityCont.classList.add("active");
 }
 // ride now calender popup
 function showCalender(para) {
@@ -84,8 +88,9 @@ function showSignup() {
 }
 // showLoginPopup();
 function showLoginPopup() {
-  let loginDiv = document.getElementsByClassName("loginPop")[0];
+  let loginDiv = document.getElementsByClassName("loginPopupOverlay")[0];
   loginDiv.classList.toggle("hide");
+  document.body.style.overflow = "hidden";
 }
 // help popup
 function showContactPopup() {
