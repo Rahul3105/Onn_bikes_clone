@@ -17,6 +17,13 @@ function changeCollapseBtnValue(collapse_btn_type, value) {
   let collapse_btn = document.getElementsByClassName(collapse_btn_type)[0];
   collapse_btn.innerHTML = value;
   collapse_btn.classList.remove("active");
+  if (value == "30 DAYS BOOKING") {
+    document.getElementsByClassName("endDateSelector")[0].style.display =
+      "none";
+  } else {
+    document.getElementsByClassName("endDateSelector")[0].style.display =
+      "block";
+  }
 }
 // this function is to change image of header dynamically
 let imgNum = 2;
@@ -59,8 +66,8 @@ function showSelectCity() {
   selectCityCont.style.display = "block";
 }
 // ride now calender popup
-function showCalender() {
-  let calender = document.getElementsByClassName("calender")[0];
+function showCalender(para) {
+  let calender = document.querySelector(`.${para} > .calender`);
   calender.classList.toggle("showCal");
 }
 // nav bar signup page
@@ -78,7 +85,7 @@ function showSignup() {
 // showLoginPopup();
 function showLoginPopup() {
   let loginDiv = document.getElementsByClassName("loginPop")[0];
-  loginDiv.style.display = "block";
+  loginDiv.classList.toggle("hide");
 }
 // help popup
 function showContactPopup() {
@@ -413,7 +420,6 @@ function changeRightOfAccount(show, hide, activeBtn, deactiveBtn) {
 let date = new Date();
 
 function missionCalender() {
-  console.log(date);
   date.setDate(1);
   let dayOfFirstDay = date.getDay();
   let month = document.querySelectorAll(".calender .month p");
@@ -444,7 +450,12 @@ function missionCalender() {
   }
   for (let i = 1; i <= lastDate; i++) {
     let dateCont = document.createElement("div");
-    if (date.getMonth() == new Date().getMonth() && i < new Date().getDate()) {
+    let currDate = new Date();
+    if (
+      (date.getMonth() == currDate.getMonth() && i < currDate.getDate()) ||
+      (date.getMonth() < currDate.getMonth() &&
+        date.getFullYear() <= currDate.getFullYear())
+    ) {
       dateCont.classList.add("past");
     } else {
       dateCont.classList.add("presentNFuture");
@@ -490,10 +501,9 @@ function changeMonth(para) {
   date.setDate(1);
   if (para == "prev") {
     date.setMonth(currMonth - 1);
-    console.log(date.getMonth());
   } else {
     date.setMonth(currMonth + 1);
   }
-  console.log(date.getMonth());
+
   missionCalender();
 }

@@ -118,14 +118,17 @@ body {
 
 /* rideNow box css  */
 .rideNow {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 102rem;
   margin: auto;
-  background-color: white;
   height: 5.5rem;
   font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .rideNow > div {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: white;
   width: 20%;
   height: 100%;
   float: left;
@@ -859,20 +862,7 @@ footer > .footer_upperPart + hr {
 }
 
 /* login popup css starts form here */
-/* some
-  properties
-  of
-  this
-  overlay
-  is
-  with
-  fleet
-  and
-  pricing
-  overlay */
-/* .loginPopupOverlay {
-  display: none !important;
-} */
+
 .loginPop {
   position: absolute;
   top: 20%;
@@ -882,7 +872,6 @@ footer > .footer_upperPart + hr {
   background: url(images/login/login.png);
   background-position: -3208px 0;
   z-index: 2;
-  display: none;
 }
 .loginPop > .loginPopRemove {
   right: -2%;
