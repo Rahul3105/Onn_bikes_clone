@@ -51,7 +51,7 @@ setInterval(() => {
 
 function removePopUp(name) {
   let popUpCont = document.getElementsByClassName(name)[0];
-  popUpCont.style.display = "none";
+  popUpCont.classList.add("hide");
 }
 // ride now city popup
 function showSelectCity() {
@@ -378,4 +378,34 @@ function loginUser() {
 function showWelcomeContent() {
   document.getElementsByClassName("welcomeNav")[0].classList.toggle("active");
   console.log("yo");
+}
+// tempo
+function showMyAccount() {
+  let accountDiv = document.getElementsByClassName("myAccount")[0];
+  accountDiv.classList.remove("hide");
+}
+
+function enableInputBox(classOfParent) {
+  let parentOfInput = document.querySelector(`.${classOfParent}`);
+  Array.from(parentOfInput.children).forEach((elem) => {
+    if (elem.tagName == "INPUT" || elem.tagName == "TEXTAREA") {
+      if (elem.disabled == true) elem.disabled = false;
+      else elem.disabled = true;
+    }
+  });
+}
+// changeRightOfAccount();
+function changeRightOfAccount(show, hide, activeBtn, deactiveBtn) {
+  show = document.getElementsByClassName(show)[0];
+  hide = document.getElementsByClassName(hide)[0];
+  activeBtn = document.getElementsByClassName(activeBtn)[0];
+  deactiveBtn = document.getElementsByClassName(deactiveBtn)[0];
+  if (show.classList.contains("hide")) {
+    show.classList.remove("hide");
+    activeBtn.classList.add("active");
+  }
+  if (!hide.classList.contains("hide")) {
+    hide.classList.add("hide");
+    deactiveBtn.classList.remove("active");
+  }
 }

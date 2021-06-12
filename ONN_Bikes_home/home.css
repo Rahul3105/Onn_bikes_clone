@@ -726,7 +726,8 @@ footer > .footer_upperPart + hr {
 }
 .covid_updateCont > .removeCovidUpdate,
 .selectCity > .removeSelectCity,
-.loginPop > .loginPopRemove {
+.loginPop > .loginPopRemove,
+.removeMyAccount {
   position: absolute;
   border-radius: 50%;
   width: 3.3rem;
@@ -1080,7 +1081,7 @@ footer > .footer_upperPart + hr {
   color: #2d3b55;
 }
 .hide {
-  display: none;
+  display: none !important;
 }
 .formSec > #signup_form > div {
   width: 95%;
@@ -1423,12 +1424,10 @@ footer > .footer_upperPart + hr {
   top: 5%;
   left: 5%;
   height: 90%;
-  border: 1px solid lime;
   z-index: 10;
   display: flex;
 }
 .myAccount > .left-side {
-  /* border: 1px solid red; */
   width: 20%;
   box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
   text-align: center;
@@ -1437,7 +1436,6 @@ footer > .footer_upperPart + hr {
   width: 110px;
   height: 110px;
   background-position: -8379px 0;
-  /* border: 1px solid black; */
   margin: auto;
   margin-top: 50%;
   margin-bottom: 5%;
@@ -1476,19 +1474,21 @@ footer > .footer_upperPart + hr {
   text-align: start;
   padding: 0 10%;
   transition: 0.2s;
+  margin-bottom: 3px;
 }
 .myAccount .left-side button:hover {
   color: white;
   background-color: #1d2d51;
   transition: 0.2s;
 }
-.bookingHistory-myAccount {
+.bookingHistory-myAccount.active,
+.yourProfile-myAccount.active {
   color: white !important;
   background-color: #1d2d51 !important;
-  margin-bottom: 3px;
+  transition: 0.2s;
 }
+
 .myAccount .right-side {
-  /* background-color: red; */
   width: 80%;
 }
 .historyCont {
@@ -1509,6 +1509,90 @@ footer > .footer_upperPart + hr {
   text-align: center;
   padding: 73px 10px;
   color: red;
+}
+/* .right-side your profile */
+
+.right-side .yourProfileCont {
+  height: 100%;
+  width: 100%;
+  padding: 3% 3% 0% 3%;
+}
+.yourProfileCont .edit-account,
+.change-password {
+  padding: 16px;
+  box-shadow: 0 0 1px rgba(31, 31, 31, 0.5);
+  min-height: 50%;
+  position: relative;
+}
+.yourProfileCont .change-password {
+  margin-top: 4%;
+  max-height: 250px;
+  min-height: 200px;
+}
+.change-password input,
+.edit-account input,
+.email-yourProfile,
+.mobile-yourProfile,
+.edit-account textarea {
+  border: none;
+  float: left;
+  border-bottom: 1px solid #c3c1c1;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  width: 44%;
+  margin: 1.5% 0;
+  margin-right: 4%;
+  height: 35px;
+  background: white;
+  /* background-color: rgba(197, 191, 191, 0.116); */
+  padding: 1%;
+  outline: none;
+}
+.change-password input:focus,
+.edit-account input:focus,
+.email-yourProfile,
+.mobile-yourProfile,
+.edit-account textarea:focus {
+  box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
+}
+.change-password input:disabled,
+.edit-account input:disabled,
+.email-yourProfile,
+.mobile-yourProfile,
+.edit-account textarea:disabled {
+  background-color: rgba(197, 191, 191, 0.116);
+}
+.edit-account textarea {
+  height: auto !important;
+  width: auto !important;
+}
+.edit-account button,
+.change-password button {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  background-color: #aeafb1;
+  padding: 7px 12px;
+  color: #fff;
+  border: 0;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  font-size: 14px;
+}
+.right-side .removePencilIcon {
+  width: 23px;
+  height: 23px;
+  background-position: -5663px 0;
+  background-image: url(images/covid_update/cross.png);
+  position: absolute;
+  right: 34px;
+  top: 22px;
+  font-size: 18px;
+}
+.removeMyAccount {
+  right: -2%;
+  top: -3%;
 }
 /* responsive layout starts form here */
 @media only screen and (max-width: 1340px) {
