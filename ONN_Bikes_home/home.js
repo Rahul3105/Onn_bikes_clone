@@ -89,7 +89,7 @@ function changeRideNowCityValue(elem) {
 function showCalender(para) {
   let calender = document.querySelector(`.${para} > .calender`);
   calender.classList.toggle("showCal");
-  // missionCalender(para);
+  missionCalender(para);
 }
 // nav bar signup page
 function showSignup() {
@@ -533,25 +533,30 @@ function changeRightOfAccount(show, hide, activeBtn, deactiveBtn) {
   }
 }
 ////////////////////////////////////////// calender logic starts form here
-let date = new Date();
+let date1 = new Date();
+let date2 = new Date();
 
-function missionCalender() {
+function missionCalender(para) {
+  let date;
+  if (para === "startDateSelector") {
+    date = date1;
+  } else {
+    date = date2;
+  }
   date.setDate(1);
   let dayOfFirstDay = date.getDay();
-  let month = document.querySelectorAll(".calender .month p");
+  let month = document.querySelector(`.${para} .calender .month p`);
   let lastDate = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
   let prevMonthLastDate = new Date(
     date.getFullYear(),
     date.getMonth(),
     0
   ).getDate();
-  let dates = document.querySelectorAll(".calender .dates");
-  dates.forEach((dat) => {
-    dat.innerHTML = "";
-  });
-  month.forEach((mon) => {
-    mon.innerHTML = `${date.getFullYear()}-${giveMonth(date.getMonth())}`;
-  });
+  let dates = document.querySelector(`.${para} .calender .dates`);
+  dates.innerHTML = "";
+
+  month.innerHTML = `${date.getFullYear()}-${giveMonth(date.getMonth())}`;
+
   for (
     let i = prevMonthLastDate - dayOfFirstDay + 1;
     i <= prevMonthLastDate;
@@ -560,9 +565,7 @@ function missionCalender() {
     let dateCont = document.createElement("div");
     dateCont.innerHTML = i;
     dateCont.classList.add("prevMonthDate");
-    dates.forEach((dat) => {
-      dat.append(dateCont);
-    });
+    dates.append(dateCont);
   }
   for (let i = 1; i <= lastDate; i++) {
     let dateCont = document.createElement("div");
@@ -577,9 +580,8 @@ function missionCalender() {
       dateCont.classList.add("presentNFuture");
     }
     dateCont.innerHTML = i;
-    dates.forEach((dat) => {
-      dat.append(dateCont);
-    });
+
+    dates.append(dateCont);
   }
   date.setDate(lastDate);
   let restOfTheDay = date.getDay();
@@ -587,12 +589,10 @@ function missionCalender() {
     let dateCont = document.createElement("div");
     dateCont.innerHTML = i;
     dateCont.classList.add("nextMonthDate");
-    dates.forEach((dat) => {
-      dat.append(dateCont);
-    });
+
+    dates.append(dateCont);
   }
 }
-missionCalender();
 
 function giveMonth(ind) {
   let month = [
@@ -611,14 +611,24 @@ function giveMonth(ind) {
   ];
   return month[ind];
 }
-function changeMonth(para) {
-  let currMonth = date.getMonth();
-  date.setDate(1);
-  if (para == "prev") {
-    date.setMonth(currMonth - 1);
+function changeMonth(para, parentName) {
+  if (parentName == "endDateSelector") {
+    let currMonth = date2.getMonth();
+    date2.setDate(1);
+    if (para == "prev") {
+      date2.setMonth(currMonth - 1);
+    } else {
+      date2.setMonth(currMonth + 1);
+    }
   } else {
-    date.setMonth(currMonth + 1);
+    let currMonth = date1.getMonth();
+    date1.setDate(1);
+    if (para == "prev") {
+      date1.setMonth(currMonth - 1);
+    } else {
+      date1.setMonth(currMonth + 1);
+    }
   }
 
-  missionCalender();
+  missionCalender(parentName);
 }
