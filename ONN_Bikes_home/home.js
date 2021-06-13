@@ -68,7 +68,23 @@ function showSelectCity() {
   let selectCityCont = document.getElementsByClassName("selectCity-overlay")[0];
   selectCityCont.classList.toggle("hide");
   selectCityCont.classList.add("active");
+  // document.body.style.overflow = "hidden";
 }
+function addEventToCityArea() {
+  let cityArea = document.querySelectorAll(".cityArea .cityCont");
+  cityArea.forEach((cityCont) => {
+    cityCont.addEventListener("click", function () {
+      changeRideNowCityValue(this);
+    });
+  });
+}
+addEventToCityArea();
+function changeRideNowCityValue(elem) {
+  let city = elem.children[0].children[1].innerHTML;
+  document.getElementsByClassName("rideNow-city-name")[0].innerHTML = city;
+  removePopUp("selectCity-overlay");
+}
+
 // ride now calender popup
 function showCalender(para) {
   let calender = document.querySelector(`.${para} > .calender`);
