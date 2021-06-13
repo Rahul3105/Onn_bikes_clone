@@ -88,7 +88,11 @@ function changeRideNowCityValue(elem) {
 // ride now calender popup
 function showCalender(para) {
   let calender = document.querySelector(`.${para} > .calender`);
-  calender.classList.toggle("showCal");
+  let calender_timing = document.querySelector(`.${para} > .calender_timing`);
+  if (!calender_timing.classList.contains("hide")) {
+    calender_timing.classList.add("hide");
+  }
+  calender.classList.toggle("hide");
   missionCalender(para);
 }
 // nav bar signup page
@@ -578,6 +582,10 @@ function missionCalender(para) {
       dateCont.classList.add("past");
     } else {
       dateCont.classList.add("presentNFuture");
+      dateCont.onclick = function () {
+        addDateToLocalStorage(para, i, date);
+        showTimingTab(para, i, date);
+      };
     }
     dateCont.innerHTML = i;
 
@@ -632,3 +640,109 @@ function changeMonth(para, parentName) {
 
   missionCalender(parentName);
 }
+function showTimingTab(para, i, date) {
+  let calender = document.querySelector(`.${para} .calender`);
+  let calender_timing = document.querySelector(`.${para} .calender_timing`);
+  calender.classList.add("hide");
+  calender_timing.classList.remove("hide");
+  date.setDate(i);
+  let wholeDate = document.querySelector(
+    `.${para} .calender_timing .wholeDate p`
+  );
+  wholeDate.innerHTML = `${giveMonth(
+    date.getMonth()
+  )} ${i}, ${date.getFullYear()}`;
+  let arrOfTimings = [
+    `09:00 AM`,
+    `10:00 AM`,
+    `11:00 AM`,
+    `12:00 PM`,
+    `01:00 PM`,
+    `02:00 PM`,
+    `03:00 PM`,
+    `04:00 PM`,
+    `05:00 PM`,
+    `06:00 PM`,
+    `07:00 PM`,
+  ];
+  let availableTimings = document.querySelector(
+    `.${para} .calender_timing .availableTimings`
+  );
+  availableTimings.innerHTML = "";
+  let today = new Date();
+  if (
+    date.getDate() == today.getDate() &&
+    date.getMonth() == today.getMonth() &&
+    date.getFullYear() == today.getFullYear()
+  ) {
+    let lastTime = 19;
+    let hour = date.getHours() + 1;
+
+    while (hour <= lastTime) {
+      let amORpm = "AM";
+      if (hour > 12) amORpm = "PM";
+      let div = document.createElement("div");
+      div.innerHTML = `${
+        hour % 12 < 10 ? "0" + (hour % 12) : hour % 12
+      }:00 ${amORpm}`;
+      div.onclick = function () {
+        addTimeToLocalSto(para, div.innerHTML);
+        // showRideNowDateAndTime(para)
+      };
+      availableTimings.append(div);
+      hour++;
+    }
+  } else {
+    for (let i = 0; i < arrOfTimings.length; i++) {
+      let div = document.createElement("div");
+      div.innerHTML = arrOfTimings[i];
+      div.onclick = function () {
+        addTimeToLocalSto(para, div.innerHTML);
+        showRideNowDateAndTime(para);
+      };
+      availableTimings.append(div);
+    }
+  }
+}
+
+function addDateToLocalStorage(para, i, date) {
+  let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  date.setDate(i);
+  let obj = {
+    date: i,
+    month: giveMonth(date.getMonth()),
+    year: date.getFullYear(),
+    weekDay: weekDays[date.getDay()],
+  };
+  if (para == "startDateSelector") {
+    localStorage.setItem("startDateObj", JSON.stringify(obj));
+  } else {
+    localStorage.setItem("endDateObj", JSON.stringify(obj));
+  }
+}
+function addTimeToLocalSto(para, time) {
+  if (para == "startDateSelector") {
+    let startDateObj = JSON.parse(localStorage.getItem("startDateObj"));
+    startDateObj["time"] = time;
+    localStorage.setItem("startDateObj", JSON.stringify(startDateObj));
+  } else {
+    let endDateObj = JSON.parse(localStorage.getItem("endDateObj"));
+    endDateObj["time"] = time;
+    localStorage.setItem("endDateObj", JSON.stringify(endDateObj));
+  }
+}
+// this function if for get the obj and show on dome ride now sec
+// function showRideNowDateAndTime(para) {
+//   if (para == "startDateSelector") {
+//     let startDateObj = JSON.parse(localStorage.getItem("startDateObj"));
+
+//   }
+// }

@@ -808,15 +808,16 @@ footer > .footer_upperPart + hr {
   font-size: 1.9rem;
 }
 /* calender css starts form here */
-.calender {
+.calender,
+.calender_timing {
   margin-top: -5%;
-  display: none;
   width: 160%;
   background-color: white;
   z-index: 2;
 }
 .calender > .month,
-.calender > .days {
+.calender > .days,
+.calender_timing .wholeDate {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -850,14 +851,28 @@ footer > .footer_upperPart + hr {
 .calender .presentNFuture:hover {
   background-color: rgba(170, 164, 164, 0.568);
 }
-.showCal {
-  display: block;
-}
+
 .startDateSelector img,
 .endDateSelector img {
   margin-left: 10%;
 }
 
+.calender_timing .availableTimings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 12px;
+}
+.calender_timing .availableTimings div {
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.calender_timing .availableTimings div:hover {
+  background-color: rgba(128, 128, 128, 0.383);
+  transition: 0.5s;
+}
 /* login popup css starts form here */
 
 .loginPop {
