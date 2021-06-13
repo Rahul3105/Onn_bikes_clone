@@ -55,7 +55,6 @@ body {
   font-weight: 700;
   position: fixed;
   z-index: 5;
-  /* border: 1px solid lime; */
 }
 .home_nav_bar > ul {
   font-size: 1.4rem;
