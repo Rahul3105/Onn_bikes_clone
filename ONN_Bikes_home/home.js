@@ -743,11 +743,10 @@ function addTimeToLocalSto(para, time) {
 }
 // this function is for get the obj and show on dom ride now sec
 function showRideNowDateAndTime(para) {
-  console.log("up");
   if (para == "startDateSelector") {
     let startDateObj = JSON.parse(localStorage.getItem("startDateObj"));
     let spanTag = document.querySelector(`.${para} .calenderStartDate`);
-    console.log(spanTag);
+    // console.log(spanTag);
     spanTag.innerHTML = `<strong class="calenderStartDate-date">${startDateObj.date}</strong>
                             <span class="calenderStartDate-weekDay">${startDateObj.weekDay}</span>
                             <span class="calenderStartDate-month">${startDateObj.month} ${startDateObj.year}</span>
@@ -765,5 +764,70 @@ function showRideNowDateAndTime(para) {
     let endDateSpan = document.querySelector(".endDateSpan");
     endDateSpan.classList.add("hide");
     if (spanTag.classList.contains("hide")) spanTag.classList.remove("hide");
+  }
+}
+// now data is going on ride now page
+
+function checkStartAndEndDateCont() {
+  let month = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let rideNow_city_name =
+    document.getElementsByClassName("rideNow-city-name")[0];
+  let choose_plan = document.querySelector(
+    ".choose_plan .collapse-btn-rideNow"
+  );
+  let startDate = document.querySelector(
+    ".startDateSelector .calenderStartDate"
+  );
+  let endDate = document.querySelector(".endDateSelector .calenderEndDate");
+
+  choose_plan = choose_plan.innerHTML.trim();
+  if (startDate.classList.contains("hide")) {
+    alert("Please fill start date");
+  } else if (
+    endDate.classList.contains("hide") &&
+    choose_plan == "HOURLY/DAILY"
+  ) {
+    alert("Please fill end date or choose 30 days plan");
+  } else {
+    //   let startDateObj = JSON.parse(localStorage.getItem("startDateObj"));
+    //   let endDateObj = JSON.parse(localStorage.getItem("endDateObj"));
+    //   if (startDateObj.year > endDateObj.year) {
+    //     alert(
+    //       "Your start year is greater than end year, Please fill it correctly"
+    //     );
+    //   } else if (startDateObj.year == endDateObj.year) {
+    //     if (month.indexOf(startDateObj.month) > month.indexOf(endDateObj.month)) {
+    //       alert(
+    //         "Your start month is greater then end month please fill it correctly"
+    //       );
+    //     } else if (
+    //       month.indexOf(startDateObj.month) == month.indexOf(endDateObj.month)
+    //     ) {
+    //       if (startDateObj.date > endDateObj.date) {
+    //         alert(
+    //           "Your start date is greater than end date please fill it correctly"
+    //         );
+    //       }
+    //     }
+    //   }
+    let rideNowOtherInfo = {
+      cityName: `${rideNow_city_name.innerHTML}`,
+      planName: `${choose_plan}`,
+    };
+    localStorage.setItem("rideNowOtherInfo", JSON.stringify(rideNowOtherInfo));
+    window.location.href = "../Ride_now/rideNow.html";
   }
 }
