@@ -89,6 +89,7 @@ function changeRideNowCityValue(elem) {
 function showCalender(para) {
   let calender = document.querySelector(`.${para} > .calender`);
   calender.classList.toggle("showCal");
+  // missionCalender(para);
 }
 // nav bar signup page
 function showSignup() {
@@ -424,7 +425,7 @@ keepUserLoggedIn();
 // loginUser();
 
 function loginUser() {
-  removePopUp("loginPop");
+  removePopUp("loginPopupOverlay");
   document.getElementsByClassName("welcomeNav")[0].classList.remove("hide");
   document.getElementsByClassName("signupNav")[0].classList.add("hide");
 
