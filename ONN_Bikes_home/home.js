@@ -687,7 +687,8 @@ function showTimingTab(para, i, date) {
       }:00 ${amORpm}`;
       div.onclick = function () {
         addTimeToLocalSto(para, div.innerHTML);
-        // showRideNowDateAndTime(para)
+        showRideNowDateAndTime(para);
+        calender_timing.classList.add("hide");
       };
       availableTimings.append(div);
       hour++;
@@ -699,6 +700,7 @@ function showTimingTab(para, i, date) {
       div.onclick = function () {
         addTimeToLocalSto(para, div.innerHTML);
         showRideNowDateAndTime(para);
+        calender_timing.classList.add("hide");
       };
       availableTimings.append(div);
     }
@@ -739,10 +741,29 @@ function addTimeToLocalSto(para, time) {
     localStorage.setItem("endDateObj", JSON.stringify(endDateObj));
   }
 }
-// this function if for get the obj and show on dome ride now sec
-// function showRideNowDateAndTime(para) {
-//   if (para == "startDateSelector") {
-//     let startDateObj = JSON.parse(localStorage.getItem("startDateObj"));
-
-//   }
-// }
+// this function is for get the obj and show on dom ride now sec
+function showRideNowDateAndTime(para) {
+  console.log("up");
+  if (para == "startDateSelector") {
+    let startDateObj = JSON.parse(localStorage.getItem("startDateObj"));
+    let spanTag = document.querySelector(`.${para} .calenderStartDate`);
+    console.log(spanTag);
+    spanTag.innerHTML = `<strong class="calenderStartDate-date">${startDateObj.date}</strong>
+                            <span class="calenderStartDate-weekDay">${startDateObj.weekDay}</span>
+                            <span class="calenderStartDate-month">${startDateObj.month} ${startDateObj.year}</span>
+                            <span class="calenderStartDate-time">${startDateObj.time}</span>`;
+    let startDateSpan = document.querySelector(".startDateSpan");
+    startDateSpan.classList.add("hide");
+    if (spanTag.classList.contains("hide")) spanTag.classList.remove("hide");
+  } else {
+    let endDateObj = JSON.parse(localStorage.getItem("endDateObj"));
+    let spanTag = document.querySelector(`.${para} .calenderEndDate`);
+    spanTag.innerHTML = `<strong class="calenderEndDate-date">${endDateObj.date}</strong>
+                            <span class="calenderEndDate-weekDay">${endDateObj.weekDay}</span>
+                            <span class="calenderEndDate-month">${endDateObj.month} ${endDateObj.year}</span>
+                            <span class="calenderEndDate-time">${endDateObj.time}</span>`;
+    let endDateSpan = document.querySelector(".endDateSpan");
+    endDateSpan.classList.add("hide");
+    if (spanTag.classList.contains("hide")) spanTag.classList.remove("hide");
+  }
+}

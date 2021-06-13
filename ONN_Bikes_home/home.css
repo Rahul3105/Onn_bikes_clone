@@ -873,6 +873,21 @@ footer > .footer_upperPart + hr {
   background-color: rgba(128, 128, 128, 0.383);
   transition: 0.5s;
 }
+.calenderStartDate,
+.calenderEndDate {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.calenderStartDate strong,
+.calenderEndDate strong {
+  text-align: center;
+}
+.calenderStartDate span,
+.calenderEndDate span {
+  font-size: 1.3rem;
+  padding: 0;
+  text-align: center;
+}
 /* login popup css starts form here */
 
 .loginPop {
