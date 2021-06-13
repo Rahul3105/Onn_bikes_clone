@@ -898,6 +898,7 @@ footer > .footer_upperPart + hr {
   background: url(images/login/login.png);
   background-position: -3208px 0;
   z-index: 2;
+  transition: 1s;
 }
 .loginPop > .loginPopRemove {
   right: -2%;
@@ -1269,7 +1270,6 @@ footer > .footer_upperPart + hr {
   overflow: auto;
 }
 .fleetAndPricing_city_cont {
-  /* border: 1px solid lime; */
   max-height: 400px;
   min-height: 400px;
   overflow-y: auto;

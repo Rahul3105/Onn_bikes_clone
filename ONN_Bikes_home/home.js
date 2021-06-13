@@ -111,6 +111,7 @@ function showSignup() {
 function showLoginPopup() {
   let loginDiv = document.getElementsByClassName("loginPopupOverlay")[0];
   loginDiv.classList.toggle("hide");
+  loginDiv.classList.add("active");
   document.body.style.overflow = "hidden";
 }
 // help popup
