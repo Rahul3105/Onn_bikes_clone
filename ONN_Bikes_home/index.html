@@ -96,8 +96,10 @@
 
             <div class="rideNow non_selectable_txt">
                 
-                <div onclick="showSelectCity()">
-                    <p class="collapsible-content-tri rideNow-city-name">BENGALURU</p>
+                <div onclick="showSelectCity()" class='rideNowcityCont'>
+                    <a href="#home_header">
+                        <p class="collapsible-content-tri rideNow-city-name">BENGALURU</p>
+                    </a>
                 </div>
                 
                 <div class="choose_plan">
@@ -716,7 +718,7 @@
                 <div class="removeSelectCity" onclick="removePopUp('selectCity-overlay')"></div>
                 <div class="searchArea">
                     <div class="cityInputCont">
-                        <input type="text" name="searchCity" id="searchCity" placeholder="Enter your city to search">
+                        <input type="text" name="searchCity" id="searchCity" oninput="filterRideNowCities()" placeholder="Enter your city to search">
                     </div>
                     <div class="CitySearchInputInfo">
                         <p>You've selected <br><span>Bengaluru</span></p>

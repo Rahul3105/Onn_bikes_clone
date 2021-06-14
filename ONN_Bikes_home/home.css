@@ -173,6 +173,18 @@ body {
   border: none;
   cursor: pointer;
 }
+.rideNowcityCont {
+  cursor: pointer;
+}
+.rideNowcityCont a {
+  border: 1px solid rgba(255, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
 
 /* main_content section css starts form here */
 
@@ -893,6 +905,7 @@ footer > .footer_upperPart + hr {
   padding: 0;
   text-align: center;
 }
+
 /* login popup css starts form here */
 
 .loginPop {

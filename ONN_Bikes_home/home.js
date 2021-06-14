@@ -876,12 +876,33 @@ function showSelectCity() {
   let selectCityCont = document.getElementsByClassName("selectCity-overlay")[0];
   selectCityCont.classList.toggle("hide");
   selectCityCont.classList.add("active");
-  // document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
 }
 
-addEventToCityArea();
 function changeRideNowCityValue(elem) {
   let city = elem.children[0].children[1].innerHTML;
   document.getElementsByClassName("rideNow-city-name")[0].innerHTML = city;
   removePopUp("selectCity-overlay");
+}
+function filterRideNowCities() {
+  let input = document.getElementById("searchCity").value;
+  let inputVal = input.toUpperCase();
+  const cityArea = document.querySelector(".selectCity .cityArea");
+  cityArea.innerHTML = "";
+  let arrOfCities = JSON.parse(localStorage.getItem("rideNowCities"));
+  arrOfCities.forEach((city) => {
+    if (city.name.includes(inputVal)) {
+      let cityCont = document.createElement("div");
+      cityCont.classList.add("cityCont");
+      cityCont.innerHTML = `<div>
+        <img src= ${city.img}
+            alt="" srcset="">
+         <p>${city.name}</p>
+    </div>`;
+      cityCont.onclick = function () {
+        changeRideNowCityValue(this);
+      };
+      cityArea.append(cityCont);
+    }
+  });
 }
