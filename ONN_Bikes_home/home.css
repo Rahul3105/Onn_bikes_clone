@@ -671,7 +671,7 @@ footer > .footer_upperPart + hr {
   height: 0;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transition: 0.5s;
+  transition: 0.5fs;
 }
 .mobileNavBar.active {
   height: 425%;
@@ -815,7 +815,7 @@ footer > .footer_upperPart + hr {
 /* calender css starts form here */
 .calender,
 .calender_timing {
-  margin-top: -5%;
+  margin-top: 0;
   width: 160%;
   background-color: white;
   z-index: 2;
