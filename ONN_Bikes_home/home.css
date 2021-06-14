@@ -825,6 +825,10 @@ footer > .footer_upperPart + hr {
   font-size: 1.9rem;
 }
 /* calender css starts form here */
+.startDateSpan,
+.endDateSpan {
+  color: rgba(165, 162, 162, 0.822);
+}
 .calender,
 .calender_timing {
   margin-top: 0;
@@ -1398,7 +1402,7 @@ footer > .footer_upperPart + hr {
   list-style: none;
 }
 .bike_cont_list .bike_cont {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 240px;
   height: 350px;
   margin-right: 52px;
@@ -1424,7 +1428,7 @@ footer > .footer_upperPart + hr {
   font-size: 15px;
   letter-spacing: 3px;
   margin-bottom: 5px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
 }
 .bike-details > h2 {
@@ -1432,11 +1436,13 @@ footer > .footer_upperPart + hr {
   margin-top: 0;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 12px;
 }
 .bike-details p {
   font-size: 13px;
+  /* border: 1px solid lime; */
+  margin: 1rem 0;
 }
 .fleetAndPricingOverlay > ol > li .bike-details p > span {
   color: #6d6d6d;
@@ -1540,6 +1546,7 @@ footer > .footer_upperPart + hr {
 }
 .myAccount .left-side hr {
   margin-bottom: 25px;
+  color: #dde1e95d;
 }
 .myAccount .left-side button {
   display: block;
