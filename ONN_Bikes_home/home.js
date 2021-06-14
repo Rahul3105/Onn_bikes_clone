@@ -67,27 +67,6 @@ function removePopUp(name) {
     popUpCont.classList.remove("active");
   document.body.style.overflow = "visible";
 }
-// ride now city popup
-function showSelectCity() {
-  let selectCityCont = document.getElementsByClassName("selectCity-overlay")[0];
-  selectCityCont.classList.toggle("hide");
-  selectCityCont.classList.add("active");
-  // document.body.style.overflow = "hidden";
-}
-function addEventToCityArea() {
-  let cityArea = document.querySelectorAll(".cityArea .cityCont");
-  cityArea.forEach((cityCont) => {
-    cityCont.addEventListener("click", function () {
-      changeRideNowCityValue(this);
-    });
-  });
-}
-addEventToCityArea();
-function changeRideNowCityValue(elem) {
-  let city = elem.children[0].children[1].innerHTML;
-  document.getElementsByClassName("rideNow-city-name")[0].innerHTML = city;
-  removePopUp("selectCity-overlay");
-}
 
 // ride now calender popup
 function showCalender(para) {
@@ -835,4 +814,74 @@ function checkStartAndEndDateCont() {
     localStorage.setItem("rideNowOtherInfo", JSON.stringify(rideNowOtherInfo));
     window.location.href = "../Ride_now/rideNow.html";
   }
+}
+
+// now i am working on city choose pop ride now features seach city sorting
+
+const arrOfCities = [
+  {
+    img: "https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/bengaluru.png",
+    name: "BANGALURU",
+  },
+  {
+    img: "https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/hyderabad.png",
+    name: "HYDERABAD",
+  },
+  {
+    img: "https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/jaipur.png",
+    name: "JAIPUR",
+  },
+  {
+    img: "https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/gurugram.jpeg",
+    name: "GURUGRAM",
+  },
+  {
+    img: "https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/mysuru.png",
+    name: "MYSURU",
+  },
+  {
+    img: "https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/udaipur.png",
+    name: "UDAIPUR",
+  },
+  {
+    img: "https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/ahmedabad.png",
+    name: "AHMEDABAD",
+  },
+];
+
+if (localStorage.getItem("rideNowCities") == null) {
+  localStorage.setItem("rideNowCities", JSON.stringify(arrOfCities));
+}
+function showRideNowCities() {
+  const cityArea = document.querySelector(".selectCity .cityArea");
+  cityArea.innerHTML = "";
+  let arrOfCities = JSON.parse(localStorage.getItem("rideNowCities"));
+  arrOfCities.forEach((city) => {
+    let cityCont = document.createElement("div");
+    cityCont.classList.add("cityCont");
+    cityCont.innerHTML = `<div>
+        <img src= ${city.img}
+            alt="" srcset="">
+         <p>${city.name}</p>
+    </div>`;
+    cityCont.onclick = function () {
+      changeRideNowCityValue(this);
+    };
+    cityArea.append(cityCont);
+  });
+}
+// ride now city popup
+function showSelectCity() {
+  showRideNowCities();
+  let selectCityCont = document.getElementsByClassName("selectCity-overlay")[0];
+  selectCityCont.classList.toggle("hide");
+  selectCityCont.classList.add("active");
+  // document.body.style.overflow = "hidden";
+}
+
+addEventToCityArea();
+function changeRideNowCityValue(elem) {
+  let city = elem.children[0].children[1].innerHTML;
+  document.getElementsByClassName("rideNow-city-name")[0].innerHTML = city;
+  removePopUp("selectCity-overlay");
 }
