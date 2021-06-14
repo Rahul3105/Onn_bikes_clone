@@ -664,27 +664,33 @@ footer > .footer_upperPart + hr {
   margin-bottom: 0.6rem;
   background-color: white;
 }
-#menuBox {
+.mobileNavBar {
   position: absolute;
+  background-color: white;
   top: 9rem;
-  width: 100%;
-  border-top: 1px solid rgb(197, 186, 186);
+  height: 0;
+  overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.5s;
 }
-#menuBox > ul > li {
+.mobileNavBar.active {
+  height: 425%;
+  border-top: 1px solid rgb(197, 186, 186);
+  transition: 0.5s;
+}
+
+.mobileNavBar > ul > li {
   list-style: none;
-  padding-bottom: 2rem;
-  padding-left: 1rem;
+  padding: 1.2rem 2rem;
 }
-#menuBox > ul > li > a:hover {
+.mobileNavBar > ul > li > a:hover {
   color: orangered;
 }
-#menuBox > ul > li > a {
+.mobileNavBar > ul > li > a {
   text-decoration: none;
   color: rgb(30, 45, 81);
 }
 #planName {
-  /* border: 1px solid lime; */
   margin-top: -1rem;
   text-align: center;
   color: rgb(30, 45, 81);

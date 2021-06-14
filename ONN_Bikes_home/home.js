@@ -12,6 +12,10 @@ function showNav() {
   )[0];
   fleetAndPricing.classList.toggle("absolute", window.scrollY > 10);
 }
+function showMobileNavBar() {
+  let navBar = document.getElementsByClassName("mobileNavBar")[0];
+  navBar.classList.toggle("active");
+}
 // this is for collapsible content where we can select anything and that value  will appear on collapse_btn
 function changeCollapseBtnValue(collapse_btn_type, value) {
   let collapse_btn = document.getElementsByClassName(collapse_btn_type)[0];
