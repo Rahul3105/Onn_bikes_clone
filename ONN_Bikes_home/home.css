@@ -1211,7 +1211,7 @@ footer > .footer_upperPart + hr {
   color: red;
   font-size: 1.3rem;
 }
-#contactUsForm-helpPopup > input {
+#contactUsForm-helpPopup input {
   padding: 11px 8px 10px 12px;
   margin: 5px 0px 3px;
   border-radius: 4px;
@@ -1221,9 +1221,16 @@ footer > .footer_upperPart + hr {
   box-shadow: rgba(18, 52, 77, 0.05) 0px 1px 2px 0px inset;
   font-size: 1.2rem;
   font-weight: 600;
+  text-align: start;
 }
-#contactUsForm-helpPopup > input[id="tell-us-more-popup"] {
+#contactUsForm-helpPopup textarea[id="tell_us_more_popup"] {
+  margin-top: 5px;
   height: 18rem;
+  width: 100%;
+  border-radius: 4px;
+  padding: 11px 8px 10px 12px;
+  border: 1px solid rgb(207, 215, 223);
+  box-shadow: rgba(18, 52, 77, 0.05) 0px 1px 2px 0px inset;
 }
 .contactUsForm-helpPopup-heading-cont {
   background-color: black;
@@ -1253,6 +1260,30 @@ footer > .footer_upperPart + hr {
 #contactUsForm-helpPopup > button:hover {
   transform: scale(104%);
   background-color: rgb(24, 155, 50);
+}
+.helpPopup-collapse-cont {
+  position: relative;
+}
+
+.helpPopup-collapse-content {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  height: 20rem;
+  overflow: auto;
+  height: 0;
+  transition: 0.5s;
+}
+.helpPopup-collapse-cont.active .helpPopup-collapse-content {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  height: 20rem;
+  transition: 0.5s;
+}
+.helpPopup-collapse-content ul li {
+  list-style: none;
+  padding: 1rem;
+  cursor: pointer;
 }
 /* ///fleet and pricing  */
 .fleetAndPricingOverlay-cont {

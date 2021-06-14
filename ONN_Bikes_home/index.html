@@ -826,17 +826,32 @@
         </div>
         <form id="contactUsForm-helpPopup">
             <label for="name-popup">Your name</label>
-            <input type="text" name="name" id="name-popup">
+            <input type="text" name="name" id="name_popup">
 
             <label for="email-popup">Email <span>*</span></label>
-            <input type="text" name="email" id="email-popup">
+            <input type="text" name="email" id="email_popup">
 
             <label for="type">Type <span>*</span></label>
-            <input type="button" name="type" id="type-popup">
+            <div class="helpPopup-collapse-cont">
+                <input type="button" name="type" id="type_popup" value="--" onclick="showHelpPopupCollapseContent()">
+
+                <div class="helpPopup-collapse-content">
+                    <ul>
+                        <li>Breakdown/Accidents/Vehicle condition</li>
+                        <li>Bookings</li>
+                        <li>Payments</li>
+                        <li>Refund</li>
+                        <li>Extensions</li>
+                        <li>ONN Station</li>
+                        <li>Enquiries</li>
+                        <li>Cancellation</li>
+                    </ul>
+                </div>
+            </div>
 
             <label for="tell-us-more">Tell us more! <span>*</span></label>
-            <input type="text" name="tell-us-more" id="tell-us-more-popup">
-            <button>Send</button>
+            <textarea name="tell-us-more" id="tell_us_more_popup" cols="30" rows="10"></textarea>
+            <button onclick="submitHelpPopup(event)">Send</button>
         </form>
     </div>
     <div class="helpPopup" onclick="showContactPopup()">

@@ -906,3 +906,44 @@ function filterRideNowCities() {
     }
   });
 }
+function submitHelpPopup(e) {
+  e.preventDefault();
+  const form = document.getElementById("contactUsForm-helpPopup");
+  let name_popup = form.name_popup.value;
+  let email_popup = form.email_popup.value;
+  let type_popup = form.type_popup.value;
+  let tell_us_more_popup = form.tell_us_more_popup.value;
+  if (name_popup == "") {
+    alert("Please Type your name");
+  } else if (email_popup == "") {
+    alert("Please Type your email");
+  } else if (type_popup == "") {
+    alert("Please select a type");
+  } else if (tell_us_more_popup == "") {
+    alert("Please tell us more");
+  } else {
+    form.name_popup.value = "";
+    form.email_popup.value = "";
+    form.type_popup.value = "";
+    form.tell_us_more_popup.value = "";
+    alert("Thank you for contacting us. We will get back to you!");
+  }
+}
+function showHelpPopupCollapseContent() {
+  let helpPopup_collapse_cont = document.getElementsByClassName(
+    "helpPopup-collapse-cont"
+  )[0];
+  helpPopup_collapse_cont.classList.toggle("active");
+}
+function addEventToHelpPopupCollapse() {
+  let helpPopup_collapse_content = document.querySelectorAll(
+    ".helpPopup-collapse-content li"
+  );
+  helpPopup_collapse_content.forEach((li) => {
+    li.addEventListener("click", function () {
+      document.getElementById("type_popup").value = this.innerHTML;
+      showHelpPopupCollapseContent();
+    });
+  });
+}
+addEventToHelpPopupCollapse();
