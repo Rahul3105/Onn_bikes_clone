@@ -497,12 +497,100 @@ function updateMyAccount() {
 // user profile  logic starts form here
 function enableInputBox(classOfParent) {
   let parentOfInput = document.querySelector(`.${classOfParent}`);
+  let updateBtn = document.querySelector(`.${classOfParent} > button`);
   Array.from(parentOfInput.children).forEach((elem) => {
     if (elem.tagName == "INPUT" || elem.tagName == "TEXTAREA") {
-      if (elem.disabled == true) elem.disabled = false;
-      else elem.disabled = true;
+      if (elem.disabled == true) {
+        elem.disabled = false;
+        updateBtn.classList.add("active");
+      } else {
+        elem.disabled = true;
+        updateBtn.classList.remove("active");
+      }
     }
   });
+}
+
+function updateCurrUserProfile(para) {
+  let currLoggedIn = JSON.parse(localStorage.getItem("currLoggedIn"));
+  let users = JSON.parse(localStorage.getItem("users"));
+  if (para === "profile") {
+    if (
+      document
+        .querySelector(".edit-account > button")
+        .classList.contains("active")
+    ) {
+      let first_name = document.getElementById("first_name-yourProfile").value;
+      let last_name = document.getElementById("last_name-yourProfile").value;
+      first_name = first_name.split("");
+      for (let i in first_name) {
+        if (first_name[i] == " ") delete first_name[i];
+      }
+      first_name = first_name.join("");
+      last_name = last_name.split("");
+      for (let i in last_name) {
+        if (last_name[i] == " ") delete last_name[i];
+      }
+      last_name = last_name.join("");
+      users.forEach((user) => {
+        if (
+          user.first_name == currLoggedIn[0].first_name &&
+          user.last_name == currLoggedIn[0].last_name &&
+          user.email == currLoggedIn[0].email &&
+          user.mobile == currLoggedIn[0].mobile
+        ) {
+          if (first_name != "" && first_name != user.first_name) {
+            user.first_name = first_name;
+            currLoggedIn[0].first_name = first_name;
+          }
+          if (last_name != "" && last_name != user.last_name) {
+            user.last_name = last_name;
+            currLoggedIn[0].last_name = last_name;
+          }
+          alert("Profile updated successfully");
+        }
+      });
+    }
+  } else {
+    if (
+      document
+        .querySelector(".change-password > button")
+        .classList.contains("active")
+    ) {
+      let oldPassword = document.getElementById("old-password").value;
+      let new_password = document.getElementById("new-password").value;
+      let confirm_password = document.getElementById("confirm-password").value;
+
+      users.forEach((user) => {
+        if (
+          user.first_name == currLoggedIn[0].first_name &&
+          user.last_name == currLoggedIn[0].last_name &&
+          user.email == currLoggedIn[0].email &&
+          user.mobile == currLoggedIn[0].mobile
+        ) {
+          if (oldPassword == user.password) {
+            if (new_password.length < 6) {
+              alert("Please enter minimum six digit password");
+            } else if (new_password != confirm_password) {
+              alert(
+                "Your confirm password and new password is not matching please try again"
+              );
+            } else if (new_password == oldPassword) {
+              alert(
+                "Please enter a new password this password is already the current password"
+              );
+            } else {
+              user.password = new_password;
+              currLoggedIn[0].password = new_password;
+              alert("Password changed successfully");
+            }
+          }
+        }
+      });
+    }
+  }
+  localStorage.setItem("currLoggedIn", JSON.stringify(currLoggedIn));
+  localStorage.setItem("users", JSON.stringify(users));
 }
 
 // changeRightOfAccount();

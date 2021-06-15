@@ -1673,6 +1673,11 @@ footer > .footer_upperPart + hr {
   font-weight: 400;
   letter-spacing: 0.6px;
   font-size: 1.4rem;
+  border-radius: 2px;
+}
+.edit-account button.active,
+.change-password button.active {
+  background-color: #1d2d51;
 }
 .right-side .removePencilIcon {
   width: 2.3rem;
