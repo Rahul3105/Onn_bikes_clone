@@ -433,8 +433,9 @@ function showWelcomeContent() {
 }
 // tempo
 function showMyAccount() {
-  let accountDiv = document.getElementsByClassName("myAccount")[0];
+  let accountDiv = document.getElementsByClassName("myAccountOverlay")[0];
   accountDiv.classList.remove("hide");
+  document.body.style.overflow = "hidden";
 }
 
 // checkUsers() if exist than login user;

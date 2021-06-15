@@ -1312,7 +1312,8 @@ footer > .footer_upperPart + hr {
 }
 .fleetAndPricingOverlay,
 .selectCity-overlay,
-.loginPopupOverlay {
+.loginPopupOverlay,
+.myAccountOverlay {
   position: absolute;
   top: 0;
   width: 100%;
@@ -1532,12 +1533,18 @@ footer > .footer_upperPart + hr {
   color: #1d2d51;
   font-weight: 500;
   font-size: 2.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .myAccount .left-side .user-mail {
   margin-bottom: 1.5rem;
   color: #1d2d51;
   font-size: 1.3rem;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .myAccount .left-side .onn-credits {
   font-size: 1.4rem;
@@ -1691,13 +1698,19 @@ footer > .footer_upperPart + hr {
   .contactUs,
   .FAQs_section {
     width: 110rem;
-    /* border: 1px solid lime; */
   }
   .contactUs_parts {
     width: 98%;
   }
   .whyONN > .whyONN_advantages {
     width: 100%;
+  }
+  .fleetAndPricing_city_cont {
+    border: 1px solid lime;
+  }
+  .bike-slider-cont {
+    border: 1px solid green;
+    width: 70%;
   }
 }
 @media only screen and (max-width: 1133px) {
@@ -1917,5 +1930,59 @@ footer > .footer_upperPart + hr {
     width: 60% !important;
     margin: 0 !important;
     padding: 0;
+  }
+
+  /* ///making city popup responsive */
+
+  .selectCity .searchArea,
+  .cityArea {
+    clear: both;
+    width: 100% !important;
+  }
+
+  /* //making myAccount responsive */
+
+  .myAccount {
+    flex-direction: column;
+    height: auto;
+  }
+  .removePencilIcon {
+    top: 0 !important;
+    right: 0 !important;
+  }
+  .myAccount .left-side {
+    width: 100%;
+  }
+  .myAccount .left-side .biker-icon {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .myAccount .right-side {
+    height: 48rem;
+  }
+  .myAccount .right-side .yourProfileCont .email-yourProfile,
+  .mobile-yourProfile {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (max-width: 615px) {
+  .change-password input,
+  .edit-account input,
+  .email-yourProfile,
+  .mobile-yourProfile,
+  .edit-account textarea {
+    clear: both;
+    display: block;
+    width: 100%;
+  }
+  .myAccount .right-side {
+    height: 58rem;
+  }
+  .myAccount .right-side .change-password,
+  .edit-account {
+    height: 50%;
+    width: 120%;
   }
 }

@@ -1038,58 +1038,59 @@
         </div>
     </div>
 
+    <div class="myAccountOverlay hide">
+        <div class="myAccount">
+            <div class="removeMyAccount" onclick="removePopUp('myAccountOverlay')"></div>
+            <div class="left-side">
+                <div class="biker-icon">
 
-    <div class="myAccount hide">
-        <div class="removeMyAccount" onclick="removePopUp('myAccount')"></div>
-        <div class="left-side">
-            <div class="biker-icon">
-
-            </div>
-            <p class="user-name">rahul rajput</p>
-            <p class="user-mail">rajput@gmail.com</p>
-            <p class="onn-credits">ONN Credits: 0</p>
-            <hr>
-            <button class="bookingHistory-myAccount active" onclick="changeRightOfAccount('historyCont','yourProfileCont','bookingHistory-myAccount','yourProfile-myAccount')"><i class="fas fa-history"></i> Booking History</button>
-            <button class="yourProfile-myAccount" onclick="changeRightOfAccount('yourProfileCont','historyCont','yourProfile-myAccount','bookingHistory-myAccount')"><i class="fa fa-home"></i> Your Profile</button>
-        </div>
-        
-        <div class="right-side">
-            <div class="historyCont">
-                <div class="no-booking-history">
-                    <h1>You have no previous booking with us. Please book a ride to see all updates regarding that in this page.</h1>
                 </div>
+                <p class="user-name">rahul rajput</p>
+                <p class="user-mail">rajput@gmail.com</p>
+                <p class="onn-credits">ONN Credits: 0</p>
+                <hr>
+                <button class="bookingHistory-myAccount active" onclick="changeRightOfAccount('historyCont','yourProfileCont','bookingHistory-myAccount','yourProfile-myAccount')"><i class="fas fa-history"></i> Booking History</button>
+                <button class="yourProfile-myAccount" onclick="changeRightOfAccount('yourProfileCont','historyCont','yourProfile-myAccount','bookingHistory-myAccount')"><i class="fa fa-home"></i> Your Profile</button>
             </div>
-
-            <div class="yourProfileCont hide">
-                <div class="edit-account">
-                    <div class="removePencilIcon" onclick="enableInputBox('edit-account')">
-
+            
+            <div class="right-side">
+                <div class="historyCont">
+                    <div class="no-booking-history">
+                        <h1>You have no previous booking with us. Please book a ride to see all updates regarding that in this page.</h1>
                     </div>
-                    <h3>Edit Account</h3>
-                    <input type="text" name="first_name" id="first_name-yourProfile" disabled value="Rahul">
-                    <input type="text" name="last_name" id="last_name-yourProfile" disabled value = 'Rajput'>
-
-                    <div class="email-yourProfile">
-                        rahulrajput7358@gmail.com
-                    </div>
-                    <div class="mobile-yourProfile">
-                        7683004927
-                    </div>
-
-                    <textarea name="address" id="address-yourProfile" cols="37" rows="2"
-                    placeholder="Enter Address" disabled></textarea>
-                    <button><i class="fas fa-sync-alt"></i> UPDATE</button>
                 </div>
 
-                <div class="change-password">
-                    <div class="removePencilIcon"  onclick="enableInputBox('change-password')">
-                    
+                <div class="yourProfileCont hide">
+                    <div class="edit-account">
+                        <div class="removePencilIcon" onclick="enableInputBox('edit-account')">
+
+                        </div>
+                        <h3>Edit Account</h3>
+                        <input type="text" name="first_name" id="first_name-yourProfile" disabled value="Rahul">
+                        <input type="text" name="last_name" id="last_name-yourProfile" disabled value = 'Rajput'>
+
+                        <div class="email-yourProfile">
+                            rahulrajput7358@gmail.com
+                        </div>
+                        <div class="mobile-yourProfile">
+                            7683004927
+                        </div>
+
+                        <textarea name="address" id="address-yourProfile" cols="37" rows="2"
+                        placeholder="Enter Address" disabled></textarea>
+                        <button><i class="fas fa-sync-alt"></i> UPDATE</button>
                     </div>
-                    <h3>Change Password</h3>
-                    <input type="password" name="old-password" id="old-password" disabled placeholder="Old Password">
-                    <input type="password" name="new-password" id="new-password" disabled placeholder="New Password">
-                    <input type="password" name="confirm-password" id="confirm-password" disabled placeholder="Confirm Password">
-                    <button><i class="fas fa-sync-alt"></i> CHANGE PASSWORD</button>
+
+                    <div class="change-password">
+                        <div class="removePencilIcon"  onclick="enableInputBox('change-password')">
+                        
+                        </div>
+                        <h3>Change Password</h3>
+                        <input type="password" name="old-password" id="old-password" disabled placeholder="Old Password">
+                        <input type="password" name="new-password" id="new-password" disabled placeholder="New Password">
+                        <input type="password" name="confirm-password" id="confirm-password" disabled placeholder="Confirm Password">
+                        <button><i class="fas fa-sync-alt"></i> CHANGE PASSWORD</button>
+                    </div>
                 </div>
             </div>
         </div>
