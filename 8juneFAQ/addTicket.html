@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    
+    <style>
+/* css*/
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(243, 245, 247);
+}
+
+#main {
+    /*        <!-- main body start  */
+    width: 100vw;
+    height: 120vh;
+    margin: 0%;
+    background-color: rgb(243, 245, 247);
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+}
+
+    #top
+    {
+    width: 100%;
+
+    padding-bottom: 1%;
+    padding-top: 2%;
+    background-color: white;
+    color: rgb(111, 124, 151);
+
+
+    display: flex;
+    flex-flow: row wrap;
+    border-bottom: 1px solid #DADFE3;
+}
+
+
+
+
+
+#topbox1 {
+    width: 53%;
+    margin-left: 6%;
+    margin-right: 12%;
+    font-family: Poppins, Helvetica, sans-serif;
+    color: rgb(111, 124, 135);
+    color: #6f7c87;
+    font-size: 20px;
+    margin-bottom: 2%;
+    font-weight: lighter;
+    width: 40% !important;
+}
+
+#topbox1>p {
+    width: 100% !important;
+    margin-left: 11%;
+}
+
+#topbox2 {
+    width: 40%;
+    
+    margin-left: -14%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#abc98 {
+    text-align: end;
+    padding: 0%;
+    padding-right: 1%;
+
+}
+
+a {
+    font-size: 14px;
+    color: #183247;
+    line-height: 1.6;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#voldermart {
+    clear: both;
+    height: 7%;
+    background-color: white;
+
+    border-bottom: 1px solid #DADFE3;
+}
+
+
+#abc1 {
+    background-color: white;
+    width: 6%;
+    margin-left: 10.5%;
+    margin-bottom: 2%;
+    padding-top: 1.5%;
+    font-size: 110%;
+    border: 0px;
+    border-top: 2px solid rgb(244, 248, 244);
+}
+
+#abc1:hover {
+    border-top: 2px solid green;
+}
+
+#abc2 {
+    background-color: white;
+    width: 8%;
+    margin-left: 1%;
+    padding-top: 1.5%;
+    font-size: 100%;
+    border: 0px;
+    border-top: 3px solid rgb(244, 247, 244);
+}
+
+#abc2:hover {
+    border-top: 2px solid green;
+}
+
+
+
+
+
+
+
+#displayscreen
+{
+    width: 100%;
+    height: 120%;
+
+}
+#dismain
+{
+    width: 80%;
+    height: 90%;
+    margin: 2% auto;
+  
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+#questionanswer
+{
+    width: 70%;
+    height: 95%;
+    margin: 1% auto;
+   background-color: #fff;
+   border: 1px solid rgb(233, 224, 224);
+       border-radius: 6px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding: 2%;
+}
+#first
+{
+    font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    line-height: 21.875px;
+    font-weight: 700;
+    color: #183247;
+}
+#secound
+{
+    content: "*";
+    color: #d00;
+    font-size: 16.8px;
+    font-weight: bold;
+    position: relative;
+    top: 4px;
+    margin-left: 5px;
+}
+#third
+{
+    content: "*";
+    color: #d00;
+    font-size: 16.8px;
+    font-weight: bold;
+    position: relative;
+    top: 4px;
+    margin-left: 5px;
+}
+#email
+{
+    margin-left: 10%;
+    width: 50%;
+    height: 80% !important;
+    padding: 1.5%;
+}
+#helpdesk_ticket_ticket_type
+{
+
+    margin-left: 13%;
+    width: 54%;
+    height: 80% !important;
+    padding: 1.5%;
+
+}
+#forth
+{
+    content: "*";
+    color: #d00;
+    font-size: 16.8px;
+    font-weight: bold;
+    position: relative;
+    top: 4px;
+    margin-left: 5px;
+}
+#textarea
+{
+    margin-left: 7%;
+    width: 50%;
+    height: 80% !important;
+    padding: 1.5%;
+}
+.add_attachment
+{
+    content: "*";
+    color: rgb(23, 8, 48);
+    
+    font-size: 16.8px;
+    font-weight: bold;
+    position: relative;
+    top: 4px;
+    margin-left: 20%;
+}
+#file
+{
+    margin-left: 20%;
+}
+#fifth
+{
+    margin: 2%;
+     margin-left: 20%;
+}
+#quest
+{
+    width: 10%;
+    height: 99%;
+}
+#btn2
+{
+    margin-left: 23%;
+    width: 10%;
+    height: 6%;
+    background-color: rgb(46, 136, 28);
+    color: cornsilk;
+}
+#btn3
+{
+    
+    width: 10%;
+    height: 6%;
+}
+#root {
+
+    height: 8vh;
+    background-color: #183247;
+    padding: 2% 10%;
+    border: 0;
+    color: #fff;
+}
+
+
+
+#nnd_line_1st {
+    margin-left: 0.5%;
+}
+
+#login-btn {
+    margin-left: 60%;
+    margin-right: 1%;
+    color: white;
+    width: 20%;
+    padding: 1%;
+    background-color: rgb(2, 184, 117);
+    border: solid 1px #015335;
+    letter-spacing: 1.2px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8%;
+}
+
+#login-btn:hover {
+    background-color: rgb(44, 158, 116);
+}
+
+#login-btn2:hover {
+    background-color: rgb(192, 190, 190);
+}
+
+#login-btn2 {
+    width: 20%;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 1%;
+    padding-top: 1.5%;
+    text-align: center;
+    font-size: 15px;
+    background-color: whitesmoke;
+    color: rgb(66, 54, 54);
+    border: solid 1px #97a9ba;
+    border-radius: 8%;
+}
+
+#juggad1 {
+    width: 100%;
+
+    display: grid;
+    display: flex;
+    flex-direction: row;
+
+}
+
+   /* //overlayEffect */
+
+        #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        #text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
+            font-size: 12px;
+            color: rgb(7, 0, 37);
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+
+        #white-board
+        {
+            background-color:white;
+            padding: 1%;
+        }
+
+#root {
+
+    height: 8vh;
+    background-color: #183247;
+    padding: 2% 10%;
+    border: 0;
+    color: #fff;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#cookies
+{
+    color: #fff;
+    margin-left: 90%;
+}
+
+
+
+
+/* 
+bvgdmkl/v c */
+
+
+
+
+
+
+
+
+
+/* 
+bvgdmkl/v c */
+    </style>
+	
+
+</head>
+<body>
+    
+
+
+    <div id="main">       <!-- main body start -->
+           
+
+            <div id="top">             <!-- heaqding  -->
+                <div id="topbox1">                      
+                    <p>Simplifying Mobility</p> 
+                </div>
+
+				
+
+                <div id="topbox2">         <!-- heaDING Box2 -->
+                   
+                    <p id="abc98">Welcome</p>
+					
+					<div id="juggad1">
+
+						<div id="login-btn"> <p>Login</p></div>
+						<div id="login-btn2"> <p>SignUp</p></div>
+
+					</div>
+
+                </div>
+
+				
+            </div>
+			
+
+			 <div id="voldermart">
+				<button id="abc1">Home</button>
+				<button id="abc2">Solution</button>
+			</div>
+
+
+
+
+            
+
+
+             <div id="displayscreen">
+
+                <div id="dismain">
+
+                    <div id="questionanswer">
+<!-- ............................................................................................................................ -->
+                        
+                       
+
+                            <form id="addticketForm">
+                             <p id="first">Submit a ticket</p> <br>
+                        <label for="email" id="secound">Requester</label>
+                        <input type="email" id="email" name="email" placeholder="email"> <br> <br>
+                       
+                        <label for="helpdesk_ticket_ticket_type" id="third">Type :</label>
+                         <select id="helpdesk_ticket_ticket_type">
+
+                            <option value="Breakdown/Accidents/Vehicle Condition">Breakdown/Accidents/Vehicle Condition</option>
+                            <option value="Bookings" >Bookings</option>
+                            <option value="Payments" >Payments</option>
+                            <option value="Refund" >Refund</option>
+                            <option value="Extensions">Extensions</option>
+                            <option value="ONN Station">ONN Station</option>
+                            <option value="Enquiries" >Enquiries</option>
+                            <option value="Cancellation">Cancellation</option></select> <br> <br>
+                            
+                            <label for="textarea" id="forth">Tell us more :</label>
+                            <textarea cols="40" id="textarea"rows="8"></textarea> <br> <br>
+                           
+                            <div class="add_attachment"><span>+</span> Attach a file</div> <br>
+                            <input type="file" id="file" >
+
+
+                            <form method="post" >
+                                <div class="g-recaptcha" id="fifth" data-sitekey="somuuu"></div>
+                            </form>
+                                        <!-- googleapi for captcha here -->
+                            <script src='https://www.google.com/recaptcha/api.js'></script>  
+
+                       
+                        </form>
+                        
+
+
+                                <button id="btn2" onclick="haegala(event)">Submit</button>
+                                <button id="btn3">Cancel</button>
+                           
+
+<!-- ............................................................................................................................ -->
+                    </div>
+
+                    <div id="quest">
+
+
+
+
+                    </div>
+
+                </div>
+
+
+             </div>
+
+
+
+
+
+             <div id="root">   
+                
+                
+               <div>
+                   <p>Home - Solution</p> 
+               </div>
+
+
+               <!-- fgchu -->
+               <div id="overlay" onclick="off()">
+  							<div id="text">
+								  <div id="white-board">
+<pre>	
+<h2>Why we love Cookies</h2>
+<hr>
+<p>
+   We use cookies to try and give you a better experience in 
+   Freshdesk.</p>
+<p>
+   You can learn more about what kind of cookies we use, why, 
+   and how from our Privacy Policy. If you hate cookies, or are 
+   just on a diet, you can disable them altogether too. Just note 
+   that the Freshdesk service is pretty big on some cookies (we love 
+   the choco-chip ones), and some portions of Freshdesk may not work properly 
+   if you disable cookies.
+</p> 
+<p>
+   We’ll also assume you agree to the way we use cookies and are ok with it 
+   as described in our Privacy Policy, unless you choose to disable them 
+   altogether through your browser.
+</p></pre>
+								  </div>
+							  </div>
+				</div>
+                    <!-- fvhibj -->
+               <div id="cookies">
+                    <p id="end" onclick="on()">Cookies-policies</p>   
+               </div>
+                
+            </div>
+
+
+            <!-- main body end -->
+    </div>
+
+
+
+
+</body>
+</html>
+
+
+
+<script>
+
+var home=document.getElementById("abc1");
+home.addEventListener("click",test1);
+function test1()
+{
+    window.location.href="\index.html";
+}
+
+
+var btn1 = document.getElementById("login-btn");
+btn1.addEventListener("click",log);
+function log()
+{
+    window.location.href="./login.html"
+}
+var btn2 = document.getElementById("login-btn2");
+btn2.addEventListener("click",log2);
+function log2()
+{
+    window.location.href="./signup.html"
+}
+
+
+///////////////////////////////////////////////////
+
+    //overlayEffect
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+
+//////////////////////////////////////////////////////
+
+
+
+
+</script>

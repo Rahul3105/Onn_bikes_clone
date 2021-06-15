@@ -76,11 +76,11 @@
             </ul>
         </nav>
     </header>
-
+    
     <section class="ride-now">
         <div class="rideNow non_selectable_txt">
             <div onclick="showSelectCity()">
-                <p class="collapsible-content-tri rideNow-city-name">BENGALURU</p>
+                <p id="currentlocation" class="collapsible-content-tri rideNow-city-name">BENGALURU</p>
             </div>
             <div class="choose_plan">
                 <div class="collapsible-content-tri collapse-btn-rideNow" onclick="showrideNowCollapse()">
@@ -298,7 +298,7 @@
                     <div>
                         <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/jaipur.png" alt=""
                             srcset="">
-                        <p>Jaipur</p>
+                        <p>JAIPUR</p>
                     </div>
                 </div>
                 <div class="cityCont">
@@ -480,6 +480,16 @@
                     <button><i class="fas fa-sync-alt"></i> CHANGE PASSWORD</button>
                 </div>
             </div>
+        </div>
+    </div>
+
+
+    <div class="selectPickupOverlay hide">
+        <div class="selectPickup">
+            <div class="selctPickupRemove" onclick="removePopUp('selectPickupOverlay')"></div>
+            <p>Select Pickup Location</p>
+            <hr>
+            <div id="expand"></div>
         </div>
     </div>
 

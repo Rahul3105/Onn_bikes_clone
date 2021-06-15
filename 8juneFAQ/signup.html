@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    
+    <style>
+/* css*/
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(243, 245, 247);
+}
+
+#main {
+    /*        <!-- main body start  */
+    width: 100vw;
+    height: 120vh;
+    margin: 0%;
+    background-color: rgb(243, 245, 247);
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+}
+
+    #top
+    {
+    width: 100%;
+
+    padding-bottom: 1%;
+    padding-top: 2%;
+    background-color: white;
+    color: rgb(111, 124, 151);
+
+
+    display: flex;
+    flex-flow: row wrap;
+    border-bottom: 1px solid #DADFE3;
+}
+
+
+
+
+
+#topbox1 {
+    width: 53%;
+    margin-left: 6%;
+    margin-right: 12%;
+    font-family: Poppins, Helvetica, sans-serif;
+    color: rgb(111, 124, 135);
+    color: #6f7c87;
+    font-size: 20px;
+    margin-bottom: 2%;
+    font-weight: lighter;
+    width: 40% !important;
+}
+
+#topbox1>p {
+    width: 100% !important;
+    margin-left: 11%;
+}
+
+#topbox2 {
+    width: 40%;
+    
+    margin-left: -14%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#abc98 {
+    text-align: end;
+    padding: 0%;
+    padding-right: 1%;
+
+}
+
+a {
+    font-size: 14px;
+    color: #183247;
+    line-height: 1.6;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#voldermart {
+    clear: both;
+    height: 7%;
+    background-color: white;
+
+    border-bottom: 1px solid #DADFE3;
+}
+
+
+#abc1 {
+    background-color: white;
+    width: 6%;
+    margin-left: 10.5%;
+    margin-bottom: 2%;
+    padding-top: 1.5%;
+    font-size: 110%;
+    border: 0px;
+    border-top: 2px solid rgb(244, 248, 244);
+}
+
+#abc1:hover {
+    border-top: 2px solid green;
+}
+
+#abc2 {
+    background-color: white;
+    width: 8%;
+    margin-left: 1%;
+    padding-top: 1.5%;
+    font-size: 100%;
+    border: 0px;
+    border-top: 3px solid rgb(244, 247, 244);
+}
+
+#abc2:hover {
+    border-top: 2px solid green;
+}
+
+
+
+
+
+
+
+#displayscreen
+{
+    width: 100%;
+    height: 120%;
+    background-color: rgb(250, 248, 242);
+}
+#dismain
+{
+    width: 74%;
+    height: 80%;
+    margin: 2% auto;
+  
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+#questionanswer
+{
+    width: 60%;
+    height: 95%;
+    margin: 1%;
+    margin-right: 0%;
+    background-color: white;
+    border: 2px solid rgb(218, 215, 215);
+}
+#headdd
+{
+    font-size: 19px;
+    font-weight: 600;
+    font-family: Poppins,Helvetica,sans-serif;
+    line-height: 26px;
+    color: #183247;
+    text-rendering: optimizelegibility;
+    padding: 6%;
+    padding-bottom: 2%;
+}
+#headdd1
+{
+    font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 21.875px;
+    color: #183247;
+    padding: 2%;
+    padding-left: 6%;
+}
+#flnme
+{
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-left: 6%;
+}
+#flnme1
+{
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-left: 6%;
+}
+#email
+{
+    margin: 2%;
+    margin-left: 6%;
+    width: 40%;
+    padding: 1.5%;
+}
+
+#pass
+{
+     margin: 1%;
+    margin-left: 10.3%;
+    width: 40%;
+    padding: 1.5%;
+}
+#remember
+{
+    margin-top: 1%;
+    margin-left: 5.6%;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.2;
+    font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
+}
+#remember1
+{
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.2;
+    font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
+}
+#remember:checked
+{
+    margin-top: 1%;
+    margin-left: 5.6%;
+
+}
+#forgot
+{
+    font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 21.875px;
+    color: #183247;
+    margin: 2%;
+    margin-left: 5.5%;
+    margin-top: 1%;
+    width: 40%;
+   
+}
+#submit1
+{
+    margin-top: 0.5%;
+    margin-left: 27.5%;
+    width: 15%;
+    padding: 0.9%;
+    background-color: rgb(56, 148, 56);
+    color: white;
+    border: 0.9px solid rgb(33, 36, 33);
+}
+#submit2
+{
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+    width: 15%;
+    padding: 0.9%;
+}
+#line
+{
+    width: 80%;
+    height: 0.2%;
+    background-color: rgb(223, 215, 215);
+    margin: 3%;
+    margin-left: 5%;
+    margin-top: 25%;
+    
+}
+#agent
+{
+    display: flex;
+    flex-direction: row;
+}
+#agentimg
+{
+ width: 6%;                 /*  dummmy space */
+height: 6%;
+margin-left: 5%;
+background-color: black;
+}
+.lgin
+{
+    font-family: Arial, "Helvetica Neue", Helvetica;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+#ligin1
+{
+    color: rgb(56, 97, 15);
+}
+#quest
+{
+    width: 32%;
+    height: 95%;
+    margin: 1%;
+    margin-left: 0%;
+
+
+}
+#signupp
+{
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 700;
+    font-family: Poppins,Helvetica,sans-serif;
+    text-rendering: optimizelegibility;
+    color: #183247;
+    margin-top: 12%;
+    margin-left: 8%;
+}
+#signupbtn
+{
+    margin-left: 8%;
+    margin-top: 4%;
+    padding: 1.6%;
+    font-size: 13px;
+    background-color: rgb(240, 239, 239);
+    border: 0.2px solid grey;
+}
+#parasignup
+{
+    margin-left: 8%;
+    margin-top: 4%;
+    font-size: 17px;
+    line-height: 18px;
+    color: #6f7c87;
+    width: 85%;
+}
+#btn2
+{
+    margin-left: 23%;
+    width: 10%;
+    height: 6%;
+    background-color: rgb(46, 136, 28);
+    color: cornsilk;
+}
+#btn3
+{
+    
+    width: 10%;
+    height: 6%;
+}
+
+              
+#cookies
+{
+    color: #fff;
+    margin-left: 90%;
+}
+
+
+#nnd_line_1st {
+    margin-left: 0.5%;
+}
+
+#login-btn {
+    margin-left: 60%;
+    margin-right: 1%;
+    color: white;
+    width: 20%;
+    padding: 1%;
+    background-color: rgb(2, 184, 117);
+    border: solid 1px #015335;
+    letter-spacing: 1.2px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8%;
+    /* display: none; */
+}
+
+#login-btn:hover {
+    background-color: rgb(44, 158, 116);
+    /* display: none; */
+}
+
+#login-btn2:hover {
+    background-color: rgb(192, 190, 190);
+    /* display: none; */
+}
+
+#login-btn2 {
+    width: 20%;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 1%;
+    padding-top: 1.5%;
+    text-align: center;
+    font-size: 15px;
+    background-color: whitesmoke;
+    color: rgb(66, 54, 54);
+    border: solid 1px #97a9ba;
+    border-radius: 8%;
+    /* display: none; */
+}
+
+#juggad1 {
+    width: 100%;
+
+    display: grid;
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+        /* //overlayEffect */
+
+        #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        #text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
+            font-size: 12px;
+            color: rgb(7, 0, 37);
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+
+        #white-board
+        {
+            background-color:white;
+            padding: 1%;
+        }
+
+#root {
+
+    height: 8vh;
+    background-color: #183247;
+    padding: 2% 10%;
+    border: 0;
+    color: #fff;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#cookies
+{
+    color: #fff;
+    margin-left: 90%;
+}
+
+
+
+
+/* 
+bvgdmkl/v c */
+    </style>
+	
+
+</head>
+<body>
+    
+
+
+    <div id="main">       <!-- main body start -->
+           
+
+            <div id="top">             <!-- heaqding  -->
+                <div id="topbox1">                      
+                    <p>Simplifying Mobility</p> 
+                </div>
+
+				
+
+                <div id="topbox2">         <!-- heaDING Box2 -->
+                   
+                    <p id="abc98">Welcome</p>
+					
+					<div id="juggad1">
+
+						<div id="login-btn"> <p>Login</p></div>
+						<div id="login-btn2"> <p>SignUp</p></div>
+
+					</div>
+
+                </div>
+
+				
+            </div>
+			
+
+			 <div id="voldermart">
+				<button id="abc1">Home</button>
+				<button id="abc2">Solution</button>
+			</div>
+
+
+
+
+            
+
+
+             <div id="displayscreen">
+
+                <div id="dismain">
+
+                    <div id="questionanswer">
+<!-- ............................................................................................................................ -->
+                        
+
+                        <p id="headdd">Sign up for your Simplifying Mobility account</p>
+
+                        <form id="form">
+
+                            <label for="email" id="flnme"> Full name </label>
+                            <input type="text" id="email" placeholder="Your fullname"> <br>
+                            <label for="pass" id="flnme1"> Email </label>
+                            <input type="email" id="pass" placeholder="email adress"> <br>
+                          
+
+                        </form>
+
+                        
+
+                         <div id="line"> <!-- hr to be made  -->   </div> 
+                       
+                        <button id="submit1" >REGISTER</button>
+                        <button id="submit2" >CANCEL</button>
+
+
+<!-- ............................................................................................................................ -->
+                    </div>
+
+                    <div id="quest">
+
+                       
+
+                    </div>
+
+                </div>
+
+
+             </div>
+
+
+
+
+
+            <div id="root">   
+                
+                
+               <div>
+                   <p>Home - Solution</p> 
+               </div>
+
+
+               <!-- fgchu -->
+               <div id="overlay" onclick="off()">
+  							<div id="text">
+								  <div id="white-board">
+<pre>	
+<h2>Why we love Cookies</h2>
+<hr>
+<p>
+   We use cookies to try and give you a better experience in 
+   Freshdesk.</p>
+<p>
+   You can learn more about what kind of cookies we use, why, 
+   and how from our Privacy Policy. If you hate cookies, or are 
+   just on a diet, you can disable them altogether too. Just note 
+   that the Freshdesk service is pretty big on some cookies (we love 
+   the choco-chip ones), and some portions of Freshdesk may not work properly 
+   if you disable cookies.
+</p> 
+<p>
+   We’ll also assume you agree to the way we use cookies and are ok with it 
+   as described in our Privacy Policy, unless you choose to disable them 
+   altogether through your browser.
+</p></pre>
+								  </div>
+							  </div>
+				</div>
+                    <!-- fvhibj -->
+               <div id="cookies">
+                    <p id="end" onclick="on()">Cookies-policies</p>   
+               </div>
+                
+            </div>
+
+
+            <!-- main body end -->
+    </div>
+
+
+
+
+</body>
+</html>
+
+
+
+<script>
+
+var home=document.getElementById("abc1");
+home.addEventListener("click",test1);
+function test1()
+{
+    window.location.href="./index.html";
+}
+
+
+
+
+
+
+var btn3=document.getElementById("submit1");
+btn3.addEventListener("click",submit);
+
+function submit()
+{
+    window.location.href="./index.html";
+}
+
+
+var btn4=document.getElementById("login-btn2");
+btn4.addEventListener("click",submit1);
+
+function submit1()
+{
+    window.location.href="./signup.html";
+}
+var btn5=document.getElementById("login-btn");
+btn5.addEventListener("click",submit3);
+
+function submit3()
+{
+    window.location.href="./login.html";
+}
+
+
+
+
+///////////////////////////////////////////////////
+
+    //overlayEffect
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+
+//////////////////////////////////////////////////////
+
+
+
+</script>

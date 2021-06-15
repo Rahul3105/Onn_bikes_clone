@@ -1,199 +1,424 @@
-const arrOfBikes = [
-  {
-    name: "Bajaj CT 100",
-    free: 249,
-    excess: 2,
-    price: 179,
-    manufacturer: "Bajaj",
-    model: "CT 100",
-    type: "Motorcycle",
-    imgLink: "./showroom/BajajCT100@2x.jpg",
-  },
-  {
-    name: "Bajaj Dominar 400 ABS",
-    free: 300,
-    excess: 4,
-    price: 999,
-    manufacturer: "Bajaj",
-    model: "Dominar 400 ABS",
-    type: "Motorcycle",
-    imgLink: "./showroom/BajajDominar400ABS@2x.jpg",
-  },
-  {
-    name: "KTM Duke 250",
-    free: 264,
-    excess: 4,
-    price: 1099,
-    manufacturer: "KTM",
-    model: "Duke 250",
-    type: "Motorcycle",
-    imgLink: "./showroom/KTMDuke250@2x.jpg",
-  },
-  {
-    name: "Yamaha FZ",
-    free: 293,
-    excess: 2,
-    price: 549,
-    manufacturer: "Yamaha",
-    model: "FZ",
-    type: "Motorcycle",
-    imgLink: "./showroom/YamahaFZ@2x.jpg",
-  },
-  {
-    name: "Honda Navi",
-    free: 225,
-    excess: 2,
-    price: 199,
-    manufacturer: "Honda",
-    model: "Navi",
-    type: "Scooter",
-    imgLink: "./showroom/HondaNavi@2x.jpg",
-  },
-  {
-    name: "Honda DREAM NEO",
-    free: 225,
-    excess: 2,
-    price: 199,
-    manufacturer: "Honda",
-    model: "Dream Neo",
-    type: "Motorcycle",
-    imgLink: "./showroom/HondaCD110@2x.jpg",
-  },
-  {
-    name: "Honda Hornet",
-    free: 288,
-    excess: 2,
-    price: 599,
-    manufacturer: "Honda",
-    model: "Hornet",
-    type: "Motorcycle",
-    imgLink: "./showroom/HondaHornet@2x.jpg",
-  },
-  {
-    name: "Honda Activa",
-    free: 225,
-    excess: 2,
-    price: 249,
-    manufacturer: "Honda",
-    model: "Activa",
-    type: "Scooter",
-    imgLink: "./showroom/HondaActiva4G@2x.jpg",
-  },
-  {
-    name: "Honda Dio",
-    free: 217,
-    excess: 2,
-    price: 289,
-    manufacturer: "Honda",
-    model: "Dio",
-    type: "Scooter",
-    imgLink: "./showroom/HondaDio@2x.jpg",
-  },
-  {
-    name: "Honda Livo",
-    free: 217,
-    excess: 2,
-    price: 289,
-    manufacturer: "Honda",
-    model: "Livo",
-    type: "Motorcycle",
-    imgLink: "./showroom/HondaLivo@2x.jpg",
-  },
-  {
-    name: "Bajaj Pulsar 150",
-    free: 205,
-    excess: 2,
-    price: 399,
-    manufacturer: "Bajaj",
-    model: "Pulsar",
-    type: "Motorcycle",
-    imgLink: "./showroom/BajajPulsar150@2x.jpg",
-  },
-  {
-    name: "Bajaj Avenger 220 Cruise",
-    free: 293,
-    excess: 2.5,
-    price: 549,
-    manufacturer: "Bajaj",
-    model: "Avenger 220 Cruise",
-    type: "Motorcycle",
-    imgLink: "./showroom/BajajAvengerCruise220@2x.jpg",
-  },
-  {
-    name: "Bajaj Avenger 220 Street",
-    free: 293,
-    excess: 2.5,
-    price: 549,
-    manufacturer: "Bajaj",
-    model: "Avenger 220 Street",
-    type: "Motorcycle",
-    imgLink: "./showroom/BajajAvengerStreet220@2x.jpg",
-  },
-  {
-    name: "Royal Enfield 350 Classic",
-    free: 274,
-    excess: 3,
-    price: 799,
-    manufacturer: "Royal Enfield",
-    model: "350 Classic",
-    type: "Motorcycle",
-    imgLink: "./showroom/RoyalEnfieldClassic350@2x.jpg",
-  },
-  {
-    name: "Royal Enfield 350 Thunderbird",
-    free: 272,
-    excess: 3,
-    price: 849,
-    manufacturer: "Royal Enfield",
-    model: "350 Thunderbird",
-    type: "Motorcycle",
-    imgLink: "./showroom/RoyalEnfieldThunderbird350@2x.jpg",
-  },
-  {
-    name: "Bajaj Pulsar 180",
-    free: 202,
-    excess: 2,
-    price: 449,
-    manufacturer: "Bajaj",
-    model: "Pulsar",
-    type: "Motorcycle",
-    imgLink: "./showroom/BajajPulsar180@2x.jpg",
-  },
-  {
-    name: "Bajaj Pulsar NS 160",
-    free: 71,
-    excess: 2,
-    price: 139,
-    manufacturer: "Bajaj",
-    model: "Pulsar",
-    type: "Motorcycle",
-    imgLink: "./showroom/BajajPulsarNS160@2x.jpg",
-  },
+var hr = 1;
 
+function dayrating() {
+  function diff_hours(dt2, dt1) {
+    var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+    diff /= 60 * 60;
+    return Math.abs(Math.round(diff));
+  }
+  let calender = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let d1 = JSON.parse(localStorage.getItem("startDateObj"));
+  let d2 = JSON.parse(localStorage.getItem("endDateObj"));
+  if (d2 == null) {
+    d2 = {
+      date: d1.date,
+      month: d1.month,
+      time: d1.time,
+      weekDay: d1.weekDay,
+      year: d1.year,
+    };
+
+    let x = calender.indexOf(d1.month) + 1;
+    if (x == calender.length) {
+      x = 0;
+      d2.month = calender[x];
+    } else {
+      d2.month = calender[x];
+    }
+    localStorage.setItem("30daysdate", JSON.stringify(d2));
+  }
+
+  dt1 = new Date(`${d1.month} ${d1.date}, ${d1.year} ${d1.time}`);
+  dt2 = new Date(`${d2.month} ${d2.date}, ${d2.year} ${d2.time}`);
+
+  hr = diff_hours(dt1, dt2);
+  if (hr % 720 == 0) {
+    hr = Math.round(hr / 3);
+  } else if (hr % 360 == 0) {
+    hr = Math.round(hr / 5);
+  } else if (hr % 240 == 0) {
+    hr = Math.round(hr / 7);
+  } else if (hr % 24 == 0) {
+    hr = Math.round(hr / 6);
+  }
+  bikesobject();
+}
+dayrating();
+
+const arrofLocation = [
   {
-    name: "Bajaj Pulsar NS 200",
-    free: 71,
-    excess: 2,
-    price: 139,
-    manufacturer: "Bajaj",
-    model: "Pulsar",
-    type: "Motorcycle",
-    imgLink: "./showroom/BajajPulsarNS220@2x.jpg",
+    city: "BENGALURU",
+    location: "Silk Board SRCM",
+    timing: "7 AM - 9 PM",
+    reference: "Scrum Heartfulness Meditation Centre",
+    address:
+      "28, Hosur Road, Madiwala, Balaji Nagar, BTM Layout 1, Central Silk Board Colony, Stage 2, BTM Layout, BENGALURU, Karnataka 560068",
   },
   {
-    name: "Bajaj Pulsar 135 LS",
-    free: 71,
-    excess: 2,
-    price: 139,
-    manufacturer: "Bajaj",
-    model: "Pulsar",
-    type: "Motorcycle",
-    imgLink: "./showroom/BajajPulsar135@2x.jpg",
+    city: "BENGALURU",
+    location: "Yelahanka",
+    timing: "7 AM - 8 PM",
+    reference: "Green Trends Salon",
+    address:
+      "200/1, KV SR Layout, Kattigenahalli, Bagalur Main Road, Next to Reliance Fresh, BENGALURU - 560063",
+  },
+  {
+    city: "BENGALURU",
+    location: "Electronic City",
+    timing: "7 AM - 8 PM",
+    reference: "Next to paradise Biryani",
+    address:
+      "#634/472, Doddathogur, Velankani Gate, Electronic City Phase 1, Electronics City Phase,BENGALURU 560100",
+  },
+  {
+    city: "BENGALURU",
+    location: "Kundalahalli",
+    timing: "7 AM - 8 PM",
+    reference: "Kundalahalli gate signal",
+    address:
+      "Munni Reddy Complex, Varthur Main Road, Opposite Nadhini Wines, Silver Springs Layout, Kundalahalli, BENGALURU - 560066",
+  },
+  {
+    city: "BENGALURU",
+    location: "Koramangala",
+    timing: "9 AM - 8 PM",
+    reference: "Opp Big Bazaar, Next to Raja",
+    address:
+      "No 150/1 and 2, Hosur Main Road, Opposite Big Bazaar, Next to Raja Honda, Koramangala, BENGALURU - 560095",
+  },
+  {
+    city: "HYDERABAD",
+    location: "Madhapur",
+    timing: "9 AM - 7 PM",
+    reference: "Below Vijaya Lakshmi supermark",
+    address: "Plot No.539, Ayyappa Society, 100ft Road, Madhapur, Hyderabad",
+  },
+  {
+    city: "HYDERABAD",
+    location: "RAIDURGAM POLICE COMMISSIONARATE",
+    timing: "9 AM - 7 PM",
+    reference: "OYO 3607 Apartment",
+    address:
+      "OYO 3607 Apartment Gachibowli under Stilt parking. Plot No 33 & 34, Udaya Elite, Beside Care Hospital lane, Besides Cyberabad Police commissionerate,Gachibowli, Hyderabad, Telangana 500032",
+  },
+  {
+    city: "HYDERABAD",
+    location: "Gachibowli",
+    timing: "9 AM - 7 PM",
+    reference: "Opp. to Maruti True Value",
+    address:
+      "OYO 3607 Apartment Gachibowli under Stilt parking. Plot No 33 & 34, Udaya Elite, Beside Care Hospital lane, Besides Cyberabad Police commissionerate,Gachibowli, Hyderabad, Telangana 500032",
+  },
+  {
+    city: "HYDERABAD",
+    location: "Secunderabad",
+    timing: "9 AM - 7 PM",
+    reference: "Opposite to Yashoda Hospital",
+    address:
+      "Opposite to Yeshoda Hospital Parking Alexander Rd, Kummari Guda, Shivaji Nagar, Secunderabad, Telangana 500003.",
+  },
+  {
+    city: "HYDERABAD",
+    location: "Dilsukhnagar",
+    timing: "9 AM - 7 PM",
+    reference: "Beside Income Tax Office",
+    address:
+      "16-2-741/29 & 37, Anushka Towers, Bank colony, New malakpet, Dilsukhnagar. LandMark:- Beside DTDC Courier & Oasis Reproductive Hospital.",
+  },
+  {
+    city: "HYDERABAD",
+    location: "Ameerpet",
+    timing: "9 AM - 7 PM",
+    reference: "Aditya Trade center",
+    address:
+      "Swati Manor, Beside Aditya Trade center, Kumar Basti, Ameerpet, Hyderabad, Telangana 500082",
+  },
+  {
+    city: "HYDERABAD",
+    location: "Chanda Nagar",
+    timing: "9 AM - 7 PM",
+    reference: "Fitness Secret Gym",
+    address:
+      "Akshita Spaces, Second Floor, Plot # 194p, Rajendar Reddy Nagar Colony, Ameenpur Road, Chanda Nagar, Hyd -500050.",
+  },
+  {
+    city: "JAIPUR",
+    location: "New Aatish Market Metro station",
+    timing: "8 AM - 5 PM",
+    reference: "Parking of New Aatish Market",
+    address:
+      "New Aatish Market Metro station, Gurjar ki Thadi Underpass, Sultan Nagar, Shanthi Nagar,Near Metro Station, Mansarovar, Jaipur, Rajasthan 302020",
+  },
+  {
+    city: "JAIPUR",
+    location: "GT-Gaurav Tower",
+    timing: "8 AM - 5 PM",
+    reference: "Gaurav Tower",
+    address:
+      "Gold Souk Grand Mall (Near Hotel Lalit, Basement 2 Parking), Jaipur, Rajasthan 302001",
+  },
+  {
+    city: "JAIPUR",
+    location: "Gold Souk Grand Mall",
+    timing: "8 AM - 5 PM",
+    reference: "Near Jawahar Circle",
+    address:
+      "Gold Souk Grand Mall (Near Hotel Lalit, Basement 2 Parking), Jaipur, Rajasthan 302001",
+  },
+  {
+    city: "JAIPUR",
+    location: "C Scheme",
+    timing: "8 AM - 5 PM",
+    reference: "Man Upasana",
+    address:
+      "Man Upasana C-44 Sardar Patel Marg Panch Batti, C Scheme, Ashok Nagar Jaipur, Rajasthan 302001",
+  },
+  {
+    city: "JAIPUR",
+    location: "Mansarovar- Shipra Path",
+    timing: "8 AM - 5 PM",
+    reference: "Opposite Reil house, Mansarova",
+    address:
+      "34/17, Shipra path,Opposite Reil house, Mansarovar, Jaipur-302020",
+  },
+  {
+    city: "GURUGRAM",
+    location: "Bike Surgeon",
+    timing: "9 AM - 9 PM",
+    reference: "Gurucharan palace, district court road, Near Rajiv Chowk",
+    address: "51/19, Bhim nagar, New Railway Rd, Gurugram, HR-122001",
+  },
+  {
+    city: "MYSURU",
+    location: "Jaganmohan Palace",
+    timing: "9 AM - 9 PM",
+    reference: "Near Mysore Palace",
+    address:
+      "425 - 426, Deshika Road, Opp. Jaganmohan Palace, Subbarayanakere, Chamrajpura, Mysuru, Karnataka 570024",
+  },
+  {
+    city: "UDAIPUR",
+    location: "Udaipole",
+    timing: "8 AM - 5 PM",
+    reference: "Near Hotel Shree Narayana",
+    address:
+      "Shop NO-6, Arihant Plaza ,Opposite ICICI Bank Udaipole ,Udaipur-313001",
   },
 ];
 
-function bikes() {
+localStorage.setItem("rideslocations", JSON.stringify(arrofLocation));
+
+function bikesobject() {
+  const arrOfBikes = [
+    {
+      name: "Bajaj CT 100",
+      free: 10 * hr,
+      excess: 2,
+      price: 8 * hr,
+      manufacturer: "Bajaj",
+      model: "CT 100",
+      type: "Motorcycle",
+      imgLink: "./showroom/BajajCT100@2x.jpg",
+    },
+    {
+      name: "Bajaj Dominar 400 ABS",
+      free: 13 * hr,
+      excess: 4,
+      price: 42 * hr,
+      manufacturer: "Bajaj",
+      model: "Dominar 400 ABS",
+      type: "Motorcycle",
+      imgLink: "./showroom/BajajDominar400ABS@2x.jpg",
+    },
+    {
+      name: "KTM Duke 250",
+      free: 11 * hr,
+      excess: 4,
+      price: 46 * hr,
+      manufacturer: "KTM",
+      model: "Duke 250",
+      type: "Motorcycle",
+      imgLink: "./showroom/KTMDuke250@2x.jpg",
+    },
+    {
+      name: "Yamaha FZ",
+      free: 12 * hr,
+      excess: 2,
+      price: 23 * hr,
+      manufacturer: "Yamaha",
+      model: "FZ",
+      type: "Motorcycle",
+      imgLink: "./showroom/YamahaFZ@2x.jpg",
+    },
+    {
+      name: "Honda Navi",
+      free: 9 * hr,
+      excess: 2,
+      price: 8 * hr,
+      manufacturer: "Honda",
+      model: "Navi",
+      type: "Scooter",
+      imgLink: "./showroom/HondaNavi@2x.jpg",
+    },
+    {
+      name: "Honda DREAM NEO",
+      free: 9 * hr,
+      excess: 2,
+      price: 8 * hr,
+      manufacturer: "Honda",
+      model: "Dream Neo",
+      type: "Motorcycle",
+      imgLink: "./showroom/HondaCD110@2x.jpg",
+    },
+    {
+      name: "Honda Hornet",
+      free: 12 * hr,
+      excess: 2,
+      price: 25 * hr,
+      manufacturer: "Honda",
+      model: "Hornet",
+      type: "Motorcycle",
+      imgLink: "./showroom/HondaHornet@2x.jpg",
+    },
+    {
+      name: "Honda Activa",
+      free: 9 * hr,
+      excess: 2,
+      price: 10 * hr,
+      manufacturer: "Honda",
+      model: "Activa",
+      type: "Scooter",
+      imgLink: "./showroom/HondaActiva4G@2x.jpg",
+    },
+    {
+      name: "Honda Dio",
+      free: 9 * hr,
+      excess: 2,
+      price: 12 * hr,
+      manufacturer: "Honda",
+      model: "Dio",
+      type: "Scooter",
+      imgLink: "./showroom/HondaDio@2x.jpg",
+    },
+    {
+      name: "Honda Livo",
+      free: 9 * hr,
+      excess: 2,
+      price: 12 * hr,
+      manufacturer: "Honda",
+      model: "Livo",
+      type: "Motorcycle",
+      imgLink: "./showroom/HondaLivo@2x.jpg",
+    },
+    {
+      name: "Bajaj Pulsar 150",
+      free: 8 * hr,
+      excess: 2,
+      price: 17 * hr,
+      manufacturer: "Bajaj",
+      model: "Pulsar",
+      type: "Motorcycle",
+      imgLink: "./showroom/BajajPulsar150@2x.jpg",
+    },
+    {
+      name: "Bajaj Avenger 220 Cruise",
+      free: 12 * hr,
+      excess: 2.5,
+      price: 23 * hr,
+      manufacturer: "Bajaj",
+      model: "Avenger 220 Cruise",
+      type: "Motorcycle",
+      imgLink: "./showroom/BajajAvengerCruise220@2x.jpg",
+    },
+    {
+      name: "Bajaj Avenger 220 Street",
+      free: 12 * hr,
+      excess: 2.5,
+      price: 23 * hr,
+      manufacturer: "Bajaj",
+      model: "Avenger 220 Street",
+      type: "Motorcycle",
+      imgLink: "./showroom/BajajAvengerStreet220@2x.jpg",
+    },
+    {
+      name: "Royal Enfield 350 Classic",
+      free: 11 * hr,
+      excess: 3,
+      price: 33 * hr,
+      manufacturer: "Royal Enfield",
+      model: "350 Classic",
+      type: "Motorcycle",
+      imgLink: "./showroom/RoyalEnfieldClassic350@2x.jpg",
+    },
+    {
+      name: "Royal Enfield 350 Thunderbird",
+      free: 11 * hr,
+      excess: 3,
+      price: 35 * hr,
+      manufacturer: "Royal Enfield",
+      model: "350 Thunderbird",
+      type: "Motorcycle",
+      imgLink: "./showroom/RoyalEnfieldThunderbird350@2x.jpg",
+    },
+    {
+      name: "Bajaj Pulsar 180",
+      free: 9 * hr,
+      excess: 2,
+      price: 19 * hr,
+      manufacturer: "Bajaj",
+      model: "Pulsar",
+      type: "Motorcycle",
+      imgLink: "./showroom/BajajPulsar180@2x.jpg",
+    },
+    {
+      name: "Bajaj Pulsar NS 160",
+      free: 3 * hr,
+      excess: 2,
+      price: 6 * hr,
+      manufacturer: "Bajaj",
+      model: "Pulsar",
+      type: "Motorcycle",
+      imgLink: "./showroom/BajajPulsarNS160@2x.jpg",
+    },
+
+    {
+      name: "Bajaj Pulsar NS 200",
+      free: 3 * hr,
+      excess: 2,
+      price: 6 * hr,
+      manufacturer: "Bajaj",
+      model: "Pulsar",
+      type: "Motorcycle",
+      imgLink: "./showroom/BajajPulsarNS220@2x.jpg",
+    },
+    {
+      name: "Bajaj Pulsar 135 LS",
+      free: 3 * hr,
+      excess: 2,
+      price: 6 * hr,
+      manufacturer: "Bajaj",
+      model: "Pulsar",
+      type: "Motorcycle",
+      imgLink: "./showroom/BajajPulsar135@2x.jpg",
+    },
+  ];
   localStorage.setItem("bikes", JSON.stringify(arrOfBikes));
+}
+
+function bikes() {
   let arr = JSON.parse(localStorage.getItem("bikes"));
   let parent = document.querySelector(".bike-showcase");
   parent.innerHTML = "";
@@ -223,6 +448,9 @@ function bikes() {
     pprice.innerHTML = `₹${e.price}`;
     pprice.setAttribute("class", "price");
     btn.innerHTML = "BOOK NOW";
+    btn.onclick = function () {
+      fav(e);
+    };
     pricenbooknowdiv.setAttribute("class", "price-N-bookNow");
     pricenbooknowdiv.append(pprice, btn);
     noclassdiv.append(bikeimgdiv, pname, freenexcessdiv, pricenbooknowdiv);
@@ -230,6 +458,102 @@ function bikes() {
   });
 }
 bikes();
+
+// function for booknow button
+function fav(e) {
+  showSelectPickupOverlay();
+  let selectedbike = {
+    name: e.name,
+    free: e.free,
+    excess: e.excess,
+    price: e.price,
+    manufacturer: e.manufacturer,
+    model: e.model,
+    type: e.type,
+    imgLink: e.imgLink,
+  };
+
+  let bookedbike = localStorage.getItem("selectedbike");
+
+  if (bookedbike == null) {
+    bookedbike = [];
+  } else {
+    localStorage.removeItem("selectedbike");
+    bookedbike = [];
+  }
+  bookedbike.push(selectedbike);
+  localStorage.setItem("bookedbike", JSON.stringify(selectedbike));
+
+  pickup();
+}
+
+function showSelectPickupOverlay() {
+  let selectPickupOverlay = document.querySelector(".selectPickupOverlay");
+  selectPickupOverlay.classList.remove("hide");
+}
+// document.body.style.overflow = "hidden";
+// function for location box popup
+function pickup() {
+  let arr = JSON.parse(localStorage.getItem("rideslocations"));
+  let parent = document.getElementById("expand");
+  let currentlocation = document.getElementById("currentlocation").innerText;
+  parent.innerHTML = "";
+  /*location: "Chanda Nagar",
+  timing: "9 AM - 7 PM",
+  reference: "Fitness Secret Gym",
+  address */
+  arr.forEach((e) => {
+    if (currentlocation === e.city) {
+      let parent = document.getElementById("expand");
+      let div = document.createElement("div");
+      let plocation = document.createElement("p");
+      let ptiming = document.createElement("p");
+      let preference = document.createElement("p");
+      plocation.innerHTML = e.location;
+      ptiming.innerHTML = `START TIMING: ${e.timing}`;
+      preference.innerHTML = e.reference;
+      let bottomOfLocationsDiv = document.createElement("div");
+      let p = document.createElement("p");
+      p.innerHTML = "5 Available";
+      bottomOfLocationsDiv.classList.add("bike_available");
+      let arrowIcon = document.createElement("i");
+      arrowIcon.classList.add("fas", "fa-arrow-right");
+      bottomOfLocationsDiv.append(p, arrowIcon);
+      div.onclick = function () {
+        decidedlocation(e);
+      };
+      plocation.classList.add("plocation");
+      ptiming.classList.add("ptiming");
+      preference.classList.add("preference");
+      div.append(plocation, ptiming, preference, bottomOfLocationsDiv);
+      div.setAttribute("class", "new");
+      div.style.cursor = "pointer";
+      parent.append(div);
+    }
+  });
+}
+
+//function for clicking on location box
+function decidedlocation(e) {
+  let decidedlocation = JSON.parse(localStorage.getItem("bookedbike"));
+  decidedlocation.city = e.city;
+  decidedlocation.location = e.location;
+  decidedlocation.timing = e.timing;
+  decidedlocation.reference = e.reference;
+  decidedlocation.address = e.address;
+
+  let finallocation = localStorage.getItem("finale");
+
+  if (finallocation == null) {
+    finallocation = [];
+  } else {
+    localStorage.removeItem("finale");
+    finallocation = [];
+  }
+  finallocation.push(decidedlocation);
+  localStorage.setItem("finale", JSON.stringify(finallocation));
+  window.open("../checkout/checkout.html");
+}
 
 //manufucturer sorting
 function manufacturer() {
@@ -293,6 +617,9 @@ function manufacturer() {
             pprice.innerHTML = `₹${e.price}`;
             pprice.setAttribute("class", "price");
             btn.innerHTML = "BOOK NOW";
+            btn.onclick = function () {
+              fav(e);
+            };
             pricenbooknowdiv.setAttribute("class", "price-N-bookNow");
             pricenbooknowdiv.append(pprice, btn);
             noclassdiv.append(
@@ -347,7 +674,6 @@ function vehicle(id) {
     }
 
     if (x == 0) {
-      localStorage.setItem("bikes", JSON.stringify(arrOfBikes));
       let arr = JSON.parse(localStorage.getItem("bikes"));
       let parent = document.querySelector(".bike-showcase");
       arr.forEach((e) => {
@@ -377,6 +703,9 @@ function vehicle(id) {
           pprice.innerHTML = `₹${e.price}`;
           pprice.setAttribute("class", "price");
           btn.innerHTML = "BOOK NOW";
+          btn.onclick = function () {
+            fav(e);
+          };
           pricenbooknowdiv.setAttribute("class", "price-N-bookNow");
           pricenbooknowdiv.append(pprice, btn);
           noclassdiv.append(
@@ -420,6 +749,9 @@ function vehicle(id) {
             pprice.innerHTML = `₹${e.price}`;
             pprice.setAttribute("class", "price");
             btn.innerHTML = "BOOK NOW";
+            btn.onclick = function () {
+              fav(e);
+            };
             pricenbooknowdiv.setAttribute("class", "price-N-bookNow");
             pricenbooknowdiv.append(pprice, btn);
             noclassdiv.append(
@@ -479,6 +811,9 @@ function model() {
             pprice.innerHTML = `₹${e.price}`;
             pprice.setAttribute("class", "price");
             btn.innerHTML = "BOOK NOW";
+            btn.onclick = function () {
+              fav(e);
+            };
             pricenbooknowdiv.setAttribute("class", "price-N-bookNow");
             pricenbooknowdiv.append(pprice, btn);
             noclassdiv.append(
@@ -589,6 +924,7 @@ function showContactPopup() {
 
 // this is for ride now collase 30 days or etc wala
 function showrideNowCollapse() {
+  localStorage.removeItem("endDateObj");
   let btn = document.getElementsByClassName("collapse-btn-rideNow")[0];
   btn.classList.toggle("active");
 }
@@ -1121,6 +1457,8 @@ function showRideNowDateAndTime(para) {
 // now data is going on ride now page
 
 function checkStartAndEndDateCont() {
+  dayrating();
+  bikes();
   let month = [
     "Jan",
     "Feb",

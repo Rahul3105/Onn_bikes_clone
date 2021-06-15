@@ -107,7 +107,7 @@ header nav ul li a img {
   height: 100%;
   margin: 0 auto;
   float: right;
-  padding: 15px 20px;
+  padding: 1.5rem 2rem;
 }
 /* .otpSec css starts form here */
 .otpSec > input {
@@ -117,8 +117,8 @@ header nav ul li a img {
   background: #fff;
   border: none;
   border-bottom: 1px solid #e0e0e0;
-  height: 34px;
-  padding: 6px 12px;
+  height: 3.4rem;
+  padding: 0.6rem 1.2rem;
   margin-top: 20%;
   margin-bottom: 5%;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -126,8 +126,8 @@ header nav ul li a img {
 
 .otpSec > .otpInfo {
   font-weight: 300;
-  line-height: 28px;
-  font-size: 14px;
+  line-height: 2.8rem;
+  font-size: 1.4rem;
 }
 .otpSec > input:focus {
   border-bottom: 1px solid rgb(29, 115, 226);
@@ -139,25 +139,25 @@ header nav ul li a img {
   background-color: white;
   border: 1px solid #e0e0e0;
   letter-spacing: 1px;
-  padding: 6px 12px;
-  font-size: 14px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.4rem;
   font-weight: 400;
   cursor: pointer;
   border-radius: 2px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  height: 34px;
+  height: 3.4rem;
 }
 .otpSec > button:hover {
   background-color: #e0e0e0;
 }
 .loginPop > .formSec > .heading,
 .otpSec > .otp_heading {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #878787;
-  letter-spacing: 3px;
+  letter-spacing: 0.3rem;
   font-weight: 300;
   font-family: Montserrat;
-  padding: 10px 0;
+  padding: 1rem 0;
 }
 .loginPop > .formSec > .heading > span {
   cursor: pointer;
@@ -172,7 +172,7 @@ header nav ul li a img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 25px 0;
+  margin: 2.5rem 0;
 }
 .fb_google > div {
   width: 48%;
@@ -182,7 +182,7 @@ header nav ul li a img {
   width: 100%;
   height: 100%;
   position: relative;
-  padding: 0 43px;
+  padding: 0 4.3rem;
   border: none;
   text-align: center;
   font-style: italic;
@@ -195,7 +195,7 @@ header nav ul li a img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 34px;
+  width: 3.4rem;
   height: 100%;
 }
 .fb_google > .fbLogin > button {
@@ -208,8 +208,8 @@ header nav ul li a img {
   border-right: #364e92 1px solid;
   background: url(images/login/icon_facebook_png.png) 7px 9px no-repeat;
   background-size: auto;
-  padding: 0 17px;
-  background-size: 17px;
+  padding: 0 1.7rem;
+  background-size: 1.7rem;
 }
 
 .fb_google > .googleLogin > button {
@@ -222,8 +222,8 @@ header nav ul li a img {
     7px 9px no-repeat;
   background-color: rgba(0, 0, 0, 0);
   background-size: auto;
-  padding: 0 17px;
-  background-size: 17px;
+  padding: 0 1.7rem;
+  background-size: 1.7rem;
 }
 .divider {
   position: relative;
@@ -235,14 +235,14 @@ header nav ul li a img {
   border-radius: 50%;
   color: #666;
   position: absolute;
-  top: -15px;
-  width: 30px;
-  height: 30px;
+  top: -1.5rem;
+  width: 3rem;
+  height: 3rem;
   left: 50%;
   border: 1px solid #ccc;
   text-align: center;
   transform: translateX(-50%);
-  line-height: 28px;
+  line-height: 2.8rem;
 }
 
 .formSec > #login_form > .inputCont > input,
@@ -253,7 +253,7 @@ header nav ul li a img {
   background: #fff;
   border: none;
   border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   font-size: 1.4rem;
 }
 .formSec > form input::placeholder {
@@ -273,7 +273,7 @@ header nav ul li a img {
 .formSec > form > .login-Btn {
   font-size: 1.8rem;
   height: auto;
-  padding: 8px 0;
+  padding: 0.8rem 0;
   outline: 0;
   border: none;
   color: #fff;
@@ -307,7 +307,7 @@ header nav ul li a img {
   width: 47%;
 }
 #signup_form > div {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 }
 #signup_form input {
   margin-bottom: 1px;
@@ -327,7 +327,7 @@ header nav ul li a img {
   width: 16rem;
   background-color: white;
   color: #1e2d51;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 400;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 3px;
@@ -367,8 +367,8 @@ header nav ul li a img {
   text-align: center;
 }
 .myAccount > .left-side > .biker-icon {
-  width: 110px;
-  height: 110px;
+  width: 11rem;
+  height: 11rem;
   background-position: -8379px 0;
   margin: auto;
   margin-top: 50%;
@@ -379,30 +379,30 @@ header nav ul li a img {
   margin-bottom: 0;
   color: #1d2d51;
   font-weight: 500;
-  font-size: 21px;
+  font-size: 2.1rem;
 }
 .myAccount .left-side .user-mail {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   color: #1d2d51;
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 500;
 }
 .myAccount .left-side .onn-credits {
-  font-size: 14px;
+  font-size: 1.4rem;
   margin: 0;
   font-weight: 500;
 }
 .myAccount .left-side hr {
-  margin-bottom: 25px;
+  margin-bottom: 2.5rem;
 }
 .myAccount .left-side button {
   display: block;
   width: 100%;
-  height: 40px;
+  height: 4rem;
   border: none;
   outline: none;
   color: #1d2d51;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 500;
   background-color: white;
   text-align: start;
@@ -441,7 +441,7 @@ header nav ul li a img {
   margin: auto;
   box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
   text-align: center;
-  padding: 73px 10px;
+  padding: 7.3rem 1rem;
   color: red;
 }
 /* .right-side your profile */
@@ -453,15 +453,15 @@ header nav ul li a img {
 }
 .yourProfileCont .edit-account,
 .change-password {
-  padding: 16px;
+  padding: 1.6rem;
   box-shadow: 0 0 1px rgba(31, 31, 31, 0.5);
   min-height: 50%;
   position: relative;
 }
 .yourProfileCont .change-password {
   margin-top: 4%;
-  max-height: 250px;
-  min-height: 200px;
+  max-height: 25rem;
+  min-height: 20rem;
 }
 .change-password input,
 .edit-account input,
@@ -471,7 +471,7 @@ header nav ul li a img {
   border: none;
   float: left;
   border-bottom: 1px solid #c3c1c1;
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 300;
   letter-spacing: 0.7px;
   width: 44%;
@@ -514,14 +514,14 @@ header nav ul li a img {
   font-size: 14px;
 }
 .right-side .removePencilIcon {
-  width: 23px;
-  height: 23px;
+  width: 2.3rem;
+  height: 2.3rem;
   background-position: -5663px 0;
   background-image: url(images/covid_update/cross.png);
   position: absolute;
-  right: 34px;
-  top: 22px;
-  font-size: 18px;
+  right: 3.4rem;
+  top: 2.2rem;
+  font-size: 1.8rem;
 }
 .removeMyAccount {
   right: -2%;
@@ -530,7 +530,8 @@ header nav ul li a img {
 
 .selectCity > .removeSelectCity,
 .loginPop > .loginPopRemove,
-.removeMyAccount {
+.removeMyAccount,
+.selctPickupRemove {
   position: absolute;
   border-radius: 50%;
   width: 3.3rem;
@@ -740,10 +741,10 @@ header nav ul li a img {
 .calender_timing .availableTimings {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 .calender_timing .availableTimings div {
-  padding: 10px 5px;
+  padding: 1rem 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -772,8 +773,8 @@ header nav ul li a img {
 /* ride now original css starts from here  */
 .filter-bar {
   margin-top: 1.8rem;
-  width: 205px;
-  height: 330px;
+  width: 20.5rem;
+  height: 33rem;
   background-color: white;
   box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
   float: left;
@@ -782,12 +783,12 @@ header nav ul li a img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 45px;
-  font-size: 16px;
+  height: 4.5rem;
+  font-size: 1.6rem;
   padding: 0 1rem;
 }
 .filter-bar .filter-heading a {
-  font-size: 11px;
+  font-size: 1.1rem;
   text-decoration: underline;
   color: #337ab7;
 }
@@ -797,15 +798,16 @@ header nav ul li a img {
   padding-top: 4%;
   padding-left: 4%;
 }
+
 .filter-bar .manufacturer-checkbox-cont,
 .model-checkbox-cont,
 .vehicle-checkbox-cont {
-  min-height: 20px;
+  min-height: 2rem;
   width: 100%;
   overflow-y: scroll;
-  max-height: 75px;
-  padding-left: 20px;
-  line-height: 20px;
+  max-height: 7.5rem;
+  padding-left: 2rem;
+  line-height: 2rem;
   font-size: 1.5rem;
   font-weight: 400;
 }
@@ -816,11 +818,10 @@ header nav ul li a img {
 }
 
 .save-more {
-  /* border: 1px solid lime; */
-  width: 250px;
+  width: 25rem;
   margin: auto;
-  margin-top: 40px;
-  font-size: 15px;
+  margin-top: 4rem;
+  font-size: 1.5rem;
   color: #1e2d51;
   font-weight: 600;
   display: flex;
@@ -829,8 +830,8 @@ header nav ul li a img {
 .save-more .calender-icon {
   background-color: rgb(235, 127, 35);
   margin-right: 3%;
-  width: 35px;
-  height: 35px;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -845,8 +846,8 @@ header nav ul li a img {
   float: right;
   margin-top: 1.8rem;
   width: 82%;
-  margin-right: 12px;
-  height: 425px;
+  margin-right: 1.2rem;
+  height: 42.5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   overflow-y: scroll;
@@ -855,10 +856,10 @@ header nav ul li a img {
   height: 70%;
   background-color: white;
   box-shadow: 0 0 2px #dddfe0, 0 0 2px #dddfe0;
-  height: 300px;
-  margin: 10px 13px;
-  padding: 0 15px;
-  line-height: 20px;
+  height: 30rem;
+  margin: 1rem 1.3rem;
+  padding: 0 1.5rem;
+  line-height: 2rem;
   position: relative;
   transition: 0.5s;
 }
@@ -888,7 +889,7 @@ header nav ul li a img {
   height: 57%;
 }
 .bike-showcase img {
-  width: 200px;
+  width: 20rem;
 }
 .bike-showcase .bike-name {
   color: rgb(30, 45, 81);
@@ -898,22 +899,22 @@ header nav ul li a img {
 .free-N-excess,
 .price-N-bookNow {
   display: flex;
-  margin: 11px 0;
-  font-size: 13px;
+  margin: 1.1rem 0;
+  font-size: 1.3rem;
   color: #a2a2a2;
 }
 .free-N-excess .excess {
-  margin-left: 17px;
+  margin-left: 1.7rem;
 }
 .price-N-bookNow .price {
-  font-size: 21px;
+  font-size: 2.1rem;
   color: #3c3d40;
   border-bottom: 2px solid #d4d4d4;
-  height: 47px;
-  width: 80px;
-  line-height: 46px;
+  height: 4.7rem;
+  width: 8rem;
+  line-height: 4.6rem;
   text-align: center;
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 .price-N-bookNow button {
   background-color: #1e2d51;
@@ -921,8 +922,196 @@ header nav ul li a img {
   text-align: center;
   color: #fff;
   font-weight: 500;
-  height: 47px;
+  height: 4.7rem;
   width: 50%;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.selectPickupOverlay {
+  background-color: rgba(0, 0, 0, 0.507);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.selectPickup {
+  position: relative;
+  min-width: 60%;
+  max-width: 70%;
+  margin: auto;
+  margin-top: 2%;
+  padding: 2.5rem 0;
+  background-color: white;
+  border-radius: 5px;
+}
+.selctPickupRemove {
+  right: -15px;
+  top: -15px;
+}
+.selectPickup > p {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.selectPickup > hr {
+  color: rgba(216, 207, 207, 0.452);
+  margin-bottom: 2rem;
+}
+#expand {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+}
+
+.new {
+  border-radius: 6px;
+  position: relative;
+  width: 24rem;
+  margin: 1.4rem 1.5rem 0.8rem;
+  height: 14.3rem;
+  padding-top: 0.4rem;
+  background-color: rgb(247, 247, 247);
+  cursor: pointer;
+  color: black;
+  transition: all 0.2s ease-in-out;
+  background-color: rgb(247, 247, 247);
+}
+.new:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+.new .plocation {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2% 5%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+  color: #525758;
+}
+.new .ptiming {
+  margin: 2% 5%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+  color: #525758;
+  padding-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.new .preference {
+  margin: 1% 5%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+  color: #525758;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.new .bike_available {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  background: rgb(0, 180, 104);
+  color: white;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 0 5%;
+}
+/* responsive css starts from here */
+
+@media only screen and (max-width: 1285px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .bike-showcase {
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1045px) {
+  .bike-showcase {
+    width: 78%;
+  }
+}
+@media only screen and (max-width: 979px) {
+  html {
+    font-size: 58%;
+  }
+  .rideNow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 70%;
+    height: 17rem;
+    background-color: transparent;
+  }
+  .rideNow > div {
+    width: 100%;
+    height: 5rem;
+    border: 0.8px solid rgba(173, 169, 169, 0.185);
+    background-color: white;
+  }
+  .rideNowBtn {
+    grid-column: 1/-1;
+    width: 98%;
+    height: 4rem;
+  }
+}
+@media only screen and (max-width: 919px) {
+  .bike-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bike-showcase {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 919px) {
+  .bike-showcase {
+    width: 73%;
+  }
+}
+@media only screen and (max-width: 749px) {
+  .bike-showcase,
+  .filter-bar {
+    clear: both;
+    width: 95%;
+    margin-left: 1%;
+  }
+  .filter-bar {
+    height: 40rem;
+  }
+}
+
+@media only screen and (max-width: 509px) {
+  .rideNow {
+    width: 90%;
+  }
+  .bike-showcase {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media only screen and (max-width: 419px) {
+  .bike-showcase > div:hover {
+    transform: scale(1);
+  }
+  .rideNow {
+    grid-template-columns: repeat(1, 1fr);
+    height: 25rem;
+  }
 }
