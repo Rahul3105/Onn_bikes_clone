@@ -130,6 +130,7 @@ function showFormCity() {
 }
 // this is for ride now collase 30 days or etc wala
 function showrideNowCollapse() {
+  localStorage.removeItem("endDateObj");
   let btn = document.getElementsByClassName("collapse-btn-rideNow")[0];
   btn.classList.toggle("active");
 }

@@ -2109,4 +2109,8 @@ footer > .footer_upperPart + hr {
   .bike-slider-cont {
     width: 90% !important;
   }
+  .paymentDoneOrNot {
+    width: 90%;
+    height: 60rem;
+  }
 }
