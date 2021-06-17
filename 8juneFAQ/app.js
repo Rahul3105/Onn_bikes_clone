@@ -21,7 +21,7 @@ sol.addEventListener("click", solution);
 
 function solution()
 {
-    window.location.href = "./solution.html";
+    // window.location.href = "./solution.html";
 }
 
 var btn99 = document.getElementById("login-btn2");

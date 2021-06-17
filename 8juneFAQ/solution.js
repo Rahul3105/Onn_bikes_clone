@@ -675,3 +675,33 @@ function test10()
 
 //     }
 // }
+var userreactn = document.getElementById("userreaction");
+
+var nomorvar = document.getElementById("dekha");
+var textar = document.createElement("textarea");
+var textar1 = document.createElement("button");
+textar1.innerHTML = "submit";
+var yess = document.getElementById("yes");
+yess.addEventListener("click", good);
+
+function good()
+{
+    userreactn.innerHTML = "Thank you for appreciation!";
+    userreactn.style.color = "green";
+    userreactn.style.textAlign = "center";
+    textar.style.display = "none";
+    textar1.style.display = "none";
+}
+
+var noo = document.getElementById("no");
+noo.addEventListener("click", bad);
+
+function bad()
+{
+    userreactn.innerHTML = "Sorry for inconvenience caused";
+    userreactn.style.color = "red";
+    userreactn.style.textAlign = "start";
+    textar.style.display = "block";
+    textar1.style.display = "block";
+    nomorvar.append(textar,textar1);
+}

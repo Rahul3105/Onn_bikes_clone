@@ -15,7 +15,12 @@
     padding: 0%;
 }
 
-
+input:focus
+{
+    box-shadow: 0px 1px 10px rgb(44, 158, 116);
+    outline: transparent;
+    border: 0px solid black;
+}
 
 body {
     overflow-x: hidden;
@@ -164,6 +169,7 @@ a {
     margin-right: 0%;
     background-color: white;
     border: 2px solid rgb(218, 215, 215);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 #headdd
 {
@@ -188,16 +194,18 @@ a {
 #flnme
 {
     font-size: 18px;
-    font-weight: normal;
+    font-weight: 550;
     line-height: 1.2;
     margin-left: 6%;
+    color: rgba(4, 4, 49, 0.782);
 }
 #flnme1
 {
     font-size: 18px;
-    font-weight: normal;
+    font-weight: 550;
     line-height: 1.2;
     margin-left: 6%;
+    color: rgba(4, 4, 49, 0.782);
 }
 #email
 {
@@ -254,9 +262,9 @@ a {
     margin-left: 27.5%;
     width: 15%;
     padding: 0.9%;
-    background-color: rgb(56, 148, 56);
+    background-color: rgb(52, 155, 90);
     color: white;
-    border: 0.9px solid rgb(33, 36, 33);
+    border: 0.9px solid rgb(72, 105, 72);
 }
 #submit2
 {
@@ -468,11 +476,73 @@ background-color: black;
     margin-left: 90%;
 }
 
+/*************************************************/
+#overlay1 {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            cursor: pointer;
+        }
 
+        #text1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
+            font-size: 12px;
+            color: rgb(7, 0, 37);
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+        #white-board1
+        {
+            background-color:white;
+            padding: 1%;
+        }
 
+        #popup
+        {
+            width: 40vw;
+            height: 20vh;
+           border: 3px solid rgba(36, 155, 36, 0.775);
 
-/* 
-bvgdmkl/v c */
+        }
+        #popup > h1
+        {
+            font-size: 21px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding-top: 1%;
+            color: rgb(83, 77, 77);
+        }
+        #popup > p
+        {
+            font-size: 18px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding-top: 3%;
+            color: rgb(40, 176, 160);
+        }
+        #popup > button
+        {
+            width: 35%;
+            margin-top: 3%;
+            height: 30%;
+            margin-left: 32%;
+            font-size: 20px;
+            color: white;
+            border: transparent;
+            background-color:  rgba(36, 155, 36, 0.775);
+            box-shadow: 0 4px 8px 0 rgba(44, 114, 157, 0.2);
+        }
+/*************************************************/
     </style>
 	
 
@@ -613,6 +683,35 @@ bvgdmkl/v c */
 
 
 
+
+
+<!------------------------------------------------->
+
+ <div id="overlay1" onclick="off1()">
+    <div id="text1">
+         <div id="white-board1">
+            
+
+            <div id="popup">
+                <h1>This page is under construction.</h1>
+                    <p>your data is save with us</p>
+            <button id="submit11">Go to main page</button>
+            </div>
+           
+
+         </div>
+    </div>
+</div>
+
+
+                     
+
+
+
+
+
+<!--_------------------------------------------------- -->
+
 </body>
 </html>
 
@@ -632,7 +731,7 @@ function test1()
 
 
 
-var btn3=document.getElementById("submit1");
+var btn3=document.getElementById("submit11");
 btn3.addEventListener("click",submit);
 
 function submit()
@@ -674,6 +773,20 @@ function off() {
 
 //////////////////////////////////////////////////////
 
+///////////////////////////////////////////////////
 
+    //overlayEffect
+var bakwass=document.getElementById("submit1");
+bakwass.addEventListener("click",submit1);
+function submit1() {
+  document.getElementById("overlay1").style.display = "block";
+}
+
+function off1() {
+  document.getElementById("overlay1").style.display = "none";
+}
+
+
+//////////////////////////////////////////////////////
 
 </script>

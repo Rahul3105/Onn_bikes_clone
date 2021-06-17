@@ -192,6 +192,7 @@ a {
     display: flex;
     flex-direction: row;
 }
+
 }
 .bike-company-name, .bike-modal-name {
     margin: 0px;
@@ -263,7 +264,7 @@ a {
 .confirm-subheading-text {
     font-size: 9px;
     font-weight: 500;
-    line-height: 3px;
+    line-height: 10px;
 }
 p {
     margin: 0 0 10px;

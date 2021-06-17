@@ -395,73 +395,7 @@ bvgdmkl/v c */
 
 
 
-/*************************************************/
-#overlay1 {
-            position: fixed;
-            display: none;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            cursor: pointer;
-        }
 
-        #text1 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            
-            font-size: 12px;
-            color: rgb(7, 0, 37);
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-        }
-        #white-board1
-        {
-            background-color:white;
-            padding: 1%;
-        }
-
-        #popup
-        {
-            width: 40vw;
-            height: 20vh;
-           border: 3px solid rgba(36, 155, 36, 0.775);
-
-        }
-        #popup > h1
-        {
-            font-size: 21px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding-top: 1%;
-            color: rgb(83, 77, 77);
-        }
-        #popup > p
-        {
-            font-size: 18px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding-top: 3%;
-            color: rgb(40, 176, 160);
-        }
-        #popup > button
-        {
-            width: 35%;
-            margin-top: 3%;
-            height: 30%;
-            margin-left: 32%;
-            font-size: 20px;
-            color: white;
-            border: transparent;
-            background-color:  rgba(36, 155, 36, 0.775);
-            box-shadow: 0 4px 8px 0 rgba(44, 114, 157, 0.2);
-        }
-/*************************************************/
 
 
 
@@ -524,44 +458,6 @@ bvgdmkl/v c */
                         
                        
 
-                            <form id="addticketForm">
-                             <p id="first">Submit a ticket</p> <br>
-                        <label for="email" id="secound">Requester</label>
-                        <input type="email" id="email" name="email" placeholder="email"> <br> <br>
-                       
-                        <label for="helpdesk_ticket_ticket_type" id="third">Type :</label>
-                         <select id="helpdesk_ticket_ticket_type">
-
-                            <option value="Breakdown/Accidents/Vehicle Condition">Breakdown/Accidents/Vehicle Condition</option>
-                            <option value="Bookings" >Bookings</option>
-                            <option value="Payments" >Payments</option>
-                            <option value="Refund" >Refund</option>
-                            <option value="Extensions">Extensions</option>
-                            <option value="ONN Station">ONN Station</option>
-                            <option value="Enquiries" >Enquiries</option>
-                            <option value="Cancellation">Cancellation</option></select> <br> <br>
-                            
-                            <label for="textarea" id="forth">Tell us more :</label>
-                            <textarea cols="40" id="textarea"rows="8"></textarea> <br> <br>
-                           
-                            <div class="add_attachment"><span>+</span> Attach a file</div> <br>
-                            <input type="file" id="file" >
-
-
-                            <form method="post" >
-                                <div class="g-recaptcha" id="fifth" data-sitekey="somuuu"></div>
-                            </form>
-                                        <!-- googleapi for captcha here -->
-                            <script src='https://www.google.com/recaptcha/api.js'></script>  
-
-                       
-                        </form>
-                        
-
-
-                                <button id="btn2" onclick="haegala()">Submit</button>
-                                <button id="btn3">Cancel</button>
-                           
 
 <!-- ............................................................................................................................ -->
                     </div>
@@ -627,26 +523,9 @@ bvgdmkl/v c */
             <!-- main body end -->
     </div>
 
-<!-------------------------------------- -->
-
- <div id="overlay1" onclick="off1()">
-    <div id="text1">
-         <div id="white-board1">
-            
-
-            <div id="popup">
-                <h1>Your Input/problem/ticket is collected</h1>
-                    <p>your data is save with us</p>
-            <button id="mainhome">Go to main page</button>
-            </div>
-           
-
-         </div>
-    </div>
-</div>
 
 
-<!-------------------------------------------------->
+
 </body>
 </html>
 
@@ -658,7 +537,7 @@ var home=document.getElementById("abc1");
 home.addEventListener("click",test1);
 function test1()
 {
-    window.location.href="./index.html";
+    window.location.href="\index.html";
 }
 
 
@@ -691,21 +570,11 @@ function off() {
 
 //////////////////////////////////////////////////////
 
-function haegala() {
-  document.getElementById("overlay1").style.display = "block";
-}
-
-
-function off1() {
-  document.getElementById("overlay1").style.display = "none";
-}
-
-var mainhome1=document.getElementById("mainhome");
-mainhome1.addEventListener("click",mainhome23);
-
-function mainhome23()
-{
-    window.location.href="./index.html";
-}
+    var questionanswer1=document.getElementById("questionanswer");
+    questionanswer1.innerHTML="We are reviewing your quired ticket,we'll revert back to you once the querry is rewied by us.";
+    questionanswer1.style.fontSize="35px";
+    questionanswer1.style.fontFamily="Source Sans Pro,Helvetica,Arial,sans-serif";
+    questionanswer1.style.color="green";
+    questionanswer1.style.textAlign="center";
 
 </script>

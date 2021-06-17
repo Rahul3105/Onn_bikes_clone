@@ -4,14 +4,30 @@
 }
 
 input {
-    width: 40%;
+    width: 37%;
     padding: 1%;
     margin: 1%;
     margin-left: 0%;
-    border: 1px solid rgb(243, 217, 168);
+    border: 1px solid rgb(204, 202, 199);
+    font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
 
 }
-
+#search
+{
+    margin-left: -4.9%;
+    padding: 1.1%;
+    padding-top: 0%;
+    color: grey;  
+}
+#search:hover
+{
+    border: 0.2px solid rgb(255, 255, 255);
+}
+input:focus
+{
+    box-shadow: 0px 1px 10px rgb(44, 158, 116);
+    outline: transparent;
+}
 
 li {
     margin-left: 3%;
@@ -66,11 +82,11 @@ body {
     background-color: rgb(243, 245, 247);
     display: flex;
     flex-flow: column;
-    border-bottom: 1px solid #DADFE3;
+    
 }
 
 #topbox1 {
-    width: 53%;
+    width: 90% !important;
     margin-left: 6%;
     margin-right: 12%;
     font-family: Poppins, Helvetica, sans-serif;
@@ -129,10 +145,11 @@ a {
     width: 60%;
     margin: 1.5% 5%;
     margin-left: 10%;
-    background-color: whitesmoke;
+    background-color: white;
+    box-shadow: 0px 1px 10px rgb(205, 211, 209);
     display: flex;
     flex-flow: column;
-
+    
     border: 1px solid #dadfe3;
 
 }
@@ -159,7 +176,7 @@ span {
     font-weight: lighter;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 889px) {
 
     #stem-box {
         width: 98%;
@@ -240,6 +257,7 @@ span {
 
 #nnd_line_2nd {
     margin-left: 3%;
+   
     margin-top: 2%;
     margin-bottom: 1%;
 }
@@ -253,6 +271,7 @@ span {
     margin-right: 1%;
     color: white;
     width: 20%;
+
     padding: 1%;
     background-color: rgb(2, 184, 117);
     border: solid 1px #015335;
@@ -261,6 +280,12 @@ span {
     font-size: 14px;
     font-weight: 600;
     border-radius: 8%;
+    
+}
+#dummy
+{
+    width: 2%;
+    border: transparent;
 }
 
 #login-btn:hover {
@@ -272,7 +297,10 @@ span {
 }
 
 #login-btn2 {
-    width: 20%;
+    
+    font-family: Poppins,Helvetica,sans-serif;
+    width: 15%;
+    margin-left: -2%;
     font-weight: 600;
     font-size: 12px;
     padding: 0.5%;
@@ -288,33 +316,35 @@ span {
 #juggad1 {
     width: 100%;
     display: grid;
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
+    
 
 }
 
 #heading-k {
     padding-top: 3%;
     padding-bottom: 3%;
-    font-size: 170%;
     padding-left: 4%;
     font-weight: bold;
-    color: rgb(3, 3, 43);
+    color:rgb(24, 50, 71);
+
+    font-weight: 600;
+    font-size: 22px;
+
     line-height: 26px;
     font-family: Poppins, Helvetica, sans-serif;
-    font-weight: 600;
 
 }
 
 #heading-k2 {
     margin-left: 4%;
     margin-right: 4%;
-    color: rgb(151, 148, 148);
-    border-bottom: 1px solid rgb(38, 138, 38);
-
+    color: #9aa1a6;
     font-size: 18px;
+    border-bottom: solid 1px #02B875;
     font-family: Poppins, Helvetica, sans-serif;
     font-weight: normal;
+    line-height: 30.625px;
 }
 
 #heading-k223 {
@@ -352,7 +382,7 @@ span {
 #voldermart {
     clear: both;
     background-color: white;
-
+    box-shadow: 0 1px 2px 0 rgb(63 63 68 / 15%);
     border-bottom: 1px solid #DADFE3;
 }
 
@@ -365,6 +395,7 @@ span {
     font-size: 110%;
     border: 0px;
     border-top: 2px solid rgb(244, 248, 244);
+    border-top: 2px solid rgb(2, 184, 117);
 }
 
 #abc1:hover {
