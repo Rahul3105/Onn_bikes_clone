@@ -527,6 +527,19 @@ header nav ul li a img {
   right: -2%;
   top: -3%;
 }
+.selectCity-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  max-height: 130%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.616);
+  z-index: 5;
+  overflow: auto;
+}
 
 .selectCity > .removeSelectCity,
 .loginPop > .loginPopRemove,
@@ -549,7 +562,7 @@ header nav ul li a img {
   width: 90%;
   height: 90%;
   background-color: white;
-  z-index: 2;
+  z-index: 5;
   border-radius: 4px;
   transition: 0.5s;
 }
@@ -591,6 +604,7 @@ header nav ul li a img {
   height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  background-color: white !important;
 }
 .selectCity > .cityArea img {
   width: 12rem;
@@ -769,12 +783,56 @@ header nav ul li a img {
   padding: 0;
   text-align: center;
 }
+.hamburgerMenu {
+  display: none;
+  width: 4.8rem;
+  height: 4rem;
+  cursor: pointer;
+  position: relative;
+}
+.scrollHamburger > div {
+  background-color: gray !important;
+}
+.hamburgerMenu > div {
+  width: 90%;
+  height: 10%;
+  border-radius: 1rem;
+  margin: auto;
+  margin-bottom: 0.6rem;
+  background-color: gray;
+}
+.mobileNavBar {
+  position: absolute;
+  background-color: white;
+  top: 9rem;
+  height: 0;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.5fs;
+  z-index: 2;
+}
+.mobileNavBar.active {
+  height: 425%;
+  border-top: 1px solid rgb(197, 186, 186);
+  transition: 0.5s;
+}
 
+.mobileNavBar > ul > li {
+  list-style: none;
+  padding: 1.2rem 2rem;
+}
+.mobileNavBar > ul > li > a:hover {
+  color: orangered;
+}
+.mobileNavBar > ul > li > a {
+  text-decoration: none;
+  color: rgb(30, 45, 81);
+}
 /* ride now original css starts from here  */
 .filter-bar {
   margin-top: 1.8rem;
   width: 20.5rem;
-  height: 33rem;
+  height: 38rem;
   background-color: white;
   box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
   float: left;
@@ -797,6 +855,7 @@ header nav ul li a img {
   font-weight: 600;
   padding-top: 4%;
   padding-left: 4%;
+  margin: 1rem 0;
 }
 
 .filter-bar .manufacturer-checkbox-cont,
@@ -1037,9 +1096,24 @@ header nav ul li a img {
   }
 }
 
+@media only screen and (max-width: 1259px) {
+  .loginPop {
+    width: 70%;
+  }
+  .loginPop .formSec,
+  .loginPop .otpSec {
+    width: 62%;
+  }
+}
+
 @media only screen and (max-width: 1180px) {
   .bike-showcase {
     grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+  }
+  /* login popup */
+  .loginPop {
+    right: 10% !important;
     width: 80%;
   }
 }
@@ -1047,6 +1121,17 @@ header nav ul li a img {
 @media only screen and (max-width: 1045px) {
   .bike-showcase {
     width: 78%;
+  }
+  .loginPop {
+    right: 23% !important;
+    width: 50%;
+  }
+  .loginPop .logoSec {
+    display: none;
+  }
+  .loginPop .formSec,
+  .loginPop .otpSec {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 979px) {
@@ -1072,6 +1157,32 @@ header nav ul li a img {
     width: 98%;
     height: 4rem;
   }
+  /* login popup */
+  .loginPop {
+    right: 20% !important;
+    width: 70%;
+  }
+  /* calnder responsive  */
+
+  .calender,
+  .calender_timing {
+    width: 100%;
+    position: relative;
+    left: -0%;
+  }
+
+  /* .calender,
+  .calender_timing {
+    width: 150%;
+    position: relative;
+    left: -70%;
+  }
+  .startDateSelector .calender,
+  .startDateSelector .calender_timing {
+    width: 150%;
+    position: relative;
+    left: 30%;
+  } */
 }
 @media only screen and (max-width: 919px) {
   .bike-showcase {
@@ -1079,6 +1190,11 @@ header nav ul li a img {
   }
   .bike-showcase {
     width: 75%;
+  }
+  /* login popup */
+  .loginPop {
+    right: 3% !important;
+    width: 90%;
   }
 }
 @media only screen and (max-width: 919px) {
@@ -1095,6 +1211,61 @@ header nav ul li a img {
   }
   .filter-bar {
     height: 40rem;
+  }
+
+  /* here i am creating .hamburgerMenu */
+  nav > ul > li {
+    display: none;
+  }
+  nav > ul > .logo_li {
+    display: block;
+  }
+  nav .logo_li img {
+    width: 7rem;
+  }
+  nav {
+    height: 10rem;
+  }
+  nav ul {
+    display: block !important;
+    position: relative;
+    width: 95vw !important;
+  }
+  .hamburgerMenu {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  /* filer collapse  */
+
+  .filter-bar {
+    height: 4rem;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .filter-heading {
+    cursor: pointer;
+  }
+  .filter-bar.showFilter {
+    height: 42rem;
+    transition: 0.5s;
+  }
+  .filter-heading::before {
+    content: "\25be";
+    transform: scale(1.4);
+  }
+  /* .selectCity */
+  .selectCity .searchArea,
+  .cityArea {
+    clear: both;
+    width: 100% !important;
+  }
+  .selectCity .cityArea {
+    height: auto;
+  }
+  .selectCity .searchArea {
+    height: 50%;
   }
 }
 

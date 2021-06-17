@@ -5,36 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="preconnect" href="/tserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/safety.css">
 </head>
 <body>
 <div class="safety">
     <div class="safety-banner">
         <header>
-            <nav class="navbar header-nav navbar-default navbar-fixed-top" style="padding: 5px 0px;">
-                <div class="container">
-                    <div id="myNavbar" class="navbar-collapse collapse header-nav-menu">
-                        <ul class="nav navbar-nav navbar-right" style="text-align: left;">
-                            <li><a>Home</a></li>
-                            <li><a>RENT-TO-OWN</a>
-                            </li>
-                            <li><a title="FAQs">FAQ</a>
-                            </li>
-                            <a class="navbar-brand nav_logo">
-                                <img src="./img/ONN-logo-unit-without-shadow.png" class="img-responsive" alt="Logo">
-                            </a>
-                            <li><a title=" Offers">Offers</a>
-                            </li>
-                            <li><a>Blog</a></li>
-                            <li> <a href="tel:+918378007800">
-                                    +918378007800 </a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+            <div class="headcontainer">
+            
+                <img src="./img/ONN-logo-unit-without-shadow.png" class="img-responsive logo" alt="Logo">
+              
+              <nav class="site-nav header-nav">
+                  <ul>
+                    <li><a href="../ONN_Bikes_home/index.html">Home</a></li>
+                    <li><a>RENT-TO-OWN</a>
+                    </li>
+                    <li><a title="FAQs">FAQ</a>
+                    </li>
+                    <li id="navimg"><a id="navimg" class="navbar-brand nav_logo">
+                      <img  src="./img/ONN-logo-unit-without-shadow.png" class="img-responsive" alt="Logo">
+                  </a></li>
+                    <li><a title=" Offers">Offers</a>
+                    </li>
+                    <li><a>Blog</a></li>
+                    <li> <a href="tel:+918378007800">
+                            +918378007800 </a></li>
+                  </ul> 
+              </nav>
+              
+              <div class="menu-toggle">
+                <div class="hamburger"></div>
+              </div>
+              
+            </div>
+            
+            </header>
         <h1>HOW ONN IS ENSURING YOU GET COVID-19 SAFE TWO-WHEELERS</h1>
         <p>ONN Bikes has taken certain precautions keeping out customers health and safety in mind to tackle the covid19
             situation</p>
@@ -63,7 +70,7 @@
                 <img src="./img/daily-temprature-check.jpg" alt="OnnBikes">
             </div>
         </div>
-        <div class="box">
+        <div class="box rev">
             <div class="img">
                 <img src="./img/team-mask.jpg" alt="OnnBikes">
             </div>
@@ -84,7 +91,7 @@
                 <img src="./img/sanitize.jpg" alt="OnnBikes">
             </div>
         </div>
-        <div class="box">
+        <div class="box rev">
             <div class="img">
                 <img src="./img/aarogya-setu.jpg" alt="OnnBikes">
             </div>
@@ -277,8 +284,8 @@
                 <div class="col-md-5 col-sm-12 col-xs-12">
                     <div class="uppercase">
                         <div class="col-md-3">
-                            <a class="img-responsive" alt="Logo">
-                                <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/img/logo.svg" class="img-responsive" alt="Logo">
+                            <a alt="Logo">
+                                <img src="https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/img/logo.svg" alt="Logo">
                             </a>
                         </div>
                         <div class="col-md-9 rest-footer-text">
@@ -303,8 +310,26 @@
 </body>
 </html>
 <script>
-    window.addEventListener('scroll',function(){
-        var header = document.querySelector('header');
-        header.classList.toggle('scrolled', window.scrollY > 0);
-    })
+        document.querySelector('.menu-toggle').addEventListener('click',function() {
+
+document.querySelector('.site-nav').classList.toggle('site-nav--open');
+document.querySelector('.menu-toggle').classList.toggle('open');
+
+
+
+})
+
+window.addEventListener("resize",width)
+
+function width() {
+if(window.innerWidth > 699)
+{ document.getElementById('navimg').style.display = '';}
+else
+document.getElementById('navimg').style.display = 'none';
+}
+
+window.addEventListener('scroll',function(){
+   var header = document.querySelector('header');
+   header.classList.toggle('scrolled', window.scrollY > 0);
+})
 </script>

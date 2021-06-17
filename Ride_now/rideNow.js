@@ -853,9 +853,18 @@ function clearall() {
   }
   bikes();
 }
+// showCollapseContentFilter();
 
+function showCollapseContentFilter() {
+  document
+    .getElementsByClassName("filter-bar")[0]
+    .classList.toggle("showFilter");
+}
 // some home page shit
-
+function showMobileNavBar() {
+  let navBar = document.getElementsByClassName("mobileNavBar")[0];
+  navBar.classList.toggle("active");
+}
 // this is for collapsible content where we can select anything and that value  will appear on collapse_btn
 function changeCollapseBtnValue(collapse_btn_type, value) {
   let collapse_btn = document.getElementsByClassName(collapse_btn_type)[0];
@@ -883,6 +892,7 @@ function showSelectCity() {
   let selectCityCont = document.getElementsByClassName("selectCity-overlay")[0];
   selectCityCont.classList.toggle("hide");
   selectCityCont.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 function addEventToCityArea() {
   let cityArea = document.querySelectorAll(".cityArea .cityCont");

@@ -46,33 +46,41 @@
                 <li>
                     <a href="7683004927"> +7683004927</a>
                 </li>
-                <!-- <div class="hamburgerMenu" data-toggle="collapse" data-target="#menuBox">
+                <div class="hamburgerMenu" onclick="showMobileNavBar()">
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
-                <div id="menuBox" class="collapse">
-                    <ul class="card card-body">
+                <div class="mobileNavBar">
+                    <ul>
                         <li>
-                            <a href="#whyONNId">WHY ONN?</a>
+                            <a href="#whyONNId">HOME</a>
                         </li>
                         <li>
-                            <a href="#">FLEET AND PRICING</a>
+                            <a href="#">OFFERS</a>
                         </li>
                         <li>
-                            <a onclick="location.href = '../safetypage/safety.html'">SAFETY</a>
+                            <a href="../safetypage/safety.html">RENT TO OWN</a>
                         </li>
                         <li>
-                            <a href="#">FAQ</a>
+                            <a href="../8juneFAQ/index.html">FAQ</a>
                         </li>
-                        <li>
-                            <a href="#"> LOGIN/SIGNUP</a>
+                
+                        <li style="position: relative;">
+                            <a href="#home_header" onclick="showLoginPopup()" class="signupNav"> LOGIN/SIGNUP</a>
+                            <a href="#" onclick="showWelcomeContent()" class='welcomeNav hide'>WELCOME <span
+                                    class="fa fa-caret-down"></span></a>
+                            <div class="welcome-collapse-content">
+                                <p onclick="showMyAccount()"><i class="fa fa-user"></i> MY ACCOUNT</p>
+                                <p onclick='logoutUser()'><i class="fas fa-sign-out-alt"></i> LOGOUT</p>
+                            </div>
                         </li>
+                
                         <li>
                             <a href="#"> +7683004927</a>
                         </li>
                     </ul>
-                </div> -->
+                </div>
             </ul>
         </nav>
     </header>
@@ -187,7 +195,7 @@
     </div>
 
     <section class="filter-bar">
-        <div class="filter-heading">Filter <a style="cursor: pointer;" onclick="clearall()">Clear All</a></div>
+        <div class="filter-heading" onclick="showCollapseContentFilter()">Filter <a style="cursor: pointer;" onclick="clearall()">Clear All</a></div>
         <div class="manufacturer-cont">
             <h6>MANUFACTURER</h6>
             <div class="manufacturer-checkbox-cont" id="manufacturer">

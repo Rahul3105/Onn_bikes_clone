@@ -1050,3 +1050,7 @@ function showSucessOrNot() {
   }
 }
 showSucessOrNot();
+function aboutus ()
+{
+  window.location.href = '../aboutus/aboutus.html'
+}
