@@ -459,6 +459,8 @@ function checkUsers(e) {
       login_form.password.value = "";
       addToCurrLoggedIn(user);
       loginUser();
+    } else {
+      alert("Please use forgot password, if you have problems logging in.");
     }
   });
 }
@@ -1015,7 +1017,7 @@ function submitHelpPopup(e) {
     form.email_popup.value = "";
     form.type_popup.value = "";
     form.tell_us_more_popup.value = "";
-    alert("Thank you for contacting us. We will get back to you!");
+    document.getElementsByClassName("thank_you")[0].classList.toggle("hide");
   }
 }
 function showHelpPopupCollapseContent() {
@@ -1036,3 +1038,15 @@ function addEventToHelpPopupCollapse() {
   });
 }
 addEventToHelpPopupCollapse();
+function showSucessOrNot() {
+  let paymentStatus = localStorage.getItem("paymentDone");
+  if (paymentStatus != null && paymentStatus != "NOT YET") {
+    let successOverlay = document.getElementsByClassName(
+      "paymentDoneOrNotOverlay"
+    )[0];
+    successOverlay.classList.remove("hide");
+    localStorage.setItem("paymentDone", "NOT YET");
+    document.body.style.overflow = "hidden";
+  }
+}
+showSucessOrNot();

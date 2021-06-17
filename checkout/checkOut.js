@@ -34,7 +34,11 @@ var price_without_discount = document.getElementById("price_without_discount");
 price_without_discount.innerHTML = `₹${final_data[0].price}`; //without discounted price
 
 var start = JSON.parse(localStorage.getItem("startDateObj"));
-var end = JSON.parse(localStorage.getItem("endDateObj"));
+var end = JSON.parse( localStorage.getItem( "endDateObj" ) );
+if ( end == null )
+{
+  end = JSON.parse(localStorage.getItem("30daysdate"))
+}
 
 console.log(start);
 console.log(end);
@@ -54,8 +58,8 @@ timehrs.innerHTML = start.time;
 // var year = document.getElementById("year");
 // year.innerHTML = 2000-Number(start.year);
 
-var monthYear1 = document.getElementById("monthYear1");
-monthYear1.innerHTML = end.month;
+var monthday1 = document.getElementById("month_day1");
+monthday1.innerHTML = end.date;
 
 var monthYear1 = document.getElementById("monthYear1");
 monthYear1.innerHTML = end.month;
@@ -128,6 +132,8 @@ function adder() {
 // FOR PAYMENT COLOR CHANGE (START)
 
 var payment_color = document.getElementById("checkbox");
+var total_amount_phir_se = document.getElementById("total_amount_phir_se");
+total_amount_phir_se.innerHTML = `₹${final_data[0].price}`;
 var payment_total_color = document.getElementById("payment-total");
 payment_color.addEventListener("click", test);
 var add2 = 0;
@@ -157,9 +163,11 @@ function test() {
     payment_total_color.style.background = "rgb(29,45,81)";
     payment_total_color.style.opacity = "100";
     payment_total_color.innerHTML = `PAYMENT ${net_money}`;
-    payment_total_color.addEventListener("click", paymentPage);
+    total_amount_phir_se.innerHTML = `₹${net_money}`;
+    payment_total_color.addEventListener( "click", paymentPage );
+    localStorage.setItem("onnbike_price",net_money);
     function paymentPage() {
-      window.location.href = "xyz.html";
+       window.open("../payment_option/payment.html","_parent");
     }
   } else if (add2 == 0) {
     payment_total_color.style.background = "rgb(210,211,212)";
@@ -183,6 +191,3 @@ function test() {
 // FOR PAYMENT COLOR CHANGE (ENDS)
 
 // total price
-function showPaymentPage() {
-  window.open("../payment_option/payment.html");
-}

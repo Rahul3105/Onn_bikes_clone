@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -707,6 +707,8 @@ footer > .footer_upperPart + hr {
   margin-top: -1rem;
   text-align: center;
   color: rgb(30, 45, 81);
+  position: relative;
+  z-index: 5;
 }
 #planName > .card {
   padding: 0;
@@ -746,7 +748,8 @@ footer > .footer_upperPart + hr {
 .covid_updateCont > .removeCovidUpdate,
 .selectCity > .removeSelectCity,
 .loginPop > .loginPopRemove,
-.removeMyAccount {
+.removeMyAccount,
+.paymentDoneRemove {
   position: absolute;
   border-radius: 50%;
   width: 3.3rem;
@@ -836,6 +839,7 @@ footer > .footer_upperPart + hr {
   width: 160%;
   background-color: white;
   z-index: 2;
+  position: relative;
 }
 .calender > .month,
 .calender > .days,
@@ -991,9 +995,8 @@ footer > .footer_upperPart + hr {
 .otpSec > .otp_heading {
   font-size: 1.4rem;
   color: #878787;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.3rem;
   font-weight: 300;
-  font-family: Montserrat;
   padding: 1rem 0;
 }
 .loginPop > .formSec > .heading > span {
@@ -1109,7 +1112,7 @@ footer > .footer_upperPart + hr {
 }
 .formSec > form > .login-Btn {
   font-size: 1.8rem;
-  height: auto;
+  height: 4rem;
   padding: 0.8px 0;
   outline: 0;
   border: none;
@@ -1313,7 +1316,8 @@ footer > .footer_upperPart + hr {
 .fleetAndPricingOverlay,
 .selectCity-overlay,
 .loginPopupOverlay,
-.myAccountOverlay {
+.myAccountOverlay,
+.paymentDoneOrNotOverlay {
   position: absolute;
   top: 0;
   width: 100%;
@@ -1693,10 +1697,54 @@ footer > .footer_upperPart + hr {
   right: -2%;
   top: -3%;
 }
-
+.paymentDoneOrNot {
+  background-image: url(images/history-bg/history-bg.svg);
+  width: 65%;
+  height: 40rem;
+  background-size: 47%;
+  background-repeat: no-repeat;
+  background-position: 224px 7px;
+  padding: 80px 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(245, 244, 244, 0.295) 5px 14px 28px,
+    rgba(255, 253, 253, 0.24) 10px 10px 10px;
+  position: relative;
+}
+.paymentDoneRemove {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+}
+.paymentResult {
+  color: green;
+  line-height: 5rem;
+  box-shadow: 0 0 5px rgba(31, 31, 31, 0.5);
+  text-align: center;
+  padding: 70px 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 75%;
+  font-size: 1.5rem;
+}
 /* responsive layout starts form here */
-
+@media only screen and (max-width: 1259px) {
+  .loginPop {
+    width: 70%;
+  }
+  .loginPop .formSec,
+  .loginPop .otpSec {
+    width: 62%;
+  }
+}
 @media only screen and (max-width: 1201px) {
+  /* login popup */
+  .loginPop {
+    right: 10% !important;
+    width: 80%;
+  }
+
   .whyONN,
   .app_link,
   .featuredOn,
@@ -1710,15 +1758,24 @@ footer > .footer_upperPart + hr {
   .whyONN > .whyONN_advantages {
     width: 100%;
   }
-  .fleetAndPricing_city_cont {
-    border: 1px solid lime;
-  }
   .bike-slider-cont {
-    border: 1px solid green;
     width: 70%;
   }
 }
 @media only screen and (max-width: 1133px) {
+  /* login popup */
+  .loginPop {
+    right: 23% !important;
+    width: 50%;
+  }
+  .loginPop .logoSec {
+    display: none;
+  }
+  .loginPop .formSec,
+  .loginPop .otpSec {
+    width: 100%;
+  }
+
   .home_nav_bar > ul {
     width: 90%;
   }
@@ -1751,10 +1808,40 @@ footer > .footer_upperPart + hr {
   html {
     font-size: 58%;
   }
+
+  /* login popup */
+  .loginPop {
+    right: 20% !important;
+    width: 70%;
+  }
 }
 /* one line layout starts form here */
 
 @media only screen and (max-width: 947px) {
+  /* login popup */
+  .loginPop {
+    right: 3% !important;
+    width: 90%;
+  }
+  /* //contactUsForm-helpPopup-cont css */
+  .contactUsForm-helpPopup-cont {
+    width: 50% !important;
+  }
+  /* calnder responsive  */
+
+  .calender,
+  .calender_timing {
+    width: 150%;
+    position: relative;
+    left: -70%;
+  }
+  .startDateSelector .calender,
+  .startDateSelector .calender_timing {
+    width: 150%;
+    position: relative;
+    left: 30%;
+  }
+
   .whyONN,
   .app_link,
   .featuredOn,
@@ -1886,6 +1973,10 @@ footer > .footer_upperPart + hr {
   .home_nav_bar > ul > li > a {
     display: none;
   }
+  /* //contactUsForm-helpPopup-cont css */
+  .contactUsForm-helpPopup-cont {
+    width: 90% !important;
+  }
   .home_nav_bar > ul > .logo_li > a {
     display: block;
   }
@@ -1971,8 +2062,19 @@ footer > .footer_upperPart + hr {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  /* //fleet and pricing popup */
+  .fleetAndPricing_city_cont {
+    width: 10%;
+  }
+  .bike-slider-cont {
+    width: 50%;
+  }
 }
 @media only screen and (max-width: 615px) {
+  .image_container {
+    background-position: -400px !important;
+  }
+
   .change-password input,
   .edit-account input,
   .email-yourProfile,
@@ -1989,5 +2091,18 @@ footer > .footer_upperPart + hr {
   .edit-account {
     height: 50%;
     width: 120%;
+  }
+}
+@media only screen and (max-width: 437px) {
+  .footer_upperPart > div:last-child {
+    width: 98%;
+  }
+  /* //fleet and pricing popup */
+  .fleetAndPricing_city_cont {
+    width: 10%;
+    display: none;
+  }
+  .bike-slider-cont {
+    width: 90% !important;
   }
 }

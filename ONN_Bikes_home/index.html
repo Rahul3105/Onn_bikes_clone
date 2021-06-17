@@ -852,6 +852,7 @@
             <label for="tell-us-more">Tell us more! <span>*</span></label>
             <textarea name="tell-us-more" id="tell_us_more_popup" cols="30" rows="10"></textarea>
             <button onclick="submitHelpPopup(event)">Send</button>
+            <p class="hide thank_you" style="color: green;">Thank you for contacting us. We will get back to you!</p>
         </form>
     </div>
     <div class="helpPopup" onclick="showContactPopup()">
@@ -1092,6 +1093,18 @@
                         <button onclick="updateCurrUserProfile('password')"><i class="fas fa-sync-alt"></i> CHANGE PASSWORD</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- this is that popup sucess or not isme hide class lga dena by default jab payment ho to hide class remove kr dena -->
+    <div class="paymentDoneOrNotOverlay hide">
+        <div class="paymentDoneOrNot">
+            <div class="paymentDoneRemove" onclick="removePopUp('paymentDoneOrNotOverlay')"></div>
+            <div class="paymentResult">
+                <h1>YOUR BOOKING WAS SUCCESSFUL. PAYMENT DONE.</h1>
+                <h1 style="color: #1d2d51;">THANK YOU <i class="fas fa-glass-cheers"></i></h1>
             </div>
         </div>
     </div>

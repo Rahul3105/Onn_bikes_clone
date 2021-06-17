@@ -217,6 +217,13 @@ const arrofLocation = [
     address:
       "Shop NO-6, Arihant Plaza ,Opposite ICICI Bank Udaipole ,Udaipur-313001",
   },
+  {
+    city: "AHMEDABAD",
+    location: "Vijay Cross Road",
+    timing: "9 AM - 7 PM",
+    reference: "Visitor Parking of the complex",
+    address: "The Link, Nr. Vijay Cross Road, Navrangpura, Ahmedabad 380009",
+  },
 ];
 
 localStorage.setItem("rideslocations", JSON.stringify(arrofLocation));
@@ -461,30 +468,35 @@ bikes();
 
 // function for booknow button
 function fav(e) {
-  showSelectPickupOverlay();
-  let selectedbike = {
-    name: e.name,
-    free: e.free,
-    excess: e.excess,
-    price: e.price,
-    manufacturer: e.manufacturer,
-    model: e.model,
-    type: e.type,
-    imgLink: e.imgLink,
-  };
-
-  let bookedbike = localStorage.getItem("selectedbike");
-
-  if (bookedbike == null) {
-    bookedbike = [];
+  const currLoggedIn = JSON.parse(localStorage.getItem("currLoggedIn"));
+  if (currLoggedIn.length < 1) {
+    showLoginPopup();
   } else {
-    localStorage.removeItem("selectedbike");
-    bookedbike = [];
-  }
-  bookedbike.push(selectedbike);
-  localStorage.setItem("bookedbike", JSON.stringify(selectedbike));
+    showSelectPickupOverlay();
+    let selectedbike = {
+      name: e.name,
+      free: e.free,
+      excess: e.excess,
+      price: e.price,
+      manufacturer: e.manufacturer,
+      model: e.model,
+      type: e.type,
+      imgLink: e.imgLink,
+    };
 
-  pickup();
+    let bookedbike = localStorage.getItem("selectedbike");
+
+    if (bookedbike == null) {
+      bookedbike = [];
+    } else {
+      localStorage.removeItem("selectedbike");
+      bookedbike = [];
+    }
+    bookedbike.push(selectedbike);
+    localStorage.setItem("bookedbike", JSON.stringify(selectedbike));
+
+    pickup();
+  }
 }
 
 function showSelectPickupOverlay() {
@@ -552,7 +564,7 @@ function decidedlocation(e) {
   }
   finallocation.push(decidedlocation);
   localStorage.setItem("finale", JSON.stringify(finallocation));
-  window.open("../checkout/checkout.html");
+  window.open("../checkout/checkout.html", "_parent");
 }
 
 //manufucturer sorting
@@ -856,6 +868,7 @@ function changeCollapseBtnValue(collapse_btn_type, value) {
     document.getElementsByClassName("endDateSelector")[0].style.display =
       "block";
   }
+  localStorage.removeItem("endDateObj");
 }
 
 function removePopUp(name) {
@@ -1536,3 +1549,5 @@ function fetchDataFromHomePage() {
   showRideNowDateAndTime("endDateSelector");
 }
 fetchDataFromHomePage();
+
+pickup();
