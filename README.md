@@ -1,5 +1,5 @@
 
-![Logo](https://nudg.agency/wp-content/uploads/2020/03/ONN_logo.png
+![Logo](https://media.glassdoor.com/sqll/1623474/onn-bikes-squarelogo-1527244510579.png
 )
 
     
