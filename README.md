@@ -22,5 +22,17 @@ By using this website you can book bike anytime anywhere. With the very user fri
 
 For support, email bhandarisumit049@gmail.com / soumyaranjanpurohit46@gmail.com / rahulrajput7358@gmail.com
 
+## Screenshots
+![home](https://user-images.githubusercontent.com/77793810/122582987-67230a00-d076-11eb-8079-a43185265951.PNG)
+![ridenow](https://user-images.githubusercontent.com/77793810/122583134-8b7ee680-d076-11eb-8b31-a2236e285ee4.PNG)
+![checkout](https://user-images.githubusercontent.com/77793810/122583157-90439a80-d076-11eb-8f2c-53b0e08161a1.PNG)
+![payment](https://user-images.githubusercontent.com/77793810/122583175-95a0e500-d076-11eb-9ffe-59d7b652ed54.PNG)
+![bookingdone](https://user-images.githubusercontent.com/77793810/122583193-98033f00-d076-11eb-9b60-8faeec083aef.PNG)
+![useraccount](https://user-images.githubusercontent.com/77793810/122583217-9d608980-d076-11eb-8737-ff9d44603afb.PNG)
+![safety](https://user-images.githubusercontent.com/77793810/122583230-9fc2e380-d076-11eb-9b9a-d55030382ddb.PNG)
+![aboutus](https://user-images.githubusercontent.com/77793810/122583241-a3566a80-d076-11eb-9d94-360176db7b49.PNG)
+![Faq](https://user-images.githubusercontent.com/77793810/122583254-a6e9f180-d076-11eb-8289-d6925467a1f6.PNG)
+![fleet pricing](https://user-images.githubusercontent.com/77793810/122583264-a9e4e200-d076-11eb-843f-2df3806e423e.PNG)
+
  
   
