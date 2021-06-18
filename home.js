@@ -350,8 +350,9 @@ function createUserAccount(first_name, last_name, email, mobile, password) {
     otpSec.classList.remove("hide");
     let formSec = document.querySelector(".formSec");
     formSec.classList.add("hide");
-    otp = Math.floor(Math.random() * (10000 - 1000) + 1000);
-    console.log(otp);
+    otp = Math.floor( Math.random() * ( 10000 - 1000 ) + 1000 );
+    let verify = document.getElementById('otp')
+    verify.value = otp;
   } else {
     alert(
       "The Email / Phone number is already registered with us. Please use forgot password, if you have problems logging in."
