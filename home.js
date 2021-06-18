@@ -904,7 +904,7 @@ function checkStartAndEndDateCont() {
       planName: `${choose_plan}`,
     };
     localStorage.setItem("rideNowOtherInfo", JSON.stringify(rideNowOtherInfo));
-    window.location.href = "../Ride_now/rideNow.html";
+    window.location.href = "./Ride_now/rideNow.html";
   }
 }
 
@@ -1052,5 +1052,5 @@ function showSucessOrNot() {
 }
 showSucessOrNot();
 function aboutus() {
-  window.location.href = "../about_us/about_us.html";
+  window.location.href = "./about_us/about_us.html";
 }

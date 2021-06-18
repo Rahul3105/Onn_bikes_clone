@@ -1198,12 +1198,13 @@ footer > .footer_upperPart + hr {
   overflow: auto;
   transition: none;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 10px 4px;
+  /* box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 10px 4px; */
 }
 .contactUsForm-helpPopup-cont.active {
   width: 30%;
   height: 86%;
   transition: 0.5s;
+  box-shadow: rgb(0 0 0 / 20%) 2px 2px 10px 4px;
 }
 /* this is form tag */
 #contactUsForm-helpPopup {

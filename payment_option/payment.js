@@ -63,7 +63,7 @@ function paymentAccept(para) {
   let upi_address = document.getElementById(para).value;
   if (validateMail(upi_address)) {
     localStorage.setItem("paymentDone", "DONE");
-    window.open("../ONN_Bikes_home/index.html", "_parent");
+    window.location.href = '../index.html';
   } else {
     alert("Please give correct upi address");
   }

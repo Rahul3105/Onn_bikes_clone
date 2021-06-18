@@ -14,6 +14,7 @@ body {
 }
 
 .safety {
+  width: 78%;
   font-family: "Montserrat", sans-serif;
   color: #737373;
   font-size: 1.2rem;
@@ -22,11 +23,12 @@ body {
   font-style: normal;
   line-height: 1.38;
   letter-spacing: 0rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .safety-banner {
-  width: 100%;
-  height: 8rem;
-
+  /* width: 90%; */
+  height: 75px;
   background-size: cover;
   text-align: center;
   color: #ffffff;
@@ -175,23 +177,21 @@ p {
 
 /* ............................................ */
 #checkout-main-cont {
-  width: 78%;
-  height: 65vh;
+  /* width: 78%; */
+  /* height: 65vh; */
   margin: 0% auto;
-
   display: flex;
   flex-direction: row wrap;
 }
 #bike-data {
   width: 66%;
-  height: 100%;
-
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
 }
 #bike-img {
   width: 100%;
-  height: 61%;
+  /* height: 61%; */
 }
 #comapny-name {
   font-size: 14px;
@@ -212,10 +212,10 @@ p {
 }
 #bike-pic {
   width: 100%;
-  height: 50.6%;
+  /* height: 50.6%; */
 }
 #bike-pic > img {
-  width: 26%;
+  /* width: 26%; */
   margin-left: 0.3%;
 }
 
@@ -239,10 +239,8 @@ p {
 }
 #extra-info {
   width: 100%;
-  height: 6%;
-
-  margin-top: 8%;
-
+  /* height: 6%; */
+  /* margin-top: 8%; */
   display: flex;
   flex-direction: row;
 }
@@ -264,7 +262,7 @@ p {
 #extra-info-extra {
   display: flex;
   flex-direction: row;
-  width: 40%;
+  /* width: 40%; */
   height: 100%;
 }
 #extra-info-extra > p {
@@ -274,36 +272,38 @@ p {
   padding-top: 2%;
 }
 #tachometer {
-  width: 5%;
-  height: 90%;
+  width: 21px;
+  /* height: 90%; */
   opacity: 40%;
-  margin-left: 1.4%;
+  /* margin-left: 1.4%; */
 }
 #roadSolid {
-  width: 5%;
-  height: 90%;
+  width: 21px;
+  /* height: 90%; */
   opacity: 40%;
   margin-left: 1.4%;
 }
 #coinSolid {
-  width: 5%;
-  height: 90%;
+  width: 21px;
+  /* height: 90%; */
   opacity: 40%;
   margin-left: 1.4%;
 }
 #paisa {
-  width: 34%;
-  height: 500px;
-  margin-top: -30px;
+  /* width: 34%; */
+  /* width: 500px; */
+  /* margin: auto; */
+  /* height: 500px; */
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: -30px; */
   display: flex;
   flex-direction: column;
 }
 #start-end {
   width: 100%;
-  height: 17%;
-
+  /* height: 17%; */
   justify-content: space-between;
-
   display: flex;
   flex-direction: row;
 }
@@ -327,7 +327,7 @@ p {
   flex-direction: row;
 }
 #end {
-  width: 28%;
+  /* width: 28%; */
   display: flex;
   flex-direction: column;
   /* border: 1px solid black; */
@@ -401,11 +401,10 @@ p {
   margin: 0% auto;
   margin-top: 1%;
   margin-bottom: 1%;
-  height: 14%;
+  /* height: 14%; */
   background-color: white;
   box-shadow: 0 0 4px rgb(31 31 31 / 50%);
   border: 1px solid rgb(221, 215, 215);
-
   display: flex;
   flex-direction: row;
 }
@@ -436,12 +435,12 @@ p {
   margin-top: 5%;
 }
 #bill-space {
-  width: 98%;
+  /* width: 98%; */
   /* border: 1px solid red; */
   margin-top: 1%;
   background-color: white;
   color: #555655;
-  padding: 1%;
+  padding: 10px;
   box-shadow: 0 0 4px rgb(31 31 31 / 50%);
   border: 1px solid rgb(221, 215, 215);
 }
@@ -580,15 +579,15 @@ p {
 }
 
 #bhaukal {
-  width: 98%;
-
+  /* width: 98%; */
   display: flex;
   flex-direction: row;
 }
 #bhaukal > div {
-  width: 40%;
+  width: 250px;
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 #bhaukal > div:nth-child(2) {
   width: 60%;
@@ -614,10 +613,8 @@ p {
 }
 #tANDc {
   width: 100%;
-  height: 18.5%;
-
-  margin-top: 3%;
-
+  /* height: 18.5%; */
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
 }
@@ -652,11 +649,13 @@ p {
 
 .slider {
   position: absolute;
+  height: 25px;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 48.8px;
   background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -667,8 +666,8 @@ p {
   content: "";
   height: 24px;
   width: 24px;
-  left: 4px;
-  bottom: 2px;
+  /* left: 4px; */
+  bottom: .4px;
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -708,25 +707,27 @@ input:checked + .slider:before {
 }
 #payment-total {
   width: 100%;
-  height: 40%;
+  padding: 10px;
+  /* height: 40%; */
+  margin-bottom: 10px;
   color: white;
   background-color: rgb(210, 211, 212);
   border: 1px solid rgb(141, 141, 141);
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #checkout-main-cont {
     flex-direction: column;
-    height: 170vh;
+    /* height: 170vh; */
   }
   #bike-data {
-    width: 95%;
-    height: 80vh;
+    width: 100%;
+    /* height: 80vh; */
   }
   #paisa {
-    width: 95%;
-    height: 80vh;
+    width: 100%;
+    /* height: 80vh; */
   }
   #bike-pic {
     width: 100%;
@@ -734,9 +735,9 @@ input:checked + .slider:before {
   }
 
   #bike-pic > img {
-    width: 52%;
-    height: 100%;
-    margin-left: 0.3%;
+    width: 100%;
+    /* height: 100%; */
+    /* margin-left: 0.3%; */
   }
 }
 
@@ -753,10 +754,13 @@ a {
   .container {
     width: 640px;
   }
-
-  * {
-    font-size: 50%;
-  }
+  #extra-info {
+    width: 100%;
+    /* height: 6%; */
+    /* margin-top: 8%; */
+    display: flex;
+    flex-direction: column;
+}
 }
 @media only screen and (min-width: 668px) {
   .container {
@@ -764,7 +768,7 @@ a {
   }
 
   * {
-    font-size: 50%;
+    /* font-size: 50%; */
   }
 }
 @media only screen and (min-width: 768px) {
@@ -773,7 +777,7 @@ a {
   }
 
   * {
-    font-size: 60%;
+    /* font-size: 60%; */
   }
 }
 
@@ -789,7 +793,7 @@ a {
   }
 }
 * {
-  font-size: 80%;
+  /* font-size: 80%; */
 }
 
 @media only screen and (min-width: 992px) {
@@ -798,7 +802,7 @@ a {
   }
 
   * {
-    font-size: 90%;
+    /* font-size: 90%; */
   }
 }
 
