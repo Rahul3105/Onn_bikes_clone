@@ -21,7 +21,26 @@ sol.addEventListener("click", solution);
 
 function solution()
 {
-    // window.location.href = "./solution.html";
+    // window.location.href = "";
+    var btn991 = document.getElementById("top2");
+    
+    btn991.style.display = "none";
+    var btn99189 = document.getElementById("abc2");
+    btn99189.style.borderTop = "3px solid green";
+    var btn991892 = document.getElementById("abc1");
+    btn991892.style.borderTop = "1px solid transparent";
+
+}
+var btn998 = document.getElementById("abc1");
+btn998.addEventListener("click", home123);
+function home123() {
+    var btn9913 = document.getElementById("top2");
+    btn9913.style.display = "block";
+
+    var btn9918990 = document.getElementById("abc1");
+    btn9918990.style.borderTop = "3px solid green";
+    var btn9918929 = document.getElementById("abc2");
+    btn9918929.style.borderTop = "1px solid transparent";
 }
 
 var btn99 = document.getElementById("login-btn2");
@@ -850,4 +869,12 @@ function test42()
     arr.push(link);
     localStorage.setItem("data",JSON.stringify(arr));
 
+}
+
+var q4892= document.getElementById("power-off132254");
+q4892.addEventListener("click", test4277);
+
+function test4277()
+{
+    window.location.href = "../index.html";
 }

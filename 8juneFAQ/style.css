@@ -1,6 +1,7 @@
 * {
     margin: 0%;
     padding: 0%;
+    
 }
 
 input {
@@ -469,3 +470,12 @@ span {
         {
            margin-top: 2% !important;
         }
+
+
+
+#power-off{
+    margin-top: 2vh;
+    margin-left: 0.3vw;
+    position: fixed;
+    
+}
