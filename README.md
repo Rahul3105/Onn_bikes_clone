@@ -5,7 +5,7 @@
     
 # ONN Bikes clone
 
-By using this website you can book bike anytime anywhere. With the very user friendly interface it will take your hardly 5 minutes. And tada! you got your bike.
+By using this website you can book a bike anytime anywhere. With the very user-friendly interface, it will take hardly 5 minutes. And tada! you got your bike.
 
 ## Authors
 
