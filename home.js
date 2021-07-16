@@ -20,7 +20,17 @@ function showMobileNavBar() {
 function changeCollapseBtnValue(collapse_btn_type, value) {
   let collapse_btn = document.getElementsByClassName(collapse_btn_type)[0];
   collapse_btn.innerHTML = value;
+  let data = JSON.parse(localStorage.getItem("rideNowOtherInfo"));
+  let rideNowOtherInfo = {
+    ...data,
+    planName: `${value}`,
+  };
+  console.log(rideNowOtherInfo);
+  localStorage.setItem("rideNowOtherInfo", JSON.stringify(rideNowOtherInfo));
   collapse_btn.classList.remove("active");
+  hideEndDate(value);
+}
+function hideEndDate(value) {
   if (value == "30 DAYS BOOKING") {
     document.getElementsByClassName("endDateSelector")[0].style.display =
       "none";
@@ -350,8 +360,8 @@ function createUserAccount(first_name, last_name, email, mobile, password) {
     otpSec.classList.remove("hide");
     let formSec = document.querySelector(".formSec");
     formSec.classList.add("hide");
-    otp = Math.floor( Math.random() * ( 10000 - 1000 ) + 1000 );
-    let verify = document.getElementById('otp')
+    otp = Math.floor(Math.random() * (10000 - 1000) + 1000);
+    let verify = document.getElementById("otp");
     verify.value = otp;
   } else {
     alert(
@@ -879,27 +889,6 @@ function checkStartAndEndDateCont() {
   ) {
     alert("Please fill end date or choose 30 days plan");
   } else {
-    //   let startDateObj = JSON.parse(localStorage.getItem("startDateObj"));
-    //   let endDateObj = JSON.parse(localStorage.getItem("endDateObj"));
-    //   if (startDateObj.year > endDateObj.year) {
-    //     alert(
-    //       "Your start year is greater than end year, Please fill it correctly"
-    //     );
-    //   } else if (startDateObj.year == endDateObj.year) {
-    //     if (month.indexOf(startDateObj.month) > month.indexOf(endDateObj.month)) {
-    //       alert(
-    //         "Your start month is greater then end month please fill it correctly"
-    //       );
-    //     } else if (
-    //       month.indexOf(startDateObj.month) == month.indexOf(endDateObj.month)
-    //     ) {
-    //       if (startDateObj.date > endDateObj.date) {
-    //         alert(
-    //           "Your start date is greater than end date please fill it correctly"
-    //         );
-    //       }
-    //     }
-    //   }
     let rideNowOtherInfo = {
       cityName: `${rideNow_city_name.innerHTML}`,
       planName: `${choose_plan}`,
@@ -914,7 +903,7 @@ function checkStartAndEndDateCont() {
 const arrOfCities = [
   {
     img: "https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/bengaluru.png",
-    name: "BANGALURU",
+    name: "BENGALURU",
   },
   {
     img: "https://d3bvfezcznypk7.cloudfront.net/staticwebsitecontent/CityImages/hyderabad.png",
@@ -941,6 +930,16 @@ const arrOfCities = [
     name: "AHMEDABAD",
   },
 ];
+if (localStorage.getItem("rideNowOtherInfo") != null) {
+  let { cityName, planName } = JSON.parse(
+    localStorage.getItem("rideNowOtherInfo")
+  );
+  document.querySelector(".rideNow-city-name").innerHTML = cityName;
+  if (planName != undefined) {
+    document.querySelector(".collapse-btn-rideNow").innerHTML = planName;
+    hideEndDate(planName);
+  }
+}
 
 if (localStorage.getItem("rideNowCities") == null) {
   localStorage.setItem("rideNowCities", JSON.stringify(arrOfCities));
@@ -958,6 +957,16 @@ function showRideNowCities() {
          <p>${city.name}</p>
     </div>`;
     cityCont.onclick = function () {
+      ///////
+      let data = JSON.parse(localStorage.getItem("rideNowOtherInfo"));
+      let rideNowOtherInfo = {
+        ...data,
+        cityName: `${this.children[0].children[1].innerHTML}`,
+      };
+      localStorage.setItem(
+        "rideNowOtherInfo",
+        JSON.stringify(rideNowOtherInfo)
+      );
       changeRideNowCityValue(this);
     };
     cityArea.append(cityCont);

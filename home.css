@@ -4,7 +4,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.bike-details > p:nth-child(3),
+.bike-details > p:nth-child(4),
+.bike-details > p:nth-child(5) {
+  font-weight: 600 !important;
+}
+.bike-details > p:nth-child(3) > span,
+.bike-details > p:nth-child(4) > span,
+.bike-details > p:nth-child(5) > span {
+  font-weight: 400;
+}
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -233,6 +242,9 @@ body {
   margin-top: 1rem;
 }
 
+.featuredOn img {
+  cursor: pointer;
+}
 /* why onn section */
 .whyONN,
 .featuredOn,
@@ -1167,11 +1179,12 @@ footer > .footer_upperPart + hr {
   position: fixed;
   bottom: 5%;
   right: 2%;
-  padding: 1rem 2rem;
+  padding: 1rem 1.3rem;
   color: white;
   background-color: green;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.3rem;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
   border-radius: 30px 8px 30px 30px;
   cursor: pointer;
 }
