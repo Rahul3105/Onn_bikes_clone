@@ -17,7 +17,11 @@ By using this website you can book a bike anytime anywhere. With the very user-f
 
 - We have used local storage as a backend.
 - Responsive for all screen sizes.
-- Multiple sorting feature in filter section. 
+- Multiple sorting feature in filter section.
+
+## How to run project locally?
+Just have to clone the repository and run index.html file with live server or without live server both are fine.
+
 ## Support
 
 For support, email bhandarisumit049@gmail.com / soumyaranjanpurohit46@gmail.com / rahulrajput7358@gmail.com
