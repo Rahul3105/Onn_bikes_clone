@@ -7,6 +7,9 @@
 
 By using this website you can book a bike anytime anywhere. With the very user-friendly interface, it will take hardly 5 minutes. And tada! you got your bike.
 
+## How to run project locally?
+Just have to clone the repository or download the zip version and then open index.html file with any browser.
+
 ## Authors
 
 - [Soumya Ranjan Purohit](https://github.com/cybervirus997)
@@ -18,9 +21,6 @@ By using this website you can book a bike anytime anywhere. With the very user-f
 - We have used local storage as a backend.
 - Responsive for all screen sizes.
 - Multiple sorting feature in filter section.
-
-## How to run project locally?
-Just have to clone the repository and run index.html file with live server or without live server both are fine.
 
 ## Support
 
